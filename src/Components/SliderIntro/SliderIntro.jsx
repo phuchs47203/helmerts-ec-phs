@@ -104,7 +104,7 @@ const SliderIntro = () => {
         }
       </Slide >
       <Slide
-        autoplay={false} duration={1000}
+        autoplay={true} duration={1200}
         arrows={false}
       >
         {slideImagesVertical.map((slideImage, index) => (
