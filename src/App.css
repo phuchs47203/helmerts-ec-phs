@@ -1,0 +1,81 @@
+body {
+  background: var(--color-bg);
+}
+
+.helmerst-app {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+}
+
+.scale-up-center {
+  -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+.navbar_color{
+  color: white;
+}
+@-webkit-keyframes scale-up-center {
+  0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+  }
+
+  100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+}
+
+@keyframes scale-up-center {
+  0% {
+      -webkit-transform: scale(0.5);
+      transform: scale(0.5);
+  }
+
+  100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+  }
+}
+.fall-in-left {
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: fallInLeft 0.5s ease-in forwards;
+}
+
+@keyframes fallInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-100%);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+.gradient__text {
+  background: var(--gradient-text);
+  background-clip: text;
+  -webkit-background-clop: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.line_color {
+  background: var(--liner-color);
+  background-clip: text;
+  -webkit-background-clop: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section__padding {
+  padding: 0rem 6rem;
+}
+
+.section__margin {
+  margin: 4rem 6rem;
+}
+.helmerst-app{
+}
+.helmerst-app-navbar{
+  /* padding: 1rem 10rem; */
+}
