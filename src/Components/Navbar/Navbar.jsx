@@ -84,7 +84,7 @@ const Navbar = () => {
           <div className='navbar-icons-svg' >
             {toggleMenu
               ? <AiOutlineMenu />
-              : <AiOutlineMenu style={combineStyle} onClick={() => settoggleMenu(true)} />
+              : <AiOutlineMenu style={combineStyle} onClick={() => settoggleMenu(true) & settogglesearch(true)} />
             }
             {toggleMenu &&
               <div className='navbar-icons-svg-content fall-in-left'>
