@@ -80,6 +80,7 @@
     font-family: var(--font-family);
     color: var(--color-p);
 }
+
 .text-decoration {
     text-decoration: none;
 }
@@ -199,6 +200,7 @@
     .navbar-icons-svg-content {
         width: 45vw;
     }
+
     .menu-link {
         font-size: 18px;
     }
@@ -206,14 +208,20 @@
 
 @media screen and (max-width: 990px) {
 
-    .navbar-account-cart{
+    .navbar-account-cart {
         grid-gap: 1rem;
     }
+
     .navbar-account-cart h1 {
         display: none;
     }
+
     .navbar-icons-svg-content {
         width: 65vw;
+    }
+
+    .close_search {
+        margin-left: -1.8rem;
     }
 }
 
@@ -221,48 +229,65 @@
     .helmerts-navbar-app-region {
         height: 60px;
     }
+
     .helmerts-navbar-app-region-navbar {
 
         margin-top: -120px;
-    
+
     }
+
+    .close_search {
+        margin-left: -1.6rem;
+
+    }
+
     .navbar-search-logo_search input {
         width: 100%;
         padding: 0.7rem 1rem;
         border: none;
         font-size: 16px;
+        padding-right: 2rem;
     }
+
     .helmerts-navbar-app-region svg {
-        width: 22px;
-        height: 22px;    
+        width: 20px;
+        height: 20px;
     }
+
     .helmerts-navbar-app-region {
-        padding: 0rem 1rem;
+        padding: 0rem 0.7rem;
     }
+
     .helmerts-navbar-app-region-navbar {
-        grid-gap: 0.7rem;
+        grid-gap: 0.5rem;
     }
+
     .navbar-icons h1 {
         display: none;
     }
+
     .navbar-icons-svg-content {
         width: 100vw;
     }
 
-    .menu-product-catergory-content{
+    .menu-product-catergory-content {
         grid-gap: 0.5rem;
     }
-    .menu-link{
+
+    .menu-link {
         font-size: 16px;
     }
 
 }
+
 @media screen and (max-width: 400px) {
     .navbar-search-logo_search input {
         padding: 0.8rem 1rem;
         font-size: 14px;
+        padding-right: 2rem;
     }
-    .menu-link{
+
+    .menu-link {
         font-size: 14px;
     }
 
