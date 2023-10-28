@@ -46,8 +46,28 @@
     width: 30px;
     height: 30px;
     color: var(--color-icon);
+    cursor: pointer;
 }
 
+
+.error-message {
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 0.2rem;
+    color: rgb(237, 84, 41);
+    word-spacing: -0.2rem;
+}
+.success-message{
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 0.2rem;
+    color: rgb(43, 175, 14);
+    word-spacing: -0.2rem;
+}
 @media screen and (max-width: 1300px) {
     .app-helmerts-cta {
         margin: 0 1rem;
