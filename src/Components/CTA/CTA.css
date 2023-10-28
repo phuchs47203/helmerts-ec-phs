@@ -1,0 +1,111 @@
+.app-helmerts-cta {
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    border-radius: 1rem;
+    margin: 0 20rem;
+    padding: 0.5rem 1rem;
+    justify-content: center;
+    align-items: center;
+    background: var(--gradient-bg-cta);
+}
+
+.app-helmerts-cta-header h1 {
+    font-family: var(--font-family);
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-h);
+    margin-bottom: 0.3rem;
+
+}
+
+.app-helmerts-cta-content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts-cta-content input {
+    flex: 0.4;
+    padding: 0.5rem;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-family: var(--font-family);
+    color: var(--color-p);
+    margin-right: 0.5rem;
+    background: transparent;
+    border-bottom: 0.5px solid black;
+}
+
+.app-helmerts-cta-content svg {
+    width: 30px;
+    height: 30px;
+    color: var(--color-icon);
+}
+
+@media screen and (max-width: 1300px) {
+    .app-helmerts-cta {
+        margin: 0 1rem;
+    }
+
+    .app-helmerts-cta-content input {
+        flex: 0.6;
+    }
+}
+
+@media screen and (max-width: 990px) {
+
+    .app-helmerts-cta-header h1 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+
+    .app-helmerts-cta-content input {
+        flex: 0.8;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .app-helmerts-cta-header h1 {
+        font-size: 16px;
+        line-height: 26px;
+        word-spacing: -0.2rem;
+    }
+
+    .app-helmerts-cta-content input {
+        font-size: 14px;
+        line-height: 22px;
+        flex: 0.9;
+        padding: 0.2rem;
+
+    }
+
+    .app-helmerts-cta-content svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .app-helmerts-cta-header h1 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .app-helmerts-cta-content input {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .app-helmerts-cta-content svg {
+        width: 20px;
+        height: 20px;
+    }
+}

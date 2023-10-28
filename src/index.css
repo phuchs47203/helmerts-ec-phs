@@ -7,6 +7,8 @@
     --font-family: 'Roboto Mono', monospace;
     --gradient-text: radial-gradient(ellipse at 52% 100%, rgba(237, 82, 153, 1) 0%, rgba(233, 100, 38, 1) 100%);
     --gradient-bg: linear-gradient(90deg, rgba(193, 77, 42, 1) 0%, rgba(153, 73, 197, 1) 100%);
+    --gradient-bg-cta: linear-gradient(180deg, rgba(253, 214, 194, 1) 0%, rgba(230, 230, 196, 1) 100%);
+
     --primary-color: #dceafa;
     --secondary-color: #313bac;
     --black-color: #030303;
@@ -15,10 +17,9 @@
     --brown-color: #46364a;
     --white-color: #ffffff;
     --color-bg: #f6f1eb;
-    --color-p: rgb(68, 68, 68);
-    --color-icon: rgb(66, 48, 42);
-
-    --color-h: rgb(72, 24, 10);
+    --color-p: rgb(96, 49, 34);
+    --color-h: rgb(16, 83, 14);
+    --color-icon: rgb(96, 49, 34);
     --liner-color: linear-gradient(90deg, rgba(160, 51, 19, 1) 0%, rgba(247, 210, 181, 1) 100%);
 }
 

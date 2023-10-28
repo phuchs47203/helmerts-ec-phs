@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import { SlideIntro } from '../../Components'
+import { SlideIntro, CTA } from '../../Components'
 const Home = () => {
   return (
     <div id='home' className='helmert-app-home'>
@@ -13,6 +13,7 @@ const Home = () => {
 
         <h1>hello</h1>
         <h1>hello</h1>
+        <CTA />
         <h1>hello</h1>
         <h1>hello</h1>
         <h1>hello</h1>
