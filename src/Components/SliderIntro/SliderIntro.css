@@ -47,7 +47,7 @@
     font-weight: 300;
     line-height: 46px;
     text-align: center;
-    padding: 6rem 15rem;
+    padding: 10rem 15rem;
     word-spacing: -0.2rem;
 }
 
@@ -62,6 +62,7 @@
     padding: 0rem 1rem;
     word-spacing: -0.2rem;
 }
+
 @media screen and (min-width: 600px) {
     .div-style-v {
         display: none;
@@ -78,14 +79,14 @@
     .div-style p {
         font-size: 28px;
         line-height: 36px;
-        padding: 6rem 5rem;
+        padding: 10rem 5rem;
     }
 }
 
 @media screen and (max-width: 990px) {
     .div-style p {
         font-size: 24px;
-        padding: 6rem 1rem;
+        padding: 10rem 1rem;
     }
 
 }
@@ -93,7 +94,7 @@
 
 @media screen and (max-width: 400px) {
     .div-style-v p {
-        font-size: 13px;
-        line-height: 23px;
+        font-size: 15px;
+        line-height: 25px;
     }
 }
