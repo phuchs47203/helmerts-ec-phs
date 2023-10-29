@@ -103,6 +103,11 @@
         line-height: 22px;
         word-spacing: -0.1rem;
     }
+
+    .helmert-app-home_heading-title-link:hover {
+        font-size: 14px;
+        font-weight: 400;
+    }
 }
 
 @media screen and (max-width: 400px) {
