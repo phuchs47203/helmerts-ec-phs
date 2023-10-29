@@ -14,13 +14,13 @@ const App = () => {
         </div>
         <Routes>
           <Route path='/' element={<SlideIntro />} />
-          <Route path='/home' element={<SlideIntro />} />
+          <Route path='/home/*' element={<SliderAndHome />} />
 
         </Routes>
         <div className='helmerst-app-boby section__padding'>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
+            {/* <Route path='/home' element={<Home />} /> */}
             <Route path='/product' element={<Product />} />
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
@@ -38,5 +38,14 @@ const App = () => {
     </BrowserRouter>
   )
 }
-
+function SliderAndHome() {
+  return (
+    <>
+      <SlideIntro />
+      <div className='helmerst-app-boby section__padding'>
+        <Home />
+      </div>
+    </>
+  );
+}
 export default App;
