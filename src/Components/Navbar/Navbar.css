@@ -312,4 +312,8 @@
         padding: 1rem;
         margin-left: 0.5rem;
     }
+
+    .menu-link {
+        font-size: 14px;
+    }
 }
