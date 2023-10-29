@@ -3,7 +3,6 @@
     flex-direction: column;
     background-color: yellow;
     border-radius: 1rem;
-    margin: 0 20rem;
     padding: 0.5rem 1rem;
     justify-content: center;
     align-items: center;
@@ -69,10 +68,6 @@
     word-spacing: -0.2rem;
 }
 @media screen and (max-width: 1300px) {
-    .app-helmerts-cta {
-        margin: 0 1rem;
-    }
-
     .app-helmerts-cta-content input {
         flex: 0.6;
     }

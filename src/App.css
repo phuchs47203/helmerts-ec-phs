@@ -68,7 +68,7 @@ body {
 }
 
 .section__padding {
-  padding: 0rem 6rem;
+  padding: 0rem 10rem;
 }
 
 .section__margin {
@@ -78,4 +78,9 @@ body {
 }
 .helmerst-app-navbar{
   /* padding: 1rem 10rem; */
+}
+@media screen and (max-width: 1400px) {
+  .section__padding{
+    padding: 0rem 1rem;
+  }
 }

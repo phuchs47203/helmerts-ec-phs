@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Navbar, Footer, SlideIntro } from './Components';
-import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup } from './Containers';
+import { Navbar, Footer, SlideIntro, CTA } from './Components';
+import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup, Category } from './Containers';
 
 const App = () => {
   return (
@@ -15,8 +15,9 @@ const App = () => {
         <Routes>
           <Route path='/' element={<SlideIntro />} />
           <Route path='/home' element={<SlideIntro />} />
+
         </Routes>
-        <div className='helmerst-app-boby section__padding'>
+        <div className='helmerst-app-boby'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
@@ -27,8 +28,11 @@ const App = () => {
             <Route path='/account/signin' element={<Signin />} />
             <Route path='/account/signup' element={<Signup />} />
             <Route path='/account/signout' element={<Signout />} />
-
+            <Route path='/product/category/:productType' element={<Category />} />
           </Routes>
+        </div>
+        <div className='helmerst-app-cta section__padding'>
+          <CTA />
         </div>
         <div className='helmerst-app-footer'>
           <Footer />

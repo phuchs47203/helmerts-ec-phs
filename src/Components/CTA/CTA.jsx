@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './CTA.css'
 import { AiOutlineSend } from 'react-icons/ai';
+import { useNavigate } from 'react-router-dom';
 const CTA = () => {
   const [erroEmail, seterroEmail] = useState("");
   const [successEmail, setsuccessEmail] = useState("");
@@ -9,8 +10,14 @@ const CTA = () => {
     const value = e.target.value;
     settextEmail(value);
     setsuccessEmail('');
+    navigate(`/product/category/${types}`);
+
   }
+  const navigate = useNavigate();
+  const types = "open";
+  const type1 = "half";
   const handleSendEmail = (e) => {
+    navigate(`/product/category/${type1}`);
     e.preventDefault();
     setsuccessEmail('');
     if (!textEmail) {
@@ -37,7 +44,7 @@ const CTA = () => {
       </div>
       <div className='app-helmerts-cta-content'>
         <input
-          type="text"
+          type="email"
           value={textEmail}
           onChange={(e) => handleChangeEmail(e)}
           placeholder='Email address' />

@@ -5,31 +5,44 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineDown, AiOutlineUp, AiOutlineSea
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { images } from '../../Constants';
+const openType = "open";
+const fullType = "full";
+
+const types = [
+  "full",
+  "open",
+  "modular",
+  "half",
+  "bicycle",
+  "children",
+  "accessorie"
+];
+
 const MenuProductCategories = () => (
   <>
     <p>
       <Link to="/product" className='menu-link' >All Products</Link>
     </p>
     <p>
-      <Link to="/product" className='menu-link' >Open Face(3/4)</Link>
+      <Link to={`/product/category/${types[0]}`} className='menu-link' >Full Face</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Full Face </Link>
+      <Link to={`/product/category/${types[1]}`} className='menu-link' >Open Face(3/4)</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Modular</Link>
+      <Link to={`/product/category/${types[2]}`} className='menu-link' >Modular</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Half Helmet</Link>
+      <Link to={`/product/category/${types[3]}`} className='menu-link' >Half Helmet</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Bicycle Helmet</Link>
+      <Link to={`/product/category/${types[4]}`} className='menu-link' >Bicycle Helmet</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Children's Helmet</Link>
+      <Link to={`/product/category/${types[5]}`} className='menu-link' >Children's Helmet</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Accessories</Link>
+      <Link to={`/product/category/${types[6]}`} className='menu-link' >Accessories</Link>
     </p>
   </>
 )

@@ -4,7 +4,6 @@ import { images } from '../../Constants';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
 
-
 const slideImages = [
   {
     url: images.slide1,
