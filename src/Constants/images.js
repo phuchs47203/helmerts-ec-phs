@@ -32,7 +32,7 @@ import helmerts_high_resolution_logo_white_transparent from '../Assets/helmerts-
 import helmerts_high_resolution_logo_white from '../Assets/helmerts-high-resolution-logo-white.png';
 import helmerts_high_resolution_logo from '../Assets/helmerts-high-resolution-logo.png';
 import logo_icon from '../Assets/logo-icon-transparent.png';
-import video from '../Assets/gpt-4-92586ac_1080p60.mp4';
+import video from '../Assets/new_model_3_4.mp4';
 export default {
     slide1,
     slide2,
