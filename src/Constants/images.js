@@ -33,6 +33,14 @@ import helmerts_high_resolution_logo_white from '../Assets/helmerts-high-resolut
 import helmerts_high_resolution_logo from '../Assets/helmerts-high-resolution-logo.png';
 import logo_icon from '../Assets/logo-icon-transparent.png';
 import video from '../Assets/new_model_3_4.mp4';
+import fullface from '../Assets/fullface.png';
+import openface from '../Assets/openface.png';
+import modular from '../Assets/modular.png';
+import half from '../Assets/half.jpeg';
+import bicycle from '../Assets/bicycle.jpeg';
+import children from '../Assets/children.png';
+import accessories from '../Assets/accessories.jpg';
+
 export default {
     slide1,
     slide2,
@@ -68,7 +76,14 @@ export default {
     helmerts_high_resolution_logo_white,
     helmerts_high_resolution_logo,
     logo_icon,
-    video
+    video,
+    fullface,
+    openface,
+    modular,
+    half,
+    bicycle,
+    children,
+    accessories
 };
 
 
