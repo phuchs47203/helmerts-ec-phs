@@ -306,3 +306,10 @@
     }
 
 }
+
+@media screen and (max-width: 290px) {
+    .menu-product-catergory-content {
+        padding: 1rem;
+        margin-left: 0.5rem;
+    }
+}
