@@ -89,34 +89,39 @@ const Navbar = () => {
             }
             {toggleMenu &&
               <div className='navbar-icons-svg-content fall-in-left'>
-                <AiOutlineClose onClick={() => settoggleMenu(false) & settoggleMenuProduct(false)} />
-                <p>
-                  <Link to="/home" className='menu-link' onClick={() => settoggleMenu(false)}>Home</Link>
-                </p>
-                <div className='menu-product'>
-                  <div className='menu-product-title'>
-                    <span className='menu-link'>Helmet Catefories</span>
-                    {toggleMenuProduct
-                      ? <AiOutlineUp style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(false)} />
-                      : <AiOutlineDown style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(true)} />
+                <div className='navbar-icons-svg-content_svg'>
+                  <AiOutlineClose onClick={() => settoggleMenu(false) & settoggleMenuProduct(false)} />
+
+                </div>
+                <div className='navbar-icons-svg-content_content'>
+                  <p>
+                    <Link to="/home" className='menu-link' onClick={() => settoggleMenu(false)}>Home</Link>
+                  </p>
+                  <div className='menu-product'>
+                    <div className='menu-product-title'>
+                      <span className='menu-link'>Helmet Catefories</span>
+                      {toggleMenuProduct
+                        ? <AiOutlineUp style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(false)} />
+                        : <AiOutlineDown style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(true)} />
+                      }
+                    </div>
+                    {
+                      toggleMenuProduct &&
+                      <div className='menu-product-catergory-content scale-up-center' onClick={() => settoggleMenu(false) & settoggleMenuProduct(false)}>
+                        <MenuProductCategories />
+                      </div>
                     }
                   </div>
-                  {
-                    toggleMenuProduct &&
-                    <div className='menu-product-catergory-content scale-up-center' onClick={() => settoggleMenu(false) & settoggleMenuProduct(false)}>
-                      <MenuProductCategories />
-                    </div>
-                  }
+                  <p>
+                    <Link to="/introduce" className='menu-link' onClick={() => settoggleMenu(false)}>Introduce</Link>
+                  </p>
+                  <p>
+                    <Link to="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</Link>
+                  </p>
+                  <p>
+                    <Link to="/contact" className='menu-link' onClick={() => settoggleMenu(false)}>Contact</Link>
+                  </p>
                 </div>
-                <p>
-                  <Link to="/introduce" className='menu-link' onClick={() => settoggleMenu(false)}>Introduce</Link>
-                </p>
-                <p>
-                  <Link to="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</Link>
-                </p>
-                <p>
-                  <Link to="/contact" className='menu-link' onClick={() => settoggleMenu(false)}>Contact</Link>
-                </p>
               </div>
 
             }
