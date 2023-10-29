@@ -7,36 +7,43 @@ body {
   background-color: var(--color-bg);
 }
 
+p {
+  font-family: var(--font-family);
+}
+
 .scale-up-center {
   -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
   animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
-.navbar_color{
+
+.navbar_color {
   color: white;
 }
+
 @-webkit-keyframes scale-up-center {
   0% {
-      -webkit-transform: scale(0.5);
-      transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
 
   100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
 
 @keyframes scale-up-center {
   0% {
-      -webkit-transform: scale(0.5);
-      transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
   }
 
   100% {
-      -webkit-transform: scale(1);
-      transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
 }
+
 .fall-in-left {
   opacity: 0;
   transform: translateX(-100%);
@@ -45,14 +52,16 @@ body {
 
 @keyframes fallInLeft {
   0% {
-      opacity: 0;
-      transform: translateX(-100%);
+    opacity: 0;
+    transform: translateX(-100%);
   }
+
   100% {
-      opacity: 1;
-      transform: translateX(0);
+    opacity: 1;
+    transform: translateX(0);
   }
 }
+
 .gradient__text {
   background: var(--gradient-text);
   background-clip: text;
@@ -74,13 +83,15 @@ body {
 .section__margin {
   margin: 4rem 6rem;
 }
-.helmerst-app{
-}
-.helmerst-app-navbar{
+
+.helmerst-app {}
+
+.helmerst-app-navbar {
   /* padding: 1rem 10rem; */
 }
+
 @media screen and (max-width: 1400px) {
-  .section__padding{
+  .section__padding {
     padding: 0rem 1rem;
   }
 }

@@ -1,0 +1,120 @@
+.helmert-app-home {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 6rem;
+    margin: 8rem 0rem;
+}
+
+.helmert-app-home_heading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.helmert-app-home_heading-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem 6rem;
+    grid-gap: 0.5rem;
+
+    margin-bottom: 3rem;
+}
+
+.helmert-app-home_heading-title h1 {
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-h);
+    line-height: 26px;
+    margin-bottom: 1rem;
+}
+
+.helmert-app-home_heading-title p,
+.helmert-app-home_heading-title-link {
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+    color: var(--color-p);
+    line-height: 26px;
+}
+
+.helmert-app-home_heading-title-link {
+    text-decoration: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 0.2rem;
+}
+
+.helmert-app-home_heading-title-link:hover {
+    border-bottom: none;
+    font-size: 17px;
+    color: var(--color-h);
+}
+
+.helmert-app-home_heading-video {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.helmert-app-home_heading-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 990px) {
+    .helmert-app-home {
+        grid-gap: 5rem;
+        margin: 5rem 0rem;
+    }
+
+    .helmert-app-home_heading-title {
+        padding: 0rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .helmert-app-home {
+        grid-gap: 3rem;
+        margin: 4rem 0rem;
+    }
+
+    .helmert-app-home_heading-title {
+        margin-bottom: 2rem;
+    }
+
+    .helmert-app-home_heading-title h1 {
+        font-size: 24px;
+        line-height: 32px;
+        margin-bottom: 0.5rem;
+    }
+
+    .helmert-app-home_heading-title p,
+    .helmert-app-home_heading-title-link {
+        font-size: 14px;
+        line-height: 22px;
+        word-spacing: -0.1rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .helmert-app-home_heading-title h1 {
+        font-size: 20px;
+        line-height: 30px;
+        word-spacing: -0.2rem;
+    }
+
+    .helmert-app-home_heading-title p,
+    .helmert-app-home_heading-title-link {
+        /* letter-spacing: -0.02rem; */
+        font-weight: 300;
+    }
+}

@@ -3,10 +3,11 @@
     flex-direction: column;
     background-color: yellow;
     border-radius: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 1rem 1rem;
     justify-content: center;
     align-items: center;
     background: var(--gradient-bg-cta);
+    margin: 0rem 15rem;
 }
 
 .app-helmerts-cta-header h1 {
@@ -15,8 +16,9 @@
     line-height: 30px;
     font-weight: 400;
     text-align: center;
-    color: var(--color-h);
+    color: var(--color-h1);
     margin-bottom: 0.3rem;
+    letter-spacing: -0.04rem;
 
 }
 
@@ -58,7 +60,8 @@
     color: rgb(237, 84, 41);
     word-spacing: -0.2rem;
 }
-.success-message{
+
+.success-message {
     font-family: var(--font-family);
     color: var(--color-p);
     font-size: 12px;
@@ -67,10 +70,16 @@
     color: rgb(43, 175, 14);
     word-spacing: -0.2rem;
 }
+
 @media screen and (max-width: 1300px) {
     .app-helmerts-cta-content input {
         flex: 0.6;
     }
+
+    .app-helmerts-cta {
+        margin: 0rem 5rem;
+    }
+
 }
 
 @media screen and (max-width: 990px) {
@@ -83,6 +92,10 @@
     .app-helmerts-cta-content input {
         flex: 0.8;
     }
+
+    .app-helmerts-cta {
+        margin: 0rem 3rem;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -91,6 +104,12 @@
         font-size: 16px;
         line-height: 26px;
         word-spacing: -0.2rem;
+    }
+
+    .app-helmerts-cta {
+        margin: 0rem;
+        padding: 1.5rem 0.5rem;
+
     }
 
     .app-helmerts-cta-content input {

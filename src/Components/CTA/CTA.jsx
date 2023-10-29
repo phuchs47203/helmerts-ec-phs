@@ -10,14 +10,11 @@ const CTA = () => {
     const value = e.target.value;
     settextEmail(value);
     setsuccessEmail('');
-    navigate(`/product/category/${types}`);
 
   }
   const navigate = useNavigate();
-  const types = "open";
-  const type1 = "half";
+
   const handleSendEmail = (e) => {
-    navigate(`/product/category/${type1}`);
     e.preventDefault();
     setsuccessEmail('');
     if (!textEmail) {

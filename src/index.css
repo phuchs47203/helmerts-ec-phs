@@ -18,7 +18,9 @@
     --white-color: #ffffff;
     --color-bg: #f6f1eb;
     --color-p: rgb(96, 49, 34);
-    --color-h: rgb(16, 83, 14);
+    --color-h: rgb(220, 63, 20);
+    --color-h1: rgb(29, 94, 26);
+
     --color-icon: rgb(96, 49, 34);
     --liner-color: linear-gradient(90deg, rgba(160, 51, 19, 1) 0%, rgba(247, 210, 181, 1) 100%);
 }
