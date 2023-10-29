@@ -96,10 +96,9 @@
     display: flex;
     flex-direction: column;
     grid-gap: 1rem;
+    /* scroll-behavior: smooth; */
     overflow-y: auto;
-
 }
-
 .menu-link {
     text-decoration: none;
     font-family: var(--font-family);
