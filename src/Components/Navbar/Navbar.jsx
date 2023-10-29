@@ -161,13 +161,13 @@ const Navbar = () => {
 
         </div>
         <div className='navbar-account-cart'>
-          <Link to="/product" className='text-decoration'>
+          <Link to="/account" className='text-decoration'>
             <div className='navbar-account-cart_account'>
               <BsFillPersonFill style={combineStyle} />
               <h1 style={combineStyle}>Account</h1>
             </div>
           </Link>
-          <Link to="/information" className='text-decoration'>
+          <Link to="/cart" className='text-decoration'>
             <div className='navbar-account-cart_cart'>
               <AiOutlineShoppingCart style={combineStyle} />
               <h1 className='text-decoration' style={combineStyle}>Cart</h1>

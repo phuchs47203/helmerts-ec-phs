@@ -15,7 +15,7 @@ const App = () => {
         <div className='helmerst-app-boby '>
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
+            {/* <Route path='/home' element={<Home />} /> */}
             <Route path='/product' element={<Product />} />
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
