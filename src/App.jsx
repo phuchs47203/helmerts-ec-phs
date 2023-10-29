@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Navbar, Footer } from './Components';
+import { Navbar, Footer, SlideIntro } from './Components';
 import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup } from './Containers';
 
 const App = () => {
@@ -12,7 +12,12 @@ const App = () => {
         <div className='helmerst-app-navbar'>
           <Navbar />
         </div>
-        <div className='helmerst-app-boby'>
+        <Routes>
+          <Route path='/' element={<SlideIntro />} />
+          <Route path='/home' element={<SlideIntro />} />
+
+        </Routes>
+        <div className='helmerst-app-boby section__padding'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
@@ -27,7 +32,7 @@ const App = () => {
           </Routes>
         </div>
         <div className='helmerst-app-footer'>
-          {/* <Footer /> */}
+          <Footer />
         </div>
       </div>
     </BrowserRouter>

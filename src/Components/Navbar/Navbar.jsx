@@ -8,10 +8,13 @@ import { images } from '../../Constants';
 const MenuProductCategories = () => (
   <>
     <p>
-      <Link to="/product" className='menu-link' >Open Face</Link>
+      <Link to="/product" className='menu-link' >All Products</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Fullface </Link>
+      <Link to="/product" className='menu-link' >Open Face(3/4)</Link>
+    </p>
+    <p>
+      <Link to="/home" className='menu-link'>Full Face </Link>
     </p>
     <p>
       <Link to="/home" className='menu-link'>Modular</Link>
@@ -23,15 +26,13 @@ const MenuProductCategories = () => (
       <Link to="/home" className='menu-link'>Bicycle Helmet</Link>
     </p>
     <p>
-      <Link to="/home" className='menu-link'>Children's Helmets</Link>
+      <Link to="/home" className='menu-link'>Children's Helmet</Link>
     </p>
     <p>
       <Link to="/home" className='menu-link'>Accessories</Link>
     </p>
   </>
 )
-
-
 const Navbar = () => {
   const [toggleMenu, settoggleMenu] = useState(false);
   const [toggleMenuProduct, settoggleMenuProduct] = useState(false);
