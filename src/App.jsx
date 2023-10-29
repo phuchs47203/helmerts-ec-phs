@@ -12,15 +12,10 @@ const App = () => {
         <div className='helmerst-app-navbar'>
           <Navbar />
         </div>
-        <Routes>
-          <Route path='/' element={<SlideIntro />} />
-          <Route path='/home/*' element={<SliderAndHome />} />
-
-        </Routes>
-        <div className='helmerst-app-boby section__padding'>
+        <div className='helmerst-app-boby '>
           <Routes>
             <Route path='/' element={<Home />} />
-            {/* <Route path='/home' element={<Home />} /> */}
+            <Route path='/home' element={<Home />} />
             <Route path='/product' element={<Product />} />
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
@@ -28,7 +23,6 @@ const App = () => {
             <Route path='/account/signin' element={<Signin />} />
             <Route path='/account/signup' element={<Signup />} />
             <Route path='/account/signout' element={<Signout />} />
-
           </Routes>
         </div>
         <div className='helmerst-app-footer'>
@@ -38,14 +32,5 @@ const App = () => {
     </BrowserRouter>
   )
 }
-function SliderAndHome() {
-  return (
-    <>
-      <SlideIntro />
-      <div className='helmerst-app-boby section__padding'>
-        <Home />
-      </div>
-    </>
-  );
-}
+
 export default App;
