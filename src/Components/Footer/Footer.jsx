@@ -1,9 +1,11 @@
 import React from 'react'
 import './Footer.css'
 import { images } from '../../Constants';
-import { TfiEmail } from 'react-icons/tfi';
+import { FaSquareFacebook } from 'react-icons/fa6';
+import {LuMail} from 'react-icons/lu';
 import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineFacebook, AiOutlinePhone } from 'react-icons/ai';
 import { GiPositionMarker } from 'react-icons/gi';
+
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
@@ -70,7 +72,7 @@ const Footer = () => {
               <div className='app-helmerts-footer-heading-content-main-contact_link'>
                 <div className='app-helmerts-footer-heading-content-main-contact_link-content'>
                   <a href="mailto:infor@helmerts.com" className='app-helmerts-footer-heading-content-main-contact_link-content link-decoration'>
-                    <TfiEmail className='color-svg' />
+                    <LuMail className='color-svg' />
                     <p className='link-decoration'>infor@helmerts.com</p>
                   </a>
                 </div>
@@ -97,7 +99,7 @@ const Footer = () => {
               <div className='app-helmerts-footer-heading-content-main-social_link'>
                 <div className='app-helmerts-footer-heading-content-main-social_link-content'>
                   <a href="" className='app-helmerts-footer-heading-content-main-contact_link-content link-decoration'>
-                    <AiOutlineFacebook className='color-svg' />
+                    <FaSquareFacebook className='color-svg' />
                     <p className='link-decoration'>Facebook</p>
                   </a>
                 </div>
