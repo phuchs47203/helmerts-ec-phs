@@ -1,6 +1,6 @@
 import React from 'react'
 import './Home.css'
-import { SlideIntro, CTA } from '../../Components'
+import { SlideIntro, CTA, MainProduct } from '../../Components'
 import { Link } from 'react-router-dom'
 import { images } from '../../Constants'
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
         <CTA />
       </div>
       <div className='helmert-app-home_product-categorise'>
-        <div className='helmert-app-home_product-categorise-heading helmert-app-home_heading-title p-bold'>
+        <div className='helmert-app-home_product-categorise-heading helmert-app-home_heading-title'>
           <h1>OUR CAVE OF WONDER</h1>
           <p>
             <Link to="/product" className='helmert-app-home_heading-title-link'>Explore all</Link>
@@ -127,15 +127,9 @@ const Home = () => {
         </div>
 
       </div>
-      <div className='helmert-app-home_product-'>
-        cho 2 loại sản phẩm, sản phẩm nổi bật và sản phẩm discount, nổi bật alf nhiều người mua
-        dành cho sp nổi bật
+      <div className='helmert-app-home_product-main'>
+        <MainProduct />
       </div>
-      <div className='helmert-app-home_product-'>
-        cho 2 loại sản phẩm, sản phẩm nổi bật và sản phẩm discount, nổi bật alf nhiều người mua
-        dnahf cho sản phẩm scale
-      </div>
-
     </div>
   )
 }

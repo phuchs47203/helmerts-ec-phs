@@ -40,6 +40,7 @@ import half from '../Assets/half.jpeg';
 import bicycle from '../Assets/bicycle.jpeg';
 import children from '../Assets/children.png';
 import accessories from '../Assets/accessories.jpg';
+import testone from '../Assets/testone.jpg';
 
 export default {
     slide1,
@@ -83,7 +84,8 @@ export default {
     half,
     bicycle,
     children,
-    accessories
+    accessories,
+    testone
 };
 
 
