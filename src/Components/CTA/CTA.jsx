@@ -38,7 +38,7 @@ const CTA = () => {
         <h1>
           LET'S KEEP THE CONVERSATION GOING
         </h1>
-        <p>
+        <p className='text-paragraph-p'>
           Receive our promotional and discover new products
         </p>
       </div>

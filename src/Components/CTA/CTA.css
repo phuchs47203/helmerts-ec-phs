@@ -1,7 +1,6 @@
 .app-helmerts-cta {
     display: flex;
     flex-direction: column;
-    background-color: yellow;
     border-radius: 1rem;
     padding: 1rem 1rem;
     justify-content: center;
@@ -21,16 +20,6 @@
     /* letter-spacing: -0.04rem; */
 }
 
-.app-helmerts-cta-header p {
-    font-family: var(--font-family);
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: 400;
-    text-align: center;
-    color: var(--color-p);
-    margin-bottom: 0.3rem;
-    letter-spacing: -0.04rem;
-}
 
 .app-helmerts-cta-content {
     width: 100%;
@@ -111,11 +100,7 @@
         word-spacing: -0.2rem;
     }
 
-    .app-helmerts-cta-header p {
-        font-size: 14px;
-        line-height: 22px;
-        word-spacing: -0.2rem;
-    }
+
 
     .app-helmerts-cta {
         margin: 0rem;

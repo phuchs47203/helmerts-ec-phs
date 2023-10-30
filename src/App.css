@@ -84,6 +84,33 @@ p {
   margin: 4rem 6rem;
 }
 
+.text-title-h1 {
+  font-family: var(--font-family);
+  font-size: 32px;
+  font-weight: 400;
+  text-align: center;
+  color: var(--color-h);
+  line-height: 26px;
+  margin-bottom: 1rem;
+}
+
+.text-paragraph-p {
+  font-family: var(--font-family);
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  color: var(--color-p);
+  line-height: 26px;
+}
+
+.btn-transition {
+  transition: transform 0.3s ease;
+}
+
+.btn-transition:active {
+  transform: scale(0.8);
+}
+
 .helmerst-app {}
 
 .helmerst-app-navbar {
@@ -95,8 +122,39 @@ p {
     padding: 0rem 1rem;
   }
 }
+
+@media screen and (max-width: 990px) {
+
+  .text-paragraph-p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+}
+
 @media screen and (max-width: 600px) {
   .section__padding {
     padding: 0rem 0.5rem;
+  }
+
+  .text-title-h1 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 0.5rem;
+  }
+
+  .text-paragraph-p {
+    font-size: 14px;
+    line-height: 22px;
+    word-spacing: -0.1rem;
+  }
+
+}
+
+@media screen and (max-width: 400px) {
+  .text-title-h1 {
+    font-size: 20px;
+    line-height: 30px;
+    word-spacing: -0.2rem;
   }
 }

@@ -12,7 +12,7 @@ const OneProduct = ({ product }) => {
             <div className='hermerts-app-oneproduct-description'>
                 <h3>{product.name}</h3>
                 <div className='hermerts-app-oneproduct-description-price' >
-                    <p>đ{product.price}</p>
+                    <p>₫ {product.price}</p>
                     <p>-30%</p>
                 </div>
             </div>

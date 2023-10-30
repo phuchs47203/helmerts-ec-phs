@@ -6,7 +6,7 @@ import OneProduct from '../OneProduct/OneProduct';
 const products = {
   id: "124",
   name: 'modular best',
-  price: '2400000',
+  price: '6,990,500',
   image: images.testone,
   description: 'this is description of product'
 };
@@ -16,9 +16,9 @@ const MainProduct = () => {
       <div className='helmert-app-home-mainproduct-hot'>
         <div className='helmert-app-home-mainproduct-heading'>
           <div className='helmert-app-home-mainproduct-heading-title'>
-            <h1>BEST SELLER</h1>
-            <p>
-              <Link to="/" className='helmert-app-home-mainproduct-heading-title-link'>Discover</Link>
+            <h1 className='text-title-h1'>BEST SELLER</h1>
+            <p className='btn-transition'>
+              <Link to="/" className='helmert-app-home-mainproduct-heading-title-link btn-transition'>Discover</Link>
             </p>
           </div>
           <div className='helmert-app-home-mainproduct-heading-line' />
@@ -37,9 +37,9 @@ const MainProduct = () => {
       <div className='helmert-app-home-mainproduct-flashsale'>
         <div className='helmert-app-home-mainproduct-heading'>
           <div className='helmert-app-home-mainproduct-heading-title'>
-            <h1>FLASH SALE</h1>
-            <p>
-              <Link to="/" className='helmert-app-home-mainproduct-heading-title-link'>Discover</Link>
+            <h1 className='text-title-h1'>FLASH SALE</h1>
+            <p className='btn-transition'>
+              <Link to="/" className='helmert-app-home-mainproduct-heading-title-link btn-transition'>Discover</Link>
             </p>
           </div>
           <div className='helmert-app-home-mainproduct-heading-line' />

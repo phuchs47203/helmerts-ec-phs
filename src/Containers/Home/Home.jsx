@@ -9,14 +9,14 @@ const Home = () => {
     <div id='home' className='helmert-app-home section__padding'>
       <div className='helmert-app-home_heading'>
         <div className='helmert-app-home_heading-title'>
-          <h1>ENJOYE WITH HELMERTS</h1>
-          <p>
+          <h1 className='text-title-h1'>ENJOYE WITH HELMERTS</h1>
+          <p className='text-paragraph-p'>
             Bringing forth modern beauty accompanies every journey while ensuring utmost safety.
           </p>
-          <p>
+          <p className='text-paragraph-p'>
             Not only a helmet but also a fashion accessory.
           </p>
-          <p>
+          <p className='text-paragraph-p'>
             <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link '>Explore the collection</Link>
           </p>
         </div>
@@ -30,7 +30,7 @@ const Home = () => {
       </div>
       <div className='helmert-app-home_product-categorise'>
         <div className='helmert-app-home_product-categorise-heading helmert-app-home_heading-title'>
-          <h1>OUR CAVE OF WONDER</h1>
+          <h1 className='text-title-h1'>OUR CAVE OF WONDER</h1>
           <p>
             <Link to="/product" className='helmert-app-home_heading-title-link'>Explore all</Link>
           </p>
