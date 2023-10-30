@@ -7,7 +7,7 @@ const products = {
   id: "124",
   name: 'modular best',
   price: '6,990,500',
-  image: images.testone,
+  image: images.children,
   description: 'this is description of product'
 };
 const MainProduct = () => {
@@ -30,8 +30,6 @@ const MainProduct = () => {
           <OneProduct product={products} key={products.id} />
           <OneProduct product={products} key={products.id} />
           <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
         </div>
       </div>
       <div className='helmert-app-home-mainproduct-flashsale'>
@@ -45,9 +43,6 @@ const MainProduct = () => {
           <div className='helmert-app-home-mainproduct-heading-line' />
         </div>
         <div className='helmert-app-home-mainproduct-content'>
-
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
           <OneProduct product={products} key={products.id} />
           <OneProduct product={products} key={products.id} />
           <OneProduct product={products} key={products.id} />

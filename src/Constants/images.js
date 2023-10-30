@@ -22,16 +22,9 @@ import hn1 from '../Assets/Trương Định, Hai Bà Trưng District, Hanoi  024
 import hn2 from '../Assets/Shop Nón Sơn, 520 P. Xã Đàn, Nam Đồng, Đống Đa, Hà Nội  02435773162.jpg';
 import ct1 from '../Assets/1-23 Đ. Mậu Thân, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam 02923828268.jpg';
 import dn1 from '../Assets/Nón Sơn, 476 Đ. Lê Duẩn, Chính Gián, Hải Châu, Đà Nẵng 02363538587.jpg';
-import bestseller from '../Assets/bestseller.jpg';
-import buy1get1 from '../Assets/buy1get1.png';
-import flashsale from '../Assets/flashsale.png';
-import helmerts_high_resolution_logo_black_transparent from '../Assets/helmerts-high-resolution-logo-black-transparent.png';
-import helmerts_high_resolution_logo_black from '../Assets/helmerts-high-resolution-logo-black.png';
 import helmerts_high_resolution_logo_transparent from '../Assets/helmerts-high-resolution-logo-transparent.png';
-import helmerts_high_resolution_logo_white_transparent from '../Assets/helmerts-high-resolution-logo-white-transparent.png';
-import helmerts_high_resolution_logo_white from '../Assets/helmerts-high-resolution-logo-white.png';
-import helmerts_high_resolution_logo from '../Assets/helmerts-high-resolution-logo.png';
 import logo_icon from '../Assets/logo-icon-transparent.png';
+import logo_text from '../Assets/helmerts-high-resolution-logo-transparent-non-icon.png';
 import video from '../Assets/new_model_3_4.mp4';
 import fullface from '../Assets/fullface.png';
 import openface from '../Assets/openface.png';
@@ -40,8 +33,11 @@ import half from '../Assets/half.jpeg';
 import bicycle from '../Assets/bicycle.jpeg';
 import children from '../Assets/children.png';
 import accessories from '../Assets/accessories.jpg';
-import testone from '../Assets/testone.jpg';
-
+import louislutton from '../Assets/louis-vuitton-logo.png';
+import versace from '../Assets/versace.png';
+import burberry from '../Assets/burberry.png';
+import hermes from '../Assets/hermes-logo.png';
+import gucci from '../Assets/gucci-removebg-preview.png';
 export default {
     slide1,
     slide2,
@@ -67,16 +63,9 @@ export default {
     hn2,
     ct1,
     dn1,
-    bestseller,
-    buy1get1,
-    flashsale,
-    helmerts_high_resolution_logo_black_transparent,
-    helmerts_high_resolution_logo_black,
     helmerts_high_resolution_logo_transparent,
-    helmerts_high_resolution_logo_white_transparent,
-    helmerts_high_resolution_logo_white,
-    helmerts_high_resolution_logo,
     logo_icon,
+    logo_text,
     video,
     fullface,
     openface,
@@ -85,7 +74,11 @@ export default {
     bicycle,
     children,
     accessories,
-    testone
+    louislutton,
+    versace,
+    burberry,
+    hermes,
+    gucci
 };
 
 
