@@ -39,7 +39,9 @@ const Home = () => {
           <div className='helmert-app-home_product-categorise-content-row1'>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.fullface} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.fullface} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
@@ -49,7 +51,9 @@ const Home = () => {
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.openface} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.openface} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
@@ -59,7 +63,9 @@ const Home = () => {
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.modular} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.modular} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
@@ -69,7 +75,9 @@ const Home = () => {
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.half} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.half} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
@@ -81,7 +89,9 @@ const Home = () => {
           <div className='helmert-app-home_product-categorise-content-row2'>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.bicycle} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.bicycle} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
@@ -91,7 +101,9 @@ const Home = () => {
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.children} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.children} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
@@ -101,7 +113,9 @@ const Home = () => {
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <img src={images.accessories} alt="fullface" />
+                <Link to={`/product/category/${typefull}`} className=''>
+                  <img src={images.accessories} alt="fullface" />
+                </Link>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>

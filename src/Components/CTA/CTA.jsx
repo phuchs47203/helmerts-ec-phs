@@ -36,8 +36,11 @@ const CTA = () => {
     <div className='app-helmerts-cta'>
       <div className='app-helmerts-cta-header'>
         <h1>
-          Leave your email address to receive promotional information from us
+          LET'S KEEP THE CONVERSATION GOING
         </h1>
+        <p>
+          Receive our promotional and discover new products
+        </p>
       </div>
       <div className='app-helmerts-cta-content'>
         <input

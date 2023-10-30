@@ -7,19 +7,29 @@
     justify-content: center;
     align-items: center;
     background: var(--gradient-bg-cta);
-    margin: 0rem 15rem;
+    margin: 0rem 25rem;
 }
 
 .app-helmerts-cta-header h1 {
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: 22px;
     line-height: 30px;
     font-weight: 400;
     text-align: center;
     color: var(--color-h1);
     margin-bottom: 0.3rem;
-    letter-spacing: -0.04rem;
+    /* letter-spacing: -0.04rem; */
+}
 
+.app-helmerts-cta-header p {
+    font-family: var(--font-family);
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 400;
+    text-align: center;
+    color: var(--color-p);
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.04rem;
 }
 
 .app-helmerts-cta-content {
@@ -28,13 +38,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    width: 400px;
+
 }
 
 .app-helmerts-cta-content input {
-    flex: 0.4;
     padding: 0.5rem;
     outline: none;
     border: none;
+    width: 100%;
     font-size: 16px;
     font-family: var(--font-family);
     color: var(--color-p);
@@ -71,13 +83,10 @@
     word-spacing: -0.2rem;
 }
 
-@media screen and (max-width: 1300px) {
-    .app-helmerts-cta-content input {
-        flex: 0.6;
-    }
+@media screen and (max-width: 1650px) {
 
     .app-helmerts-cta {
-        margin: 0rem 5rem;
+        margin: 0rem 15rem;
     }
 
 }
@@ -87,10 +96,6 @@
     .app-helmerts-cta-header h1 {
         font-size: 20px;
         line-height: 28px;
-    }
-
-    .app-helmerts-cta-content input {
-        flex: 0.8;
     }
 
     .app-helmerts-cta {
@@ -106,16 +111,25 @@
         word-spacing: -0.2rem;
     }
 
+    .app-helmerts-cta-header p {
+        font-size: 14px;
+        line-height: 22px;
+        word-spacing: -0.2rem;
+    }
+
     .app-helmerts-cta {
         margin: 0rem;
         padding: 1.5rem 0.5rem;
 
     }
 
+    .app-helmerts-cta-content {
+        width: 300px;
+    }
+
     .app-helmerts-cta-content input {
         font-size: 14px;
         line-height: 22px;
-        flex: 0.9;
         padding: 0.2rem;
 
     }
@@ -129,8 +143,13 @@
 @media screen and (max-width: 400px) {
 
     .app-helmerts-cta-header h1 {
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 16px;
+        line-height: 22px;
+
+    }
+
+    .app-helmerts-cta-content {
+        width: 250px;
     }
 
     .app-helmerts-cta-content input {
@@ -141,5 +160,13 @@
     .app-helmerts-cta-content svg {
         width: 20px;
         height: 20px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+
+
+    .app-helmerts-cta-content {
+        width: fit-content;
     }
 }
