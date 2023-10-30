@@ -1,15 +1,17 @@
 .app-helmerts-footer {
     background-color: var(--color-footer);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     display: flex;
     flex-direction: column;
+    padding: 2rem 10rem;
+    padding-bottom: 1rem;
+    margin-top: 3rem;
 }
 
 .app-helmerts-footer-heading {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1.4fr;
     grid-gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .app-helmerts-footer-heading-logo {
@@ -29,6 +31,7 @@
 .app-helmerts-footer-heading-content {
     display: flex;
     flex-direction: column;
+    grid-gap: 2rem;
 }
 
 .app-helmerts-footer-heading-content-brand {
@@ -46,6 +49,7 @@
     align-items: center;
     width: 50px;
     height: 50px;
+
 }
 
 .app-helmerts-footer-heading-content-brand-img img {
@@ -55,6 +59,170 @@
     cursor: pointer;
 }
 
-.app-helmerts-footer-heading-content-main {}
+.app-helmerts-footer-heading-content-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: flex-start;
+}
 
-.app-helmerts-footer-copyright {}
+.app-helmerts-footer-heading-content-main-service,
+.app-helmerts-footer-heading-content-main-social,
+.app-helmerts-footer-heading-content-main-contact,
+.app-helmerts-footer-heading-content-main-legal {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.app-helmerts-footer-heading-content-main-service_title,
+.app-helmerts-footer-heading-content-main-social_title,
+.app-helmerts-footer-heading-content-main-contact_title,
+.app-helmerts-footer-heading-content-main-legal_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.title-main {
+    color: rgb(222, 252, 255);
+    font-family: var(--font-family);
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+}
+
+.app-helmerts-footer-heading-content-main-service_link,
+.app-helmerts-footer-heading-content-main-social_link,
+.app-helmerts-footer-heading-content-main-contact_link,
+.app-helmerts-footer-heading-content-main-legal_link {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5rem;
+}
+
+.app-helmerts-footer-heading-content-main-service_link-content,
+.app-helmerts-footer-heading-content-main-social_link-content,
+.app-helmerts-footer-heading-content-main-contact_link-content,
+.app-helmerts-footer-heading-content-main-legal_link-content {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 0.5rem;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.color-svg {
+    color: var(--color-icon2);
+    width: 25px;
+    height: 25px;
+}
+
+.link-decoration {
+    text-decoration: none;
+    color: var(--color-link);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.app-helmerts-footer-copyright {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts-footer-copyright p {
+    font-family: var(--font-family);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+@media screen and (max-width: 1400px) {
+    .app-helmerts-footer-heading-content-main {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        grid-gap: 3rem;
+
+    }
+
+    .app-helmerts-footer-heading-content-main-service,
+    .app-helmerts-footer-heading-content-main-social,
+    .app-helmerts-footer-heading-content-main-contact,
+    .app-helmerts-footer-heading-content-main-legal {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0rem;
+        flex: 40%;
+    }
+
+    .app-helmerts-footer {
+        padding: 2rem 1rem;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .app-helmerts-footer-heading {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .app-helmerts-footer-heading-logo img {
+        display: none;
+    }
+
+    .title-main {
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .app-helmerts-footer-heading-content-main-service,
+    .app-helmerts-footer-heading-content-main-social,
+    .app-helmerts-footer-heading-content-main-contact,
+    .app-helmerts-footer-heading-content-main-legal {
+        flex: none;
+    }
+
+    .app-helmerts-footer-heading-content-main {
+        flex-direction: column;
+        grid-gap: 2rem;
+    }
+
+    .color-svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .link-decoration {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .app-helmerts-footer-heading-content-main-service_link,
+    .app-helmerts-footer-heading-content-main-social_link,
+    .app-helmerts-footer-heading-content-main-contact_link,
+    .app-helmerts-footer-heading-content-main-legal_link {
+        grid-gap: 0.4rem;
+    }
+
+    .app-helmerts-footer-heading-content-main-service_link-content,
+    .app-helmerts-footer-heading-content-main-social_link-content,
+    .app-helmerts-footer-heading-content-main-contact_link-content,
+    .app-helmerts-footer-heading-content-main-legal_link-content {
+        grid-gap: 0.3rem;
+    }
+}

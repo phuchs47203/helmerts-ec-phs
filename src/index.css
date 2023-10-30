@@ -18,11 +18,14 @@
     --white-color: #ffffff;
     --color-bg: #f6f1eb;
     --color-p: rgb(96, 49, 34);
+    --color-link: #f6f1eb;
+
     --color-h: rgb(220, 63, 20);
     --color-h1: rgb(11, 46, 101);
     --color-footer: #393633;
 
     --color-icon: rgb(96, 49, 34);
+    --color-icon2: rgb(211, 238, 216);
     --liner-color: linear-gradient(90deg, rgba(160, 51, 19, 1) 0%, rgba(247, 210, 181, 1) 100%);
 }
 
