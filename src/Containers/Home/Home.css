@@ -27,6 +27,7 @@
     text-decoration: none;
     border-bottom: 1px solid black;
     padding-bottom: 0.2rem;
+    color: var(--color-p);
 }
 
 .helmert-app-home_heading-title-link:hover {
@@ -97,13 +98,12 @@
 
 .p-bold {
     font-weight: 400;
-    font-size: 14px;
+    font-size: 15px;
+    border-bottom: none;
 }
 
 .p-bold:hover {
-    font-size: 15px;
-    font-weight: 500;
-
+    font-size: 16px;
 }
 
 @media screen and (max-width: 990px) {
@@ -120,6 +120,9 @@
         font-size: 17px;
     }
 
+    .p-bold:hover {
+        font-size: 16px;
+    }
 
     .helmert-app-home_product-categorise-content {
         display: grid;
@@ -143,8 +146,7 @@
     }
 
     .helmert-app-home_heading-title-link:hover {
-        font-size: 14px;
-        font-weight: 400;
+        font-size: 15px;
     }
 
     .helmert-app-home_product-categorise-content {
@@ -156,22 +158,10 @@
         align-items: center;
     }
 
-    .p-bold {
-        padding: 0rem;
-    }
-
 }
 
 @media screen and (max-width: 400px) {
     .helmert-app-home_product-categorise-content-row-img img {
         margin-bottom: 0;
     }
-}
-
-@media screen and (max-width: 300px) {
-
-    .p-bold {
-        font-size: 13px;
-    }
-
 }

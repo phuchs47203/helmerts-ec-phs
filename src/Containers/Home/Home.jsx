@@ -17,7 +17,7 @@ const Home = () => {
             Not only a helmet but also a fashion accessory.
           </p>
           <p className='text-paragraph-p'>
-            <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link '>Explore the collection</Link>
+            <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link'>Explore the collection</Link>
           </p>
         </div>
         <div className='helmert-app-home_heading-video'>
@@ -30,8 +30,8 @@ const Home = () => {
       </div>
       <div className='helmert-app-home_product-categorise'>
         <div className='helmert-app-home_product-categorise-heading helmert-app-home_heading-title'>
-          <h1 className='text-title-h1'>OUR CAVE OF WONDER</h1>
-          <p>
+          <h1 className='text-title-h1'>OUR CAVE OF WONDER</h1>          
+          <p className='text-paragraph-p'>
             <Link to="/product" className='helmert-app-home_heading-title-link'>Explore all</Link>
           </p>
         </div>
