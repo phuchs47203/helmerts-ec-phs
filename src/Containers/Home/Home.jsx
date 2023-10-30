@@ -43,7 +43,7 @@ const Home = () => {
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Full face</Link>
+                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Fullface</Link>
                 </p>
               </div>
             </div>
@@ -53,7 +53,7 @@ const Home = () => {
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Open face</Link>
+                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Openface</Link>
                 </p>
               </div>
             </div>
@@ -73,7 +73,7 @@ const Home = () => {
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Half helmet</Link>
+                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Halfface</Link>
                 </p>
               </div>
             </div>
@@ -85,7 +85,7 @@ const Home = () => {
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Bicycle Helmet</Link>
+                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Bike Helmet</Link>
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ const Home = () => {
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Chilren's Helmet</Link>
+                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Kids Helmet</Link>
                 </p>
               </div>
             </div>
@@ -105,7 +105,7 @@ const Home = () => {
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Helmet Accessories</Link>
+                  <Link to={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Accessories</Link>
                 </p>
               </div>
             </div>
