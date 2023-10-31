@@ -5,9 +5,6 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineDown, AiOutlineUp, AiOutlineSea
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { images } from '../../Constants';
-const openType = "open";
-const fullType = "full";
-
 const types = [
   "full",
   "open",

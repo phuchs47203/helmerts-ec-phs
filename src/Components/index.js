@@ -7,4 +7,3 @@ export { default as SlideIntro } from './SliderIntro/SliderIntro.jsx';
 export { default as SliderPresent } from './SliderPresent/SliderPresent.jsx';
 export { default as MainProduct } from './MainProduct/MainProduct.jsx';
 export { default as OneProduct } from './OneProduct/OneProduct.jsx';
-

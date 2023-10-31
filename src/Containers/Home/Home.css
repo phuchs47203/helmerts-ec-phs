@@ -5,14 +5,16 @@
     margin: 5rem 0rem;
 }
 
-.helmert-app-home_heading {
+.helmert-app-home_heading,
+.helmert-app-home_product-categorise {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.helmert-app-home_heading-title {
+.helmert-app-home_heading-title,
+.helmert-app-home_product-categorise-title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,14 +25,16 @@
 }
 
 
-.helmert-app-home_heading-title-link {
+.helmert-app-home_heading-title-link,
+.helmert-app-home_product-categorise-title-link {
     text-decoration: none;
     border-bottom: 1px solid black;
     padding-bottom: 0.2rem;
     color: var(--color-p);
 }
 
-.helmert-app-home_heading-title-link:hover {
+.helmert-app-home_heading-title-link:hover,
+.helmert-app-home_product-categorise-title-link:hover {
     border-bottom: none;
     font-size: 19px;
     font-weight: 400;
@@ -50,13 +54,6 @@
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-
-.helmert-app-home_product-categorise {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
 }
 
 .helmert-app-home_product-categorise-content {
