@@ -88,7 +88,7 @@ const slideImagesVertical = [
 const SliderIntro = () => {
 
   return (
-    <div className='app-helmert-home-intro'>
+    <div id='sliderintro' className='app-helmert-home-intro'>
       <Slide
         autoplay={true} duration={1000}
         arrows={false}

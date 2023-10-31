@@ -2,7 +2,7 @@ import React from 'react'
 import './Footer.css'
 import { images } from '../../Constants';
 import { FaSquareFacebook } from 'react-icons/fa6';
-import {LuMail} from 'react-icons/lu';
+import { LuMail } from 'react-icons/lu';
 import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineFacebook, AiOutlinePhone } from 'react-icons/ai';
 import { GiPositionMarker } from 'react-icons/gi';
 
@@ -11,9 +11,7 @@ const Footer = () => {
   return (
     <div id='footer' className='app-helmerts-footer'>
       <div className='app-helmerts-footer-heading'>
-        <div className='app-helmerts-footer-heading-logo'>
-          <img src={images.logo_text} alt="" />
-        </div >
+
         <div className='app-helmerts-footer-heading-content'>
           <div className='app-helmerts-footer-heading-content-brand'>
             <div className='app-helmerts-footer-heading-content-brand-img'>
@@ -92,31 +90,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div className='app-helmerts-footer-heading-content-main-social'>
-              <div className='app-helmerts-footer-heading-content-main-social_title'>
-                <h1 className='title-main'>Social Media</h1>
-              </div>
-              <div className='app-helmerts-footer-heading-content-main-social_link'>
-                <div className='app-helmerts-footer-heading-content-main-social_link-content'>
-                  <a href="" className='app-helmerts-footer-heading-content-main-contact_link-content link-decoration'>
-                    <FaSquareFacebook className='color-svg' />
-                    <p className='link-decoration'>Facebook</p>
-                  </a>
-                </div>
-                <div className='app-helmerts-footer-heading-content-main-social_link-content'>
-                  <a href="" className='app-helmerts-footer-heading-content-main-contact_link-content link-decoration'>
-                    <AiOutlineInstagram className='color-svg' />
-                    <p className='link-decoration'>Instagram</p>
-                  </a>
-                </div>
-                <div className='app-helmerts-footer-heading-content-main-social_link-content'>
-                  <a href="" className='app-helmerts-footer-heading-content-main-contact_link-content link-decoration'>
-                    <AiOutlineYoutube className='color-svg' />
-                    <p className='link-decoration'>Youtube</p>
-                  </a>
-                </div>
-              </div>
-            </div>
+
             <div className='app-helmerts-footer-heading-content-main-legal'>
               <div className='app-helmerts-footer-heading-content-main-legal_title'>
                 <h1 className='title-main'>Legal</h1>
@@ -146,6 +120,24 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className='app-helmerts-footer-heading-logo'>
+          <div className='app-helmerts-footer-heading-logo-img'>
+            <Link to="/home">
+              <img src={images.helmerts_high_resolution_logo_transparent} alt="" />
+            </Link>
+          </div>
+          <div className='app-helmerts-footer-heading-logo-social'>
+            <a href="" className='app-helmerts-footer-heading-logo-social-content link-decoration'>
+              <FaSquareFacebook className='color-svg-social' />
+            </a>
+            <a href="" className='app-helmerts-footer-heading-logo-social-content link-decoration'>
+              <AiOutlineInstagram className='color-svg-social' />
+            </a>
+            <a href="" className='app-helmerts-footer-heading-logo-social_link-content link-decoration'>
+              <AiOutlineYoutube className='color-svg-social' />
+            </a>
+          </div>
+        </div >
       </div>
       <div className='app-helmerts-footer-copyright'>
         <p>

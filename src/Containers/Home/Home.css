@@ -93,6 +93,7 @@
     margin-bottom: 0.5rem;
 }
 
+
 .p-bold {
     font-weight: 400;
     font-size: 15px;
@@ -101,6 +102,7 @@
 
 .p-bold:hover {
     font-size: 16px;
+    color: var(--color-h);
 }
 
 @media screen and (max-width: 990px) {
@@ -109,11 +111,13 @@
         margin: 5rem 0rem;
     }
 
-    .helmert-app-home_heading-title {
+    .helmert-app-home_heading-title,
+    .helmert-app-home_product-categorise-title {
         padding: 0rem;
     }
 
-    .helmert-app-home_heading-title-link:hover {
+    .helmert-app-home_heading-title-link:hover,
+    .helmert-app-home_product-categorise-title-link:hover {
         font-size: 17px;
     }
 
@@ -142,8 +146,13 @@
         margin-bottom: 2rem;
     }
 
-    .helmert-app-home_heading-title-link:hover {
-        font-size: 15px;
+    .helmert-app-home_heading-title-link:hover,
+    .helmert-app-home_product-categorise-title-link:hover {
+        font-size: 14px;
+    }
+
+    .p-bold:hover {
+        font-size: 14px;
     }
 
     .helmert-app-home_product-categorise-content {

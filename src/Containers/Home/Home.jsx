@@ -45,7 +45,7 @@ const Home = () => {
         <div className='helmert-app-home_product-categorise-title'>
           <h1 className='text-title-h1'>OUR CAVE OF WONDER</h1>
           <p className='text-paragraph-p'>
-            <a href={`product/category/${types[0]}`} className='helmert-app-home_product-categorise-title-link'>Explore all</a>
+            <a href={`/product`} className='helmert-app-home_product-categorise-title-link'>Explore all</a>
           </p>
         </div>
         <div className='helmert-app-home_product-categorise-content'>
@@ -77,25 +77,25 @@ const Home = () => {
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${typefull}`} className=''>
+                <a href={`/product/category/${types[2]}`} className=''>
                   <img src={images.modular} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Modular</a>
+                  <a href={`/product/category/${types[2]}`} className='helmert-app-home_heading-title-link p-bold'>Modular</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${typefull}`} className=''>
+                <a href={`/product/category/${types[3]}`} className=''>
                   <img src={images.half} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Halfface</a>
+                  <a href={`/product/category/${types[3]}`} className='helmert-app-home_heading-title-link p-bold'>Halfface</a>
                 </p>
               </div>
             </div>
@@ -103,37 +103,37 @@ const Home = () => {
           <div className='helmert-app-home_product-categorise-content-row2'>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${typefull}`} className=''>
+                <a href={`/product/category/${types[4]}`} className=''>
                   <img src={images.bicycle} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Bike Helmet</a>
+                  <a href={`/product/category/${types[4]}`} className='helmert-app-home_heading-title-link p-bold'>Bike Helmet</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${typefull}`} className=''>
+                <a href={`/product/category/${types[5]}`} className=''>
                   <img src={images.children} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Kids Helmet</a>
+                  <a href={`/product/category/${types[5]}`} className='helmert-app-home_heading-title-link p-bold'>Kids Helmet</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${typefull}`} className=''>
+                <a href={`/product/category/${types[6]}`} className=''>
                   <img src={images.accessories} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${typefull}`} className='helmert-app-home_heading-title-link p-bold'>Accessories</a>
+                  <a href={`/product/category/${types[6]}`} className='helmert-app-home_heading-title-link p-bold'>Accessories</a>
                 </p>
               </div>
             </div>

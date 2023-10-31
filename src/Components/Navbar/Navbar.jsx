@@ -129,7 +129,7 @@ const Navbar = () => {
                     <Link to="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</Link>
                   </p>
                   <p>
-                    <Link to="/contact" className='menu-link' onClick={() => settoggleMenu(false)}>Contact</Link>
+                    <a href="#footer" className='menu-link' onClick={() => settoggleMenu(false)}>Contact</a>
                   </p>
                 </div>
               </div>
