@@ -43,22 +43,27 @@ const Footer = () => {
           <div className='app-helmerts-footer-heading-content-main'>
             <div className='app-helmerts-footer-heading-content-main-service'>
               <div className='app-helmerts-footer-heading-content-main-service_title'>
-                <h1 className='title-main'>Clien service</h1>
+                <h1 className='title-main'>Clien Service</h1>
               </div>
               <div className='app-helmerts-footer-heading-content-main-service_link'>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Choosing size guide</Link>
+                    <Link to="" className='link-decoration'>Choosing Size Guide</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Shopping guide</Link>
+                    <Link to="" className='link-decoration'>Shopping Guide</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Shop system</Link>
+                    <Link to="" className='link-decoration'>Shop System</Link>
+                  </p>
+                </div>
+                <div className='app-helmerts-footer-heading-content-main-service_link-content'>
+                  <p>
+                    <Link to="" className='link-decoration'>Gifting</Link>
                   </p>
                 </div>
               </div>
@@ -98,24 +103,25 @@ const Footer = () => {
               <div className='app-helmerts-footer-heading-content-main-legal_link'>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
+                    <Link to="" className='link-decoration'>Term & Condition</Link>
+                  </p>
+                </div>
+                <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
+                  <p>
                     <Link to="" className='link-decoration'>Privacy Policy</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Return & Refund</Link>
+                    <Link to="" className='link-decoration'>Returns & Exchanges</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Protect Personal Information</Link>
+                    <Link to="" className='link-decoration'>Do Not Sell/Share My Personal Information</Link>
                   </p>
                 </div>
-                <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
-                  <p>
-                    <Link to="" className='link-decoration'>Term & Condition</Link>
-                  </p>
-                </div>
+
               </div>
             </div>
           </div>

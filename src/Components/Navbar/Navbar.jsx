@@ -18,28 +18,28 @@ const types = [
 const MenuProductCategories = () => (
   <>
     <p>
-      <Link to="/product" className='menu-link' >All Products</Link>
+      <a href="/product" className='menu-link' >All Products</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[0]}`} className='menu-link' >Full Face</Link>
+      <a href={`/product/category/${types[0]}`} className='menu-link' >Full Face</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[1]}`} className='menu-link' >Open Face(3/4)</Link>
+      <a href={`/product/category/${types[1]}`} className='menu-link' >Open Face(3/4)</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[2]}`} className='menu-link' >Modular</Link>
+      <a href={`/product/category/${types[2]}`} className='menu-link' >Modular</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[3]}`} className='menu-link' >Half Helmet</Link>
+      <a href={`/product/category/${types[3]}`} className='menu-link' >Half Helmet</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[4]}`} className='menu-link' >Bicycle Helmet</Link>
+      <a href={`/product/category/${types[4]}`} className='menu-link' >Bicycle Helmet</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[5]}`} className='menu-link' >Children's Helmet</Link>
+      <a href={`/product/category/${types[5]}`} className='menu-link' >Children's Helmet</a>
     </p>
     <p>
-      <Link to={`/product/category/${types[6]}`} className='menu-link' >Accessories</Link>
+      <a href={`/product/category/${types[6]}`} className='menu-link' >Accessories</a>
     </p>
   </>
 )
@@ -123,13 +123,16 @@ const Navbar = () => {
                     }
                   </div>
                   <p>
-                    <Link to="/introduce" className='menu-link' onClick={() => settoggleMenu(false)}>Introduce</Link>
+                    <a href="/clientservice" className='menu-link' onClick={() => settoggleMenu(false)}>Client Service</a>
                   </p>
                   <p>
-                    <Link to="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</Link>
+                    <a href="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</a>
                   </p>
                   <p>
-                    <a href="#footer" className='menu-link' onClick={() => settoggleMenu(false)}>Contact</a>
+                    <a href="#footer" className='menu-link' onClick={() => settoggleMenu(false)}>Contact Us</a>
+                  </p>
+                  <p>
+                    <a href="/introduce" className='menu-link' onClick={() => settoggleMenu(false)}>About Helmerts</a>
                   </p>
                 </div>
               </div>

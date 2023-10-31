@@ -15,9 +15,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<SlideIntro />} />
           <Route path='/home' element={<SlideIntro />} />
-
         </Routes>
-        <div className='helmerst-app-boby'>
+        <div className='helmerst-app-boby padding_top'>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/home' element={<Home />} />
