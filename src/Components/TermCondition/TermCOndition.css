@@ -1,0 +1,14 @@
+.app-helmerts_leagal-tearm-condition {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+    width: 100%;
+    background-color: rgb(220, 255, 218);
+}
+
+.app-helmerts_leagal-tearm-condition_content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    width: 100%;
+}

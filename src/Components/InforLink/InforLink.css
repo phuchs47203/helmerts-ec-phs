@@ -1,0 +1,17 @@
+.app-helmerts_infor-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.app-helmerts_infor-link_title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.app-helmerts_infor-link_content {
+    width: 100%;
+}

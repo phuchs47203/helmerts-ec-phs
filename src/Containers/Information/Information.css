@@ -1,0 +1,33 @@
+.app-helmerts_information_legal {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.app-helmerts_information_legal-heading {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+}
+
+.app-helmerts_information_legal-heading_title {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_information_legal-heading_list {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_information_legal-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 3rem;
+}

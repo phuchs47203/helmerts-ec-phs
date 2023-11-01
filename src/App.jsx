@@ -23,11 +23,13 @@ const App = () => {
             <Route path='/product' element={<Product />} />
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
+            {/* <Route path='/information#return-exchange' element={<Information />} /> */}
             <Route path='/account' element={<Account />} />
             <Route path='/account/signin' element={<Signin />} />
             <Route path='/account/signup' element={<Signup />} />
             <Route path='/account/signout' element={<Signout />} />
             <Route path='/product/category/:productType' element={<Category />} />
+
           </Routes>
         </div>
         <div className='helmerst-app-cta section__padding'>

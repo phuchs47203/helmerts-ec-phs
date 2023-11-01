@@ -103,22 +103,22 @@ const Footer = () => {
               <div className='app-helmerts-footer-heading-content-main-legal_link'>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Term & Condition</Link>
+                    <a href="/information" className='link-decoration'>Term & Condition</a>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Privacy Policy</Link>
+                    <a href="/information" className='link-decoration'>Privacy Policy</a>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Returns & Exchanges</Link>
+                    <a href="/information" className='link-decoration'>Returns & Exchanges</a>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-legal_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Do Not Sell/Share My Personal Information</Link>
+                    <a href="/information" className='link-decoration'>Do Not Sell/Share My Personal Information</a>
                   </p>
                 </div>
 

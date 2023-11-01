@@ -1,0 +1,18 @@
+.app-helmerts_legal-return-exchange {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+    background-color: aliceblue;
+}
+
+.app-helmerts_legal-return-exchange_heading {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_legal-return-exchange_content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+}

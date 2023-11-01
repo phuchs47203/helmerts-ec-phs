@@ -1,0 +1,44 @@
+.app-helmerts_leagal-privacy-policy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: rgb(254, 225, 225);
+}
+
+.app-helmerts_leagal-privacy-policy_heading {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_leagal-privacy-policy_content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 2rem;
+}
+
+.app-helmerts_leagal-privacy-policy_content-general {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_leagal-privacy-policy_content-general_list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0rem;
+    padding-left: 3rem;
+    padding-right: 1rem;
+}
+
+.app-helmerts_leagal-privacy-policy_content-general_list ul {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_leagal-privacy-policy_content-general_list ul li {
+    color: rgb(86, 96, 216);
+}
