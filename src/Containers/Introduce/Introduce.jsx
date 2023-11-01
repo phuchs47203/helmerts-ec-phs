@@ -10,7 +10,7 @@ const Introduce = () => {
         <div className='app-helmert-introduce-history_heading'>
           <h1 className='text-title-h1'>HELMERTS</h1>
           <p className='text-paragraph-p'>
-            Established in September 2023, Bigbike is currently one of the reputable helmet suppliers in Vietnam. We are proud to be a reliable companion of the Vietnamese people throughout the past times.
+            Established in September 2023, Helmerts is currently one of the reputable helmet suppliers in Vietnam. We are proud to be a reliable companion of the Vietnamese people throughout the past times.
           </p>
           <p className='text-paragraph-p'>
             With the continuous development of fashion trends. Helmert wants to bring customers helmets that are not only good quality but also fashionable, helping generation Z youth enjoy wearing helmets that are both beautiful and safe.
