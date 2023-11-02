@@ -16,10 +16,13 @@ const App = () => {
           <Route path='/' element={<SlideIntro />} />
           <Route path='/home' element={<SlideIntro />} />
         </Routes>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+        </Routes>
         <div className='helmerst-app-boby padding_top'>
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/home' element={<Home />} />
+
             <Route path='/product' element={<Product />} />
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
