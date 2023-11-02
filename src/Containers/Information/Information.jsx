@@ -7,23 +7,28 @@ const Information = () => {
     <div id='information' className='app-helmerts_information_legal section__padding'>
       <div className='app-helmerts_information_legal-heading'>
         <div className='app-helmerts_information_legal-heading_title'>
-          <h1>This is Legal of HELMERTS online store</h1>
-          <p>p tage detail</p>
+          <h1 className='text-title-h1'>This is the Legal of Helmerts online store</h1>
+          <p className='text-paragraph-p'>Thank you for using our website service.Helmerts ensures that all information collected will be stored safely</p>
         </div>
 
-        <div className='app-helmerts_information_legal-heading_list'>
-          <p>
-            <a href="#term-condition"> Term & Condition</a>
-          </p>
-          <p>
-            <a href="#privacy-policy">Privacy Policy</a>
-          </p>
-          <p>
-            <a href="#return-exchange">Returns & Exchanges</a>
-          </p>
+        <div className='app-helmerts_information_legal-row'>
+          <div className='app-helmerts_information_legal-heading_list'>
+            <p>
+              <a href="#term-condition" className='app-helmerts_information_legal-heading_list-link'>Term & Condition</a>
+            </p>
+            <p>
+              <a href="#privacy-policy" className='app-helmerts_information_legal-heading_list-link'>Privacy Policy</a>
+            </p>
+            <p>
+              <a href="#return-exchange" className='app-helmerts_information_legal-heading_list-link'>Returns & Exchanges</a>
+            </p>
+            <p>
+              <a href="#personal-information" className='app-helmerts_information_legal-heading_list-link'>Protect Personal Information</a>
+            </p>
+          </div>
         </div>
       </div>
-      <div className='app-helmerts_information_legal-content'>
+      <div className='app-helmerts_information_legal-content padding_content'>
         <TermCondition />
         <PrivacyPolicy />
         <ReturnExchange />

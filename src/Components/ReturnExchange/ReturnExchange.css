@@ -1,18 +1,77 @@
 .app-helmerts_legal-return-exchange {
     display: flex;
     flex-direction: column;
-    grid-gap: 2rem;
-    background-color: aliceblue;
+    grid-gap: 1rem;
+    background-color: var(--color-legal);
+    padding: 1rem;
 }
 
 .app-helmerts_legal-return-exchange_heading {
     display: flex;
     flex-direction: column;
     grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts_legal-return-exchange_heading h1 {
+    font-family: var(--font-family2);
+    color: var(--color-h);
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 38px;
+}
+
+.app-helmerts_legal-return-exchange_heading p {
+    text-align: center;
+    font-size: 17px;
+    font-family: var(--font-family2);
+    font-weight: 200;
 }
 
 .app-helmerts_legal-return-exchange_content {
     display: flex;
     flex-direction: column;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
+}
+
+.app-helmerts_legal-return-exchange_content_contact a {
+    color: var(--color-h);
+}
+
+.align_center {
+    text-align: center;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 990px) {
+    .app-helmerts_legal-return-exchange_heading h1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .app-helmerts_legal-return-exchange_heading p {
+        font-size: 16px;
+    }
+
+    .app-helmerts_legal-return-exchange_heading {
+        grid-gap: 0.3rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .app-helmerts_legal-return-exchange_heading h1 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .app-helmerts_legal-return-exchange_heading p {
+        font-size: 14px;
+    }
+
+    .app-helmerts_legal-return-exchange_content {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 0.5rem;
+    }
 }

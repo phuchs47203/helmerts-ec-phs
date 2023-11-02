@@ -1,0 +1,69 @@
+.app-helmerts_personal-information {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    padding: 1rem;
+    background-color: var(--color-legal);
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts_personal-information_heading {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts_personal-information_heading h1 {
+    font-family: var(--font-family2);
+    color: var(--color-h);
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 38px;
+}
+
+.app-helmerts_personal-information_heading p {
+    text-align: center;
+    font-size: 17px;
+    font-family: var(--font-family2);
+    font-weight: 200;
+}
+
+.app-helmerts_personal-information_content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+@media screen and (max-width: 990px) {
+    .app-helmerts_personal-information_heading {
+        grid-gap: 0.3rem;
+    }
+
+    .app-helmerts_personal-information_heading h1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .app-helmerts_personal-information_heading p {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .app-helmerts_personal-information_heading h1 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .app-helmerts_personal-information_heading p {
+        font-size: 14px;
+    }
+
+    .app-helmerts_personal-information_content {
+        grid-gap: 0.5rem;
+    }
+}

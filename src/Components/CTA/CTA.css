@@ -42,6 +42,7 @@
     margin-right: 0.5rem;
     background: transparent;
     border-bottom: 0.5px solid black;
+    border-radius: none;
 }
 
 .app-helmerts-cta-content svg {

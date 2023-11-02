@@ -2,18 +2,18 @@ import React from 'react'
 import './PrivacyPloicy.css'
 const PrivacyPolicy = () => {
     return (
-        <div id='privacy-policy' className='app-helmerts_leagal-privacy-policy section__padding'>
+        <div id='privacy-policy' className='app-helmerts_leagal-privacy-policy'>
             <div className='app-helmerts_leagal-privacy-policy_heading'>
-                <h1>Privacy Policy</h1>
+                <h1>PRIVACY POLICY</h1>
                 <p>
                     This privacy policy provides how Helmerts uses and protects any information that you give or share when you use this website. Helmerts is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.Helmerts may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy has been effective since 10.10.2023 updated 30.12.2023
                 </p>
             </div>
             <div className='app-helmerts_leagal-privacy-policy_content'>
                 <div className='app-helmerts_leagal-privacy-policy_content-general'>
-                    <p>We may collect the following information:</p>
+                    <p className='legal-p-title color_p-legal'>We may collect the following information:</p>
                     <div className='app-helmerts_leagal-privacy-policy_content-general_list'>
-                        <ul>
+                        <ul className='legal-p-content'>
                             <li>Name</li>
                             <li>Contact information including email address</li>
                             <li>Demographic information such as post code, preferences and interests</li>
@@ -23,11 +23,11 @@ const PrivacyPolicy = () => {
 
                 </div>
                 <div className='app-helmerts_leagal-privacy-policy_content-general'>
-                    <p>
+                    <p className='legal-p-title color_p-legal'>
                         Why required and what we do with the information we gather
                     </p>
                     <div className='app-helmerts_leagal-privacy-policy_content-general_list'>
-                        <ul>
+                        <ul className='legal-p-content'>
                             <li>We require this information to understand your needs and provide you with a better service, and in particular for the following reasons: Internal record keeping.</li>
                             <li>We may use the information to improve our products and services. We may periodically send promotional email about new products, special offers or other information which we think you may find interesting using the email address which you have provided.</li>
                             <li>From time to time, we may also use your information to contact you for market research purposes. We may contact you by email, phone, fax or mail.</li>
@@ -39,17 +39,17 @@ const PrivacyPolicy = () => {
 
                 </div>
                 <div className='app-helmerts_leagal-privacy-policy_content-security'>
-                    <p>Security</p>
-                    <p>
+                    <p className='legal-p-title color_p-legal'>Security</p>
+                    <p className='legal-p-content'>
                         We are committed to ensuring that your information is secure. In order to prevent unauthorized access or disclosure, we have put in place suitable physical, electronic and managerial procedures to safeguard and secure the information we collect online.
                     </p>
                 </div>
                 <div className='app-helmerts_leagal-privacy-policy_content-general'>
-                    <p>
+                    <p className='legal-p-title color_p-legal'>
                         How we use cookies
                     </p>
                     <div className='app-helmerts_leagal-privacy-policy_content-general_list'>
-                        <ul>
+                        <ul className='legal-p-content'>
                             <li>
                                 A cookie is a small file which asks permission to be placed on your computer's hard drive. Once you agree, the file is added and the cookie helps analyze web traffic or lets you know when you visit a particular site. Cookies allow web applications to respond to you as an individual. The web application can tailor its operations to your needs, your likes and dislikes, by gathering and remembering information about your preferences.
                             </li>

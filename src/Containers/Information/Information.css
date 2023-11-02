@@ -16,13 +16,19 @@
 .app-helmerts_information_legal-heading_title {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
+    grid-gap: 0rem;
+}
+
+.app-helmerts_information_legal-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .app-helmerts_information_legal-heading_list {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
+    grid-gap: 1.5rem;
 }
 
 .app-helmerts_information_legal-content {
@@ -30,4 +36,56 @@
     display: flex;
     flex-direction: column;
     grid-gap: 3rem;
+}
+
+.app-helmerts_information_legal-heading_list-link {
+    color: var(--color-p);
+    font-weight: 300;
+    text-decoration: none;
+    border-bottom: 1px solid rgb(52, 149, 142);
+    padding-bottom: 0.2rem;
+    font-size: 20px;
+    line-height: 28px;
+    text-align: start;
+    font-family: var(--font-family2);
+}
+
+.app-helmerts_information_legal-heading_list-link:hover {
+    border: none;
+    color: rgb(88, 189, 202);
+    font-weight: bold;
+}
+
+.padding_content {
+    padding: 0rem 5rem;
+}
+
+@media screen and (max-width: 990px) {
+    .padding_content {
+        padding: 0rem 1rem;
+    }
+
+    .app-helmerts_information_legal-heading {
+        grid-gap: 1rem;
+    }
+
+    .app-helmerts_information_legal-heading_list {
+        grid-gap: 1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .padding_content {
+        padding: 0rem;
+    }
+
+    .app-helmerts_information_legal-heading_list-link {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .app-helmerts_information_legal-content {
+        grid-gap: 2rem;
+    }
+
 }

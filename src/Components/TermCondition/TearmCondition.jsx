@@ -8,11 +8,11 @@ const dataTermCondition = [
     },
     {
         title: '2. Linking',
-        content: 'The Website may contain links to third party websites not under the operation or control of HERMÈS. Such links are provided as a convenience only and cannot, and should not be interpreted as an express or implied endorsement of such third party websites or any products or services offered thereon. You may only provide a link to the Website if expressly authorized in advance in writing by HELMERTS.'
+        content: 'The Website may contain links to third party websites not under the operation or control of HELMERTS. Such links are provided as a convenience only and cannot, and should not be interpreted as an express or implied endorsement of such third party websites or any products or services offered thereon. You may only provide a link to the Website if expressly authorized in advance in writing by HELMERTS.'
     },
     {
         title: '3. Limitation of Liability',
-        content: 'To the fullest extent permitted by applicable law, HELMERTS will not be liable to you, or any third party, for any damages including without limitation indirect, incidental, exemplary, punitive, special or consequential damages, such as loss of profits, loss of goodwill or any other intangible losses, arising out of or in connection with your use or inability to use the Website, any content or materials on this website,  or any of the products or services offered on this website,  even if HERMÈS has been advised of the possibility of such damages, except where such liability or damage is the direct result of the gross negligence, fraud or willful misconduct of HELMERTS.'
+        content: 'To the fullest extent permitted by applicable law, HELMERTS will not be liable to you, or any third party, for any damages including without limitation indirect, incidental, exemplary, punitive, special or consequential damages, such as loss of profits, loss of goodwill or any other intangible losses, arising out of or in connection with your use or inability to use the Website, any content or materials on this website,  or any of the products or services offered on this website,  even if HELMERTS has been advised of the possibility of such damages, except where such liability or damage is the direct result of the gross negligence, fraud or willful misconduct of HELMERTS.'
     },
     {
         title: '4. Disclaimer of Warranty',

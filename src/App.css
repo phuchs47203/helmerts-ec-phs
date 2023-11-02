@@ -93,11 +93,13 @@ p {
   line-height: 26px;
   margin-bottom: 1rem;
 }
-.padding_top{
+
+.padding_top {
   padding-top: 6rem;
   /* padding-bottom: 3rem; */
   margin-bottom: 3rem;
 }
+
 .text-paragraph-p {
   font-family: var(--font-family);
   font-size: 18px;
@@ -105,6 +107,21 @@ p {
   text-align: center;
   color: var(--color-p);
   line-height: 26px;
+}
+
+.legal-p-title {
+  font-family: var(--font-family2);
+  font-size: 17px;
+}
+
+.legal-p-content {
+  width: 100%;
+  padding: 0rem 2rem;
+  color: var(--color-p);
+  font-family: var(--font-family2);
+  word-spacing: 0.15rem;
+  text-align: justify;
+  font-size: 17px;
 }
 
 .btn-transition {
@@ -140,6 +157,12 @@ p {
     margin-bottom: 0.5rem;
   }
 
+  .legal-p-content {
+    padding: 0rem 1rem;
+    word-spacing: 0.05rem;
+  }
+
+
 
 }
 
@@ -158,6 +181,14 @@ p {
     font-size: 14px;
     line-height: 22px;
     word-spacing: -0.1rem;
+  }
+
+  .legal-p-title {
+    font-size: 15px;
+  }
+
+  .legal-p-content {
+    font-size: 14.5px;
   }
 
 }

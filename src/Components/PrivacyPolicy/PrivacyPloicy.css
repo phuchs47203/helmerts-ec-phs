@@ -4,41 +4,91 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background: rgb(254, 225, 225);
+    background: var(--color-legal);
+    padding: 1rem;
+    grid-gap: 2rem;
 }
 
 .app-helmerts_leagal-privacy-policy_heading {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts_leagal-privacy-policy_heading h1 {
+    font-family: var(--font-family2);
+    color: var(--color-h);
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 38px;
+}
+
+.app-helmerts_leagal-privacy-policy_heading p {
+    text-align: center;
+    font-size: 17px;
+    font-family: var(--font-family2);
+    font-weight: 200;
 }
 
 .app-helmerts_leagal-privacy-policy_content {
     display: flex;
     flex-direction: column;
-    grid-gap: 2rem;
+    grid-gap: 1rem;
 }
 
 .app-helmerts_leagal-privacy-policy_content-general {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
+    grid-gap: 0.5rem;
+}
+
+.color_p-legal {
+    color: var(--pink);
 }
 
 .app-helmerts_leagal-privacy-policy_content-general_list {
     display: flex;
     flex-direction: column;
     padding-top: 0rem;
-    padding-left: 3rem;
+    padding-left: 1rem;
     padding-right: 1rem;
 }
 
 .app-helmerts_leagal-privacy-policy_content-general_list ul {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
+    grid-gap: 0.3rem;
 }
 
 .app-helmerts_leagal-privacy-policy_content-general_list ul li {
-    color: rgb(86, 96, 216);
+    color: var(--color-p);
+}
+
+@media screen and (max-width:990px) {
+    .app-helmerts_leagal-privacy-policy {
+        grid-gap: 1rem;
+    }
+
+    .app-helmerts_leagal-privacy-policy_heading h1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .app-helmerts_leagal-privacy-policy_heading p {
+        font-size: 16px;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .app-helmerts_leagal-privacy-policy_heading h1 {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .app-helmerts_leagal-privacy-policy_heading p {
+        font-size: 14px;
+    }
 }

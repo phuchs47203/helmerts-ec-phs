@@ -6,16 +6,16 @@ const InforLink = ({ title, content }) => {
     return (
         <div className='app-helmerts_infor-link'>
             <div className='app-helmerts_infor-link_title '>
-                <p>
+                <p className='legal-p-title'>
                     {title}
                 </p>
                 {toggleContent
-                    ? <AiOutlineMinus onClick={() => settoggleContent(false)} className='scale-up-center' />
-                    : <AiOutlinePlus onClick={() => settoggleContent(true)} className='scale-up-center' />
+                    ? <AiOutlineMinus onClick={() => settoggleContent(false)} className='scale-up-center pointer' />
+                    : <AiOutlinePlus onClick={() => settoggleContent(true)} className='scale-up-center pointer' />
                 }
             </div>
             {toggleContent &&
-                <p className='app-helmerts_infor-link_content scale-up-center'>
+                <p className='legal-p-content scale-up-center'>
                     {content}
                 </p>
             }
