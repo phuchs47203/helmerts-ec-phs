@@ -189,6 +189,10 @@ p {
 
   .legal-p-content {
     font-size: 14.5px;
+    word-spacing: -0.04rem;
+  }
+  .padding_top{
+    padding-top: 5rem;
   }
 
 }

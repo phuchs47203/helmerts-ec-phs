@@ -22,6 +22,7 @@
     font-weight: 300;
     font-size: 26px;
     line-height: 38px;
+    text-align: center;
 }
 
 .app-helmerts_personal-information_heading p {
@@ -38,6 +39,7 @@
 }
 
 @media screen and (max-width: 990px) {
+
     .app-helmerts_personal-information_heading {
         grid-gap: 0.3rem;
     }
@@ -54,6 +56,10 @@
 }
 
 @media screen and (max-width: 600px) {
+    .app-helmerts_personal-information {
+        padding: 1rem 0rem;
+    }
+
     .app-helmerts_personal-information_heading h1 {
         font-size: 18px;
         line-height: 28px;

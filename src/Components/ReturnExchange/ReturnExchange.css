@@ -60,6 +60,9 @@
 }
 
 @media screen and (max-width: 600px) {
+    .app-helmerts_legal-return-exchange{
+        padding: 1rem 0.5rem;
+    }
     .app-helmerts_legal-return-exchange_heading h1 {
         font-size: 18px;
         line-height: 28px;
