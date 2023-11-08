@@ -38,6 +38,7 @@ import versace from '../Assets/versace.png';
 import burberry from '../Assets/burberry.png';
 import hermes from '../Assets/hermes-logo.png';
 import gucci from '../Assets/gucci-removebg-preview.png';
+import swaure from '../Assets/Untitled.png';
 export default {
     slide1,
     slide2,
@@ -78,7 +79,8 @@ export default {
     versace,
     burberry,
     hermes,
-    gucci
+    gucci,
+    swaure
 };
 
 
