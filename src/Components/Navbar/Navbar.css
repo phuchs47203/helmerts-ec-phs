@@ -4,7 +4,7 @@
     position: fixed;
     width: 100vw;
     height: 70px;
-    padding: 0rem 10rem;
+    padding: 0rem 2rem;
     /* background-color: yellow; */
     z-index: 1;
 
@@ -161,7 +161,7 @@
 }
 
 .navbar-search-logo_search input {
-    width: 110%;
+    width: 100%;
     padding: 1rem 1rem;
     border-radius: 0.2rem;
     border: 1px solid rgb(253, 236, 226);
@@ -207,7 +207,7 @@
 
 @media screen and (max-width: 1350px) {
     .helmerts-navbar-app-region {
-        padding: 0rem 2rem;
+        padding: 0rem 1rem;
     }
 
     .navbar-icons-svg-content {

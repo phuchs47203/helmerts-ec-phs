@@ -20,13 +20,18 @@ const Footer = () => {
               </a>
             </div>
             <div className='app-helmerts-footer-heading-content-brand-img'>
+              <a href="https://www.dolcegabbana.com/en-it/">
+                <img src={images.dolce} alt="your brouser is not assit image" />
+              </a>
+            </div>
+            <div className='app-helmerts-footer-heading-content-brand-img'>
               <a href="https://eu.louisvuitton.com/eng-e1/homepage">
                 <img src={images.louislutton} alt="your brouser is not assit image" />
               </a>
             </div>
             <div className='app-helmerts-footer-heading-content-brand-img'>
-              <a href="https://www.versace.com/vn/en/">
-                <img src={images.versace} alt="your brouser is not assit image" />
+              <a href="https://www.hermes.com/us/en/">
+                <img src={images.hermes} alt="your brouser is not assit image" />
               </a>
             </div>
             <div className='app-helmerts-footer-heading-content-brand-img'>
@@ -34,9 +39,10 @@ const Footer = () => {
                 <img src={images.gucci} alt="your brouser is not assit image" />
               </a>
             </div>
+
             <div className='app-helmerts-footer-heading-content-brand-img'>
-              <a href="https://www.hermes.com/us/en/">
-                <img src={images.hermes} alt="your brouser is not assit image" />
+              <a href="https://www.versace.com/vn/en/">
+                <img src={images.versace} alt="your brouser is not assit image" />
               </a>
             </div>
           </div>

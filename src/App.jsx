@@ -20,18 +20,20 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
         </Routes>
+
         <div className='helmerst-app-boby padding_top'>
           <Routes>
 
-            <Route path='/product' element={<Product />} />
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
+            <Route path='/product' element={<Product />} />
             {/* <Route path='/information#return-exchange' element={<Information />} /> */}
             <Route path='/account' element={<Account />} />
             <Route path='/account/signin' element={<Signin />} />
             <Route path='/account/signup' element={<Signup />} />
             <Route path='/account/signout' element={<Signout />} />
             <Route path='/product/category/:productType' element={<Category />} />
+            <Route path='/cart' element={<Cart />} />
 
           </Routes>
         </div>

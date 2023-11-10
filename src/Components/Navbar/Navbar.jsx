@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './Navbar.css';
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown, AiOutlineUp, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { images } from '../../Constants';
 const types = [
@@ -109,7 +109,10 @@ const Navbar = () => {
                   </p>
                   <div className='menu-product'>
                     <div className='menu-product-title'>
-                      <span className='menu-link'>Helmet Catefories</span>
+                      {toggleMenuProduct
+                        ? <p className='menu-link' onClick={() => settoggleMenuProduct(false)}>Helmet Catefories</p>
+                        : <p className='menu-link' onClick={() => settoggleMenuProduct(true)}>Helmet Catefories</p>
+                      }
                       {toggleMenuProduct
                         ? <AiOutlineUp style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(false)} />
                         : <AiOutlineDown style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(true)} />

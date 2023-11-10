@@ -1,0 +1,49 @@
+.app-helmert-home-intro {
+    display: flex;
+    flex-direction: column;
+}
+
+.pre-div-style {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.pre-div-style-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-position: center;
+}
+
+
+.pre-div-style-img p {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgb(241, 236, 234);
+    font-family: var(--font-family);
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 46px;
+    text-align: center;
+    padding: 10rem 15rem;
+    word-spacing: -0.2rem;
+}
+
+
+@media screen and (min-width: 600px) {}
+
+@media screen and (max-width: 600px) {
+    .div-style {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1400px) {}
+
+@media screen and (max-width: 990px) {}

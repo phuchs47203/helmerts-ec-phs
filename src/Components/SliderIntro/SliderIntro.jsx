@@ -90,7 +90,7 @@ const SliderIntro = () => {
   return (
     <div id='sliderintro' className='app-helmert-home-intro'>
       <Slide
-        autoplay={true} duration={1000}
+        autoplay={true} duration={1300}
         arrows={false}
       >
         {slideImages.map((slideImage, index) => (

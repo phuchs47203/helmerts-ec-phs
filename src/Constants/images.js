@@ -35,10 +35,13 @@ import children from '../Assets/children.png';
 import accessories from '../Assets/accessories.jpg';
 import louislutton from '../Assets/louis-vuitton-logo.png';
 import versace from '../Assets/versace.png';
-import burberry from '../Assets/burberry.png';
-import hermes from '../Assets/hermes-logo.png';
+import burberry from '../Assets/burberry_white.png';
+import dolce from '../Assets/D_G.png';
+import hermes from '../Assets/hermes.png';
 import gucci from '../Assets/gucci-removebg-preview.png';
 import swaure from '../Assets/Untitled.png';
+import pre1 from '../Assets/pro11.png';
+import pre2 from '../Assets/pro44.png';
 export default {
     slide1,
     slide2,
@@ -78,9 +81,12 @@ export default {
     louislutton,
     versace,
     burberry,
+    dolce,
     hermes,
     gucci,
-    swaure
+    swaure,
+    pre1,
+    pre2
 };
 
 

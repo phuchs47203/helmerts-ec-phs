@@ -4,11 +4,21 @@ import './MainProduct.css'
 import { images } from '../../Constants';
 import OneProduct from '../OneProduct/OneProduct';
 const products = {
-  id: "124",
-  name: 'modular best',
-  price: '6,990,500',
-  image: images.children,
-  description: 'this is description of product'
+  id: 1,
+  name: "Open face XR4925 Black 2023",
+  brand: "Helmerts",
+  imgurl: "https://res.cloudinary.com/dh6wuvc5j/image/upload/v1699609292/lnahlt5hggzroccqybfg.jpg",
+  description: "Open face helmet newest 2023",
+  origional_price: 4800000,
+  sale_price: 2400000,
+  discount: 0.50,
+  available: 111,
+  sold: 222,
+  cat_id: 3,
+  create_by: 1,
+  update_by: 1,
+  created_at: "2023-11-06T09:02:23.000000Z",
+  updated_at: "2023-11-10T09:41:33.000000Z"
 };
 const MainProduct = () => {
   return (
@@ -24,12 +34,12 @@ const MainProduct = () => {
           <div className='helmert-app-home-mainproduct-heading-line' />
         </div>
         <div className='helmert-app-home-mainproduct-content'>
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
+          <OneProduct product={products} key={1} />
+          <OneProduct product={products} key={3} />
+          <OneProduct product={products} key={2} />
+          <OneProduct product={products} key={4} />
+          <OneProduct product={products} key={5} />
+          <OneProduct product={products} key={6} />
         </div>
       </div>
       <div className='helmert-app-home-mainproduct-flashsale'>
@@ -43,12 +53,12 @@ const MainProduct = () => {
           <div className='helmert-app-home-mainproduct-heading-line' />
         </div>
         <div className='helmert-app-home-mainproduct-content'>
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
-          <OneProduct product={products} key={products.id} />
+          <OneProduct product={products} key={1} />
+          <OneProduct product={products} key={3} />
+          <OneProduct product={products} key={2} />
+          <OneProduct product={products} key={4} />
+          <OneProduct product={products} key={5} />
+          <OneProduct product={products} key={6} />
         </div>
       </div>
     </div>
