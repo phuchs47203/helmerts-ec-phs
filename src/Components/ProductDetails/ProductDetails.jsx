@@ -25,10 +25,13 @@ const ProductDetails = () => {
         fetchData();
     }, []);
     const navigate = useNavigate();
-
     const handleBack = () => {
-        console.log(window.location.href);
-    }
+        navigate(-1);
+    };
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []); // Gọi scrollTo khi component mount
+
     return (
         <div className='app-helmerts_product_details'>
             <div className='app-helmerts_product_details-top'>
@@ -38,10 +41,66 @@ const ProductDetails = () => {
                 </div>
             </div>
             <div className='app-helmerts_product_details-content'>
-                <div className='app-helmerts_product_details-content_left'>
-                    <div className='app-helmerts_product_details-content_left-img'>
-                        <img src={product_details.imgurl} alt="" />
+                <div className='app-helmerts_product_details-content-main'>
+                    <div className='app-helmerts_product_details-content-main-left'>
+                        <div className='app-helmerts_product_details-content_left-img'>
+                            <img src={product_details.imgurl} alt="" />
+                        </div>
+
                     </div>
+                    <div className='app-helmerts_product_details-content-main-right'>
+                        <div className='app-helmerts_product_details-content-main-right-column'>
+                            <div className='app-helmerts_product_details-content_right-header'>
+                                <h1>Open Face Helmet XP05247 Black SXL</h1>
+                                <div className='app-helmerts_product_details-content_right-header_price'>
+                                    <p>	₫ {product_details.origional_price}</p>
+                                    <p>	₫ {product_details.sale_price}</p>
+                                </div>
+                            </div>
+                            <div className='line' />
+                            <div className='app-helmerts_product_details-content_right-content'>
+                                <div className='app-helmerts_product_details-content_right-content-color'>
+                                    <h3>color</h3>
+                                    <p>red</p>
+                                </div>
+                                <div className='line' />
+
+                                <div className='app-helmerts_product_details-content_right-content-size'>
+                                    <div className='app-helmerts_product_details-content_right-content-size-error'>
+                                        <p>Please choose a size</p>
+                                    </div>
+                                    <div className='app-helmerts_product_details-content_right-content-size-s'>
+                                        S
+                                    </div>
+                                    <div className='app-helmerts_product_details-content_right-content-size-m'>
+                                        <p>M</p>
+                                    </div>
+                                    <div className='app-helmerts_product_details-content_right-content-size-l'>
+                                        <p>L</p>
+                                    </div>
+                                    <div className='app-helmerts_product_details-content_right-content-size-xl'>
+                                        xl
+                                    </div>
+                                </div>
+                                <div className='line' />
+
+                                <div className='app-helmerts_product_details-content_right-content-add_to_cart'>
+                                    <button>Add to cart</button>
+                                </div>
+                                <div className='line' />
+
+                                <div className='app-helmerts_product_details-content_right-content-description'>
+                                    <p>
+                                        material
+                                    </p>
+                                    <p>made in VietNam</p>
+                                    <p>be sign by PhucHS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className='app-helmerts_product_details-content-addition'>
                     <div className='app-helmerts_product_details-content_left-size-guide'>
                         size guide
                     </div>
@@ -55,48 +114,8 @@ const ProductDetails = () => {
                         reviews
                     </div>
                 </div>
-                <div className='app-helmerts_product_details-content_right'>
-                    <div className='app-helmerts_product_details-content_right-header'>
-                        <h1>{product_details.name}</h1>
-                        <div className='app-helmerts_product_details-content_right-header_price'>
-                            <p>{product_details.origional_price}</p>
-                            <p>{product_details.sale_price}</p>
-                        </div>
-                    </div>
-                    <div className='app-helmerts_product_details-content_right-content'>
-                        <div className='app-helmerts_product_details-content_right-content-color'>
-                            <h3>color</h3>
-                            <p>red</p>
-                        </div>
-                        <div className='app-helmerts_product_details-content_right-content-size'>
-                            <div className='app-helmerts_product_details-content_right-content-size-error'>
-                                <p>Please choose a size</p>
-                            </div>
-                            <div className='app-helmerts_product_details-content_right-content-size-s'>
-                                S
-                            </div>
-                            <div className='app-helmerts_product_details-content_right-content-size-m'>
-                                <p>M</p>
-                            </div>
-                            <div className='app-helmerts_product_details-content_right-content-size-l'>
-                                <p>L</p>
-                            </div>
-                            <div className='app-helmerts_product_details-content_right-content-size-xl'>
-                                xl
-                            </div>
-                        </div>
-                        <div className='app-helmerts_product_details-content_right-content-add_to_cart'>
-                            <button>Add to cart</button>
-                        </div>
-                        <div className='app-helmerts_product_details-content_right-content-description'>
-                            <p>
-                                material
-                            </p>
-                            <p>made in VietNam</p>
-                            <p>be sign by PhucHS</p>
-                        </div>
-                    </div>
-                </div>
+
+
             </div>
 
         </div>
