@@ -90,6 +90,7 @@
     grid-gap: 1rem;
     /* scroll-behavior: smooth; */
     overflow-y: auto;
+    z-index: 5;
 }
 
 .navbar-icons-svg-content_svg {
@@ -160,6 +161,7 @@
 
 .helmerts-navbar-app-region-navbar-left-search-logo svg {
     color: var(--color-icon);
+    z-index: 2;
 }
 
 .helmerts-navbar-app-region-navbar-left-search-input {
