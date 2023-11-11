@@ -1,0 +1,32 @@
+.app-helmerts_product_details {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    padding: 0rem 2rem;
+}
+
+.app-helmerts_product_details-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.app-helmerts_product_details-top-back {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 1rem;
+    cursor: pointer;
+}
+
+.app-helmerts_product_details-top-back svg {
+    width: 25px;
+    height: 25px;
+}
+
+.app-helmerts_product_details-top-back p {
+    color: var(--color-p);
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Navbar, Footer, SlideIntro, CTA } from './Components';
+import { Navbar, Footer, SlideIntro, CTA, ProductDetails } from './Components';
 import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup, Category } from './Containers';
 
 const App = () => {
@@ -27,6 +27,7 @@ const App = () => {
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
             <Route path='/product' element={<Product />} />
+            <Route path='/product/:id' element={<ProductDetails />} />
             {/* <Route path='/information#return-exchange' element={<Information />} /> */}
             <Route path='/account' element={<Account />} />
             <Route path='/account/signin' element={<Signin />} />

@@ -11,8 +11,8 @@ export { default as InforLink } from './InforLink/InforLink.jsx';
 export { default as TermCondition } from './TermCondition/TearmCondition.jsx';
 export { default as PrivacyPolicy } from './PrivacyPolicy/PrivacyPolicy.jsx';
 export { default as ReturnExchange } from './ReturnExchange/ReturnExchange.jsx';
-export{default as PersonalInformation} from './PersonalInformation/PersonalInformation.jsx'
-
+export { default as PersonalInformation } from './PersonalInformation/PersonalInformation.jsx'
+export { default as ProductDetails } from './ProductDetails/ProductDetails.jsx';
 
 
 

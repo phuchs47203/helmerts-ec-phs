@@ -27,10 +27,6 @@ const Product = () => {
     };
     fetchData();
   }, []);
-
-  useEffect(() => {
-    console.log(products);
-  }, [products]);
   return (
     <div id='product' className='app-helmerts-product'>
       {/* <div className='slide'>
