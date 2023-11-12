@@ -529,7 +529,7 @@ p {
         padding: 0.5rem;
     }
 
-    .app-helmerts_product_details-content_left-size-guide tr {
+    .app-helmerts_product_details-content_left-size-guide-content tr {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         justify-content: center;
