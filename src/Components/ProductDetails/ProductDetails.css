@@ -373,10 +373,6 @@ p {
 }
 
 @media screen and (max-width: 600px) {
-    .app-helmerts_product_details {
-        padding: 0rem 0.5rem;
-    }
-
     .app-helmerts_product_details-content_right-content-size-s p,
     .app-helmerts_product_details-content_right-content-size-m p,
     .app-helmerts_product_details-content_right-content-size-l p,
