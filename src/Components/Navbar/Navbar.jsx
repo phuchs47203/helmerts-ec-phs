@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './Navbar.css';
 import { AiOutlineMenu, AiOutlineClose, AiOutlineDown, AiOutlineUp, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { images } from '../../Constants';
 const types = [
@@ -79,6 +79,13 @@ const Navbar = () => {
     color: location.pathname === '/' || location.pathname === '/home'
       ? (IconNavbarStyle.color) : 'rgb(66, 48, 42)'
   };
+  const navigate = useNavigate();
+  const handleHome = () => {
+    navigate('/home');
+  };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className='helmerts-navbar-app-region' style={combineStyle}>
 
@@ -102,16 +109,17 @@ const Navbar = () => {
                         <Link to="/home" className='menu-link' onClick={() => settoggleMenu(false)}>Home</Link>
                       </p>
                       <div className='menu-product'>
-                        <div className='menu-product-title'>
-                          {toggleMenuProduct
-                            ? <p className='menu-link' onClick={() => settoggleMenuProduct(false)}>Helmet Catefories</p>
-                            : <p className='menu-link' onClick={() => settoggleMenuProduct(true)}>Helmet Catefories</p>
-                          }
-                          {toggleMenuProduct
-                            ? <AiOutlineUp style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(false)} />
-                            : <AiOutlineDown style={{ 'width': '20px' }} onClick={() => settoggleMenuProduct(true)} />
-                          }
-                        </div>
+                        {toggleMenuProduct
+                          ? <div className='menu-product-title' onClick={() => settoggleMenuProduct(false)}>
+                            <p className='menu-link' >Helmet Catefories</p>
+                            <AiOutlineUp style={{ 'width': '20px' }} />
+                          </div>
+                          : <div className='menu-product-title' onClick={() => settoggleMenuProduct(true)}>
+                            <p className='menu-link' >Helmet Catefories</p>
+                            <AiOutlineDown style={{ 'width': '20px' }} />
+                          </div>
+
+                        }
                         {
                           toggleMenuProduct &&
                           <div className='menu-product-catergory-content scale-up-center' onClick={() => settoggleMenu(false) & settoggleMenuProduct(false)}>
@@ -120,16 +128,16 @@ const Navbar = () => {
                         }
                       </div>
                       <p>
-                        <a href="/clientservice" className='menu-link' onClick={() => settoggleMenu(false)}>Client Service</a>
+                        <Link to="/client-service" className='menu-link' onClick={() => settoggleMenu(false)}>Client Service</Link>
                       </p>
                       <p>
-                        <a href="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</a>
+                        <Link to="/information" className='menu-link' onClick={() => settoggleMenu(false)}>Information</Link>
                       </p>
                       <p>
                         <a href="#footer" className='menu-link' onClick={() => settoggleMenu(false)}>Contact Us</a>
                       </p>
                       <p>
-                        <a href="/introduce" className='menu-link' onClick={() => settoggleMenu(false)}>About Helmerts</a>
+                        <Link to="/introduce" className='menu-link' onClick={() => settoggleMenu(false)}>About Helmerts</Link>
                       </p>
                     </div>
                   </div>
@@ -152,7 +160,7 @@ const Navbar = () => {
                 {togglesearch
                   ? <AiOutlineSearch style={combineStyle} onClick={() => settogglesearch(false) & settogleImage(false)} />
 
-                  : <AiOutlineSearch style={{ combineStyle, display:'none' }} onClick={() => settogglesearch(false)} />
+                  : <AiOutlineSearch style={{ combineStyle, display: 'none' }} onClick={() => settogglesearch(false)} />
 
                 }
               </div>
@@ -172,8 +180,8 @@ const Navbar = () => {
         </div>
         <div className='helmerts-navbar-app-region-navbar-center'>
           {togleImage &&
-            <div className='navbar-search-logo_logo'>
-              <Link to="/" className='navbar-search-logo_link'>
+            <div className='navbar-search-logo_logo' onClick={() => handleHome()}>
+              <Link className='navbar-search-logo_link'>
                 <img src={images.helmerts_high_resolution_logo_transparent} alt="logo" />
               </Link>
             </div>

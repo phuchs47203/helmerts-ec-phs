@@ -3,7 +3,11 @@ import './Introduce.css'
 import { images } from '../../Constants';
 import { FiTrendingUp } from 'react-icons/fi';
 import { FaMoneyBillTrendUp } from 'react-icons/fa6';
+import { useEffect } from 'react';
 const Introduce = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div id='introduce' className='app-helmert-introduce section__padding'>
       <div className='app-helmert-introduce-history'>

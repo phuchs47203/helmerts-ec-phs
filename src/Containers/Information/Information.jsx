@@ -2,7 +2,11 @@ import React from 'react'
 import './Information.css'
 import { CTA } from '../../Components';
 import { TermCondition, PrivacyPolicy, ReturnExchange, PersonalInformation } from '../../Components';
+import { useEffect } from 'react';
 const Information = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div id='information' className='app-helmerts_information_legal section__padding'>
       <div className='app-helmerts_information_legal-heading'>

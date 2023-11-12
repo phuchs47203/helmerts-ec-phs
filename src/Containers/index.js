@@ -8,3 +8,7 @@ export { default as Signout } from './Signout/Signout';
 export { default as Signup } from './Signup/Signup';
 export { default as Account } from './Account/Account';
 export { default as Category } from './Category/Category';
+export {default as ClientService} from './ClientService/ClientService';
+
+
+

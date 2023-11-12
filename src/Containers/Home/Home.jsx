@@ -3,6 +3,7 @@ import './Home.css'
 import { CTA, MainProduct } from '../../Components'
 import { Link } from 'react-router-dom'
 import { images } from '../../Constants'
+import { useEffect } from 'react'
 
 const types = [
   "full",
@@ -15,6 +16,9 @@ const types = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+}, []);
   const typefull = "fullface";
   return (
     <div id='home' className='helmert-app-home section__padding'>

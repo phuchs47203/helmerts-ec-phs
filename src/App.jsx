@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Navbar, Footer, SlideIntro, CTA, ProductDetails } from './Components';
-import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup, Category } from './Containers';
+import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup, Category, ClientService } from './Containers';
 
 const App = () => {
   return (
@@ -20,14 +20,16 @@ const App = () => {
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
         </Routes>
+        <Routes>
+          <Route path='/product/:id' element={<ProductDetails />} />
 
+        </Routes>
         <div className='helmerst-app-boby padding_top'>
           <Routes>
 
             <Route path='/introduce' element={<Introduce />} />
             <Route path='/information' element={<Information />} />
             <Route path='/product' element={<Product />} />
-            <Route path='/product/:id' element={<ProductDetails />} />
             {/* <Route path='/information#return-exchange' element={<Information />} /> */}
             <Route path='/account' element={<Account />} />
             <Route path='/account/signin' element={<Signin />} />
@@ -35,7 +37,7 @@ const App = () => {
             <Route path='/account/signout' element={<Signout />} />
             <Route path='/product/category/:productType' element={<Category />} />
             <Route path='/cart' element={<Cart />} />
-
+            <Route path='/client-service' element={<ClientService />} />
           </Routes>
         </div>
         <div className='helmerst-app-cta section__padding'>
