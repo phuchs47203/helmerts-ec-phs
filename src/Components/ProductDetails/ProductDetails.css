@@ -299,6 +299,7 @@ p {
     flex-direction: column;
     grid-gap: 0.7rem;
     padding: 0rem 1rem;
+    padding-bottom: 1rem;
 }
 
 .app-helmerts_product_details-content_right-content-description p {
@@ -315,7 +316,73 @@ p {
 .app-helmerts_product_details-content-addition {
     display: flex;
     flex-direction: column;
-    border: 1px solid red;
+    /* width: 100%; */
+    height: 100%;
+    grid-gap: 2rem;
+}
+
+.app-helmerts_product_details-content_left-size-guide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    left: 0;
+    grid-gap: 1rem;
+    /* padding-right: 0rem; */
+}
+
+.app-helmerts_product_details-content_left-size-guide h3 {
+    color: var(--color-h);
+    font-size: 22px;
+    line-height: 30px;
+    font-family: var(--font-family);
+}
+
+.app-helmerts_product_details-content_left-size-guide table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.app-helmerts_product_details-content_left-size-guide tr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+}
+
+.app-helmerts_product_details-content_left-size-guide-header th {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+
+}
+
+.app-helmerts_product_details-content_left-size-guide-content td {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
 }
 
 @media screen and (max-width:990px) {
@@ -370,9 +437,110 @@ p {
         text-align: justify;
     }
 
+    .app-helmerts_product_details-content_left-size-guide {
+        /* width: 1000px; */
+        /* overflow-x: scroll; */
+    }
+
+    .app-helmerts_product_details-content_left-size-guide-header th {
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+
+    }
+
+    .app-helmerts_product_details-content_left-size-guide tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        grid-gap: 0rem;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide table {}
+
+    .app-helmerts_product_details-content_left-size-guide-header th {
+        width: 100%;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide-content td {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:750px) {
+
+    .app-helmerts_product_details-content_left-size-guide {
+
+        grid-gap: 0.5rem;
+        /* padding-right: 0rem; */
+    }
+
+    .app-helmerts_product_details-content_left-size-guide h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .hidden {
+        width: 0px;
+        color: transparent;
+        font-size: 0px;
+        line-height: 0px;
+        display: none;
+        height: 0px;
+        background-color: transparent;
+        font-weight: none;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide-header th {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide-header th:nth-last-child(-n+3) {
+        width: 0px;
+        color: transparent;
+        line-height: 0px;
+        display: none;
+        height: 0px;
+        background-color: transparent;
+        font-size: 0px;
+        font-weight: none;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide-content td:nth-last-child(-n+3) {
+        width: 0px;
+        color: transparent;
+        line-height: 0px;
+        display: none;
+        height: 0px;
+        background-color: transparent;
+        font-weight: none;
+    }
+
+
+    .app-helmerts_product_details-content_left-size-guide {
+        padding-bottom: 0rem;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide-content td {
+        padding: 0.5rem;
+    }
+
+    .app-helmerts_product_details-content_left-size-guide tr {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 2rem;
+    }
+
 }
 
 @media screen and (max-width: 600px) {
+
     .app-helmerts_product_details-content_right-content-size-s p,
     .app-helmerts_product_details-content_right-content-size-m p,
     .app-helmerts_product_details-content_right-content-size-l p,
