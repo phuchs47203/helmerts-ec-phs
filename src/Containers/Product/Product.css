@@ -191,8 +191,13 @@
 }
 
 @media screen and (max-width: 750px) {
+
+    .app-helmerts-product_list {
+        padding: 0rem 0.2rem;
+    }
+
     .app-helmerts-product_list-content {
-        grid-template-columns: 1fr 1fr;
+        grid-gap: 0.3rem;
     }
 }
 
