@@ -202,23 +202,19 @@ const Product = () => {
           })}
         </div>
 
-        {showLoading && <div>Loading...</div>}
 
-        {hasMore && (
+      </div>
+
+
+      {hasMore && (
+        <div className='app-helmerts-product_load-more'>
           <button onClick={handleShowMore} disabled={loading}>
-            Show More
+            Load more items
           </button>
-        )}
-      </div>
+        </div>
+      )}
 
 
-
-
-      <div className='app-helmerts-product_load-more'>
-        <button>
-          Load more items
-        </button>
-      </div>
 
     </div>
   )

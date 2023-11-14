@@ -47,7 +47,7 @@ p {
 .fall-in-left {
   opacity: 0;
   transform: translateX(-100%);
-  animation: fallInLeft 0.5s ease-in forwards;
+  animation: fallInLeft 0.4s ease-in forwards;
 }
 
 @keyframes fallInLeft {
