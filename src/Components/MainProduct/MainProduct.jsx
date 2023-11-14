@@ -5,10 +5,10 @@ import { images } from '../../Constants';
 import OneProduct from '../OneProduct/OneProduct';
 const products = {
   id: 1,
-  name: "Open face XR4925 Black 2023",
+  name: "Children's helmet BW729 Yellow 2023",
   brand: "Helmerts",
   imgurl: "https://res.cloudinary.com/dh6wuvc5j/image/upload/v1699609292/lnahlt5hggzroccqybfg.jpg",
-  description: "Open face helmet newest 2023",
+  description: "Children's helmet BW729 Yellow 2023",
   origional_price: 4800000,
   sale_price: 2400000,
   discount: 0.50,
