@@ -111,6 +111,7 @@
     line-height: 20px;
     font-weight: 400;
     color: var(--color-p);
+    word-spacing: -0.1rem;
 }
 
 .hermerts-app-oneproduct-description-price p:last-child {
@@ -199,6 +200,7 @@
         font-size: 14px;
         line-height: 18px;
         font-weight: 400;
+        letter-spacing: -0.06rem;
     }
 
     .hermerts-app-oneproduct-description p {
@@ -216,13 +218,4 @@
 
 }
 
-@media screen and (max-width: 400px) {
-    .hermerts-app-oneproduct-description h3 {
-        font-size: 16px;
-    }
-
-    .hermerts-app-oneproduct-description-price p {
-        font-size: 13px;
-        line-height: 20px;
-    }
-}
+@media screen and (max-width: 400px) {}
