@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef, useCallback } from 'react'
 import './Product.css'
 import { AiOutlineDown, AiOutlineUp, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
 import { CTA, OneProduct, SliderPresent } from '../../Components';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
+
 const Product = () => {
   const [toggleAll, settoggleAll] = useState(false);
   const [toggleCat, settoggleCat] = useState(false);
@@ -11,22 +12,83 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
   const URL_SERVER = "http://localhost:8000/api/products";
   const [products, setProducts] = useState([]);
+  // useEffect(() => {
+  //   // useDispatch
+  //   const fetchData = () => {
+  //     setLoading(false);
+  //     const response = axios
+  //       .get(URL_SERVER)
+  //       .then((response) => {
+  //         setProducts(response.data);
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //     setLoading(true);
+  //   };
+  //   fetchData();
+  // }, []);
+
+
+
+  const [page, setPage] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+  const [showLoading, setShowLoading] = useState(false);
+  const [visibleProducts, setVisibleProducts] = useState(9);
+
+  const observer = useRef();
+
+
   useEffect(() => {
-    // useDispatch
-    const fetchData = () => {
-      setLoading(false);
-      const response = axios
-        .get(URL_SERVER)
-        .then((response) => {
-          setProducts(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      setLoading(true);
+    const fetchData = async () => {
+      try {
+        setShowLoading(true);
+        const response = await axios.get(`http://localhost:8000/api/products`);
+        setProducts(response.data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+        setShowLoading(false);
+      }
     };
+
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (products.length > visibleProducts) {
+      setHasMore(true);
+    }
+  }, [products, visibleProducts]);
+
+  const lastProductElementRef = useCallback(
+    (node) => {
+      if (loading || !hasMore || !node) return;
+
+      if (observer.current) observer.current.disconnect();
+
+      observer.current = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && hasMore) {
+          setPage((prevPage) => prevPage + 1);
+        }
+      });
+
+      observer.current.observe(node);
+    },
+    [loading, hasMore]
+  );
+
+  const handleShowMore = () => {
+    const newVisibleProducts = visibleProducts + 9;
+
+    // Kiểm tra xem đã hiển thị hết số lượng sản phẩm chưa, nếu có thì tắt nút "Show More"
+    if (newVisibleProducts >= products.length) {
+      setHasMore(false);
+    }
+
+    setVisibleProducts(newVisibleProducts);
+  };
   return (
     <div id='product' className='app-helmerts-product'>
       {/* <div className='slide'>
@@ -111,7 +173,7 @@ const Product = () => {
           </div>
         </div>
       </div>
-      <div className='app-helmerts-product_list'>
+      {/* <div className='app-helmerts-product_list'>
         {loading &&
           <div className='app-helmerts-product_list-content'>
             {products.map((product) => (
@@ -121,7 +183,36 @@ const Product = () => {
           </div>
 
         }
+      </div> */}
+
+      <div className='app-helmerts-product_list'>
+        <div className='app-helmerts-product_list-content'>
+          {products.slice(0, visibleProducts).map((product, index) => {
+            const animationDelay = index * 0.1; // Tính toán độ trễ của hiệu ứng
+            return (
+              <div
+                ref={index === products.length - 1 ? lastProductElementRef : null}
+                key={product.id}
+                style={{ animationDelay: `${animationDelay}s` }}
+                className='product-item'
+              >
+                <OneProduct product={product} />
+              </div>
+            );
+          })}
+        </div>
+
+        {showLoading && <div>Loading...</div>}
+
+        {hasMore && (
+          <button onClick={handleShowMore} disabled={loading}>
+            Show More
+          </button>
+        )}
       </div>
+
+
+
 
       <div className='app-helmerts-product_load-more'>
         <button>

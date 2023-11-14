@@ -3,6 +3,7 @@
     flex-direction: column;
     grid-gap: 1rem;
     padding: 5rem 6rem;
+    padding-bottom: 0rem;
 }
 
 .app-helmerts_product_details-top {
@@ -69,7 +70,7 @@
 .app-helmerts_product_details-content_left-img img {
     width: 100%;
     max-height: 700px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .app-helmerts_product_details-content-main-right {
@@ -391,6 +392,7 @@ p {
         flex-direction: column;
         grid-gap: 1rem;
         padding: 3.5rem 0rem;
+        padding-bottom: 0rem;
     }
 
     .app-helmerts_product_details-top-back {
