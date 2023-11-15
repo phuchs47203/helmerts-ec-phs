@@ -18,7 +18,7 @@ const types = [
 const Home = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
-}, []);
+  }, []);
   const typefull = "fullface";
   return (
     <div id='home' className='helmert-app-home section__padding'>
@@ -32,7 +32,7 @@ const Home = () => {
             Not only a helmet but also a fashion accessory.
           </p>
           <p className='text-paragraph-p'>
-            <Link to={`/product/category/${types[0]}`} className='helmert-app-home_heading-title-link'>Explore the collection</Link>
+            <a href={`/product`} className='helmert-app-home_heading-title-link'>Explore the collection</a>
           </p>
         </div>
 

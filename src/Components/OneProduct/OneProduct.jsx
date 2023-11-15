@@ -48,7 +48,7 @@ const OneProduct = ({ product }) => {
                         <h1>{product.name}</h1>
                         <div className='hermerts-app-oneproduct-description-price' >
                             <p >₫ {product.sale_price}</p>
-                            <p >-30%</p>
+                            <p >-{product.discount*100}%</p>
                         </div>
                     </div>
                 </div>

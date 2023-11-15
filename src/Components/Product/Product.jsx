@@ -1,17 +1,16 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react'
 import './Product.css'
 import { AiOutlineDown, AiOutlineUp, AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai';
-import { CTA, OneProduct, SliderPresent } from '../../Components';
+import { CTA, OneProduct, SliderPresent } from '..';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
-import queryString from 'query-string';
+import { useLocation, useParams } from 'react-router-dom';
 
 const Product = () => {
 
 
   const { productString } = useParams();
-  const navigate = useNavigate();
+
 
 
   const [toggleAll, settoggleAll] = useState(false);
@@ -46,29 +45,60 @@ const Product = () => {
 
   const observer = useRef();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setShowLoading(true);
-        const response = await axios.get(`http://localhost:8000/api/products`);
-        setProducts(response.data);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-        setShowLoading(false);
-      }
-    };
-
-    fetchData();
-
-  }, []);
+  const location = useLocation();
   const data_filter = {
     cat_id: 5,
     sort: 2,
     all: 0,
     keyword: ''
   };
+  useEffect(() => {
+    if (location.pathname === '/product') {
+      const fetchData = async () => {
+        try {
+          setShowLoading(true);
+          const response = await axios.get(`http://localhost:8000/api/products`);
+          setProducts(response.data);
+        } catch (error) {
+          console.error(error);
+        } finally {
+          setLoading(false);
+          setShowLoading(false);
+        }
+      };
+
+      fetchData();
+    } else {
+      if (productString) {
+        try {
+          const searchParams = new URLSearchParams(productString);
+          const productObj = Object.fromEntries(searchParams.entries());
+          const fetchData = async () => {
+            try {
+              setShowLoading(true);
+              const response = await axios.post(`http://localhost:8000/api/products/filter`, data_filter, {
+                headers: { Accept: "application/json" },
+              })
+                .then((response) => {
+                  setProducts(response.data);
+                })
+            } catch (error) {
+              console.error(error);
+            } finally {
+              setLoading(false);
+              setShowLoading(false);
+            }
+          };
+          fetchData();
+        } catch (error) {
+          console.error('Error parsing product string:', error);
+        }
+      }
+    }
+
+  }, []);
+
+
   useEffect(() => {
     if (products.length > visibleProducts) {
       setHasMore(true);
@@ -102,42 +132,13 @@ const Product = () => {
 
     setVisibleProducts(newVisibleProducts);
   };
-
-  const handleChangeAll = (e) => {
-    const value = e.currentTarget.getAttribute("value");
-    console.log(value);
-    data_filter.all = value;
-    const stringifyProduct = queryString.stringify(data_filter);
-    navigate(`/product-filter/${stringifyProduct}`);
-    window.location.reload();
-
-  }
-  const handleChangeCategory = (e) => {
-    const value = e.currentTarget.getAttribute("value");
-    console.log(value);
-    data_filter.cat_id = value;
-    const stringifyProduct = queryString.stringify(data_filter);
-    navigate(`/product-filter/${stringifyProduct}`);
-    window.location.reload();
-  }
-  const handleChangeSort = (e) => {
-    const value = e.currentTarget.getAttribute("value");
-    console.log(value);
-    data_filter.sort = value;
-    const stringifyProduct = queryString.stringify(data_filter);
-    navigate(`/product-filter/${stringifyProduct}`);
-    window.location.reload();
-  }
-
   return (
     <div id='product' className='app-helmerts-product'>
       {/* <div className='slide'>
         <SliderPresent />
       </div> */}
       <div className='app-helmerts-product_heading'>
-        <h1>
-          Regardless of the field, challenge, terrain, interests, or personality, with HELMERTS you don't need to worry.
-        </h1>
+        this is heading, introduce
       </div>
       <div className='app-helmerts-product_filter'>
         <div className='app-helmerts-product_filter_left'>
@@ -155,9 +156,9 @@ const Product = () => {
             <div className='app-helmerts-product_filter-all_content'>
               {toggleAll &&
                 <div className='app-helmerts-product_filter-all_content-list'>
-                  <p value={0} onClick={(e) => handleChangeAll(e)}>All</p>
-                  <p value={1} onClick={(e) => handleChangeAll(e)}>Hot</p>
-                  <p value={2} onClick={(e) => handleChangeAll(e)}>Flash sale</p>
+                  <p>All</p>
+                  <p>Hot</p>
+                  <p>Flash sale</p>
 
                 </div>
               }
@@ -177,14 +178,14 @@ const Product = () => {
             <div className='app-helmerts-product_filter-category_content'>
               {toggleCat &&
                 <div className='app-helmerts-product_filter-category_content-list'>
-                  <p value={0} onClick={(e) => handleChangeSort(e)}>Category</p>
-                  <p value={1} onClick={(e) => handleChangeSort(e)}>Full Face</p>
-                  <p value={2} onClick={(e) => handleChangeSort(e)}>Half Face</p>
-                  <p value={3} onClick={(e) => handleChangeSort(e)}>Open Face</p>
-                  <p value={4} onClick={(e) => handleChangeSort(e)}>Modular</p>
-                  <p value={5} onClick={(e) => handleChangeSort(e)}>Bicycle Helmet</p>
-                  <p value={6} onClick={(e) => handleChangeSort(e)}>Children's Helmet</p>
-                  <p value={7} onClick={(e) => handleChangeSort(e)}>Accessories</p>
+                  <p>Category</p>
+                  <p>Full Face</p>
+                  <p>Open Face</p>
+                  <p>Modular</p>
+                  <p>Half Face</p>
+                  <p>Bicycle Helmet</p>
+                  <p>Children's Helmet</p>
+                  <p>Accessories</p>
                 </div>
               }
             </div>
@@ -205,10 +206,10 @@ const Product = () => {
             <div className='app-helmerts-product_filter-sort_content'>
               {toggleSort &&
                 <div className='app-helmerts-product_filter-sort_content-list'>
-                  <p value={0} onClick={(e) => handleChangeCategory(e)}>Default</p>
-                  <p value={1} onClick={(e) => handleChangeCategory(e)}>Lowest price</p>
-                  <p value={2} onClick={(e) => handleChangeCategory(e)}>Highest price</p>
-                  <p value={3} onClick={(e) => handleChangeCategory(e)}>Newest</p>
+                  <p>Default</p>
+                  <p>Lowest price</p>
+                  <p>Highest price</p>
+                  <p>Newest</p>
                 </div>
               }
             </div>

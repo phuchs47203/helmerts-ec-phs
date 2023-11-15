@@ -5,6 +5,9 @@ import { AiOutlineMenu, AiOutlineClose, AiOutlineDown, AiOutlineUp, AiOutlineSea
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { images } from '../../Constants';
+import queryString from 'query-string';
+
+
 const types = [
   "full",
   "open",
@@ -86,6 +89,36 @@ const Navbar = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const [keyword, setkeyword] = useState('');
+
+  const data_Search = {
+    cat_id: 0,
+    sort: 0,
+    all: 0,
+    keyword: ''
+  };
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      const data_Search = {
+        cat_id: 0,
+        sort: 0,
+        all: 0,
+        keyword: event.target.value,
+      };
+      const stringifyProductSearch = queryString.stringify(data_Search);
+      settogglesearch(true);
+      settogleImage(true);
+      navigate(`/product-filter/${stringifyProductSearch}`);
+      setkeyword('');
+      window.location.reload();
+    }
+  };
+  const handeChangeSearch = (e) => {
+    data_Search.keyword = e.target.value;
+    setkeyword(e.target.value);
+  }
+
   return (
     <div className='helmerts-navbar-app-region' style={combineStyle}>
 
@@ -169,7 +202,14 @@ const Navbar = () => {
                   ? <div />
 
                   : <div className='helmerts-navbar-app-region-navbar-left-search-input-content'>
-                    <input type="text" className='scale-up-center ' placeholder='Search' />
+                    <input
+                      type="text"
+                      className='scale-up-center '
+                      placeholder='Search'
+                      value={keyword}
+                      onChange={(e) => handeChangeSearch(e)}
+                      onKeyPress={(e) => handleKeyPress(e)}
+                    />
                     <AiOutlineClose className='scale-up-center close_search' onClick={() => settogglesearch(true) & settogleImage(true)} />
                   </div>
 

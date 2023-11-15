@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import './MainProduct.css'
 import { images } from '../../Constants';
 import OneProduct from '../OneProduct/OneProduct';
+import queryString from 'query-string';
+import axios from 'axios';
+
 const products = {
   id: 1,
   name: "Children's helmet BW729 Yellow 2023",
@@ -20,7 +23,65 @@ const products = {
   created_at: "2023-11-06T09:02:23.000000Z",
   updated_at: "2023-11-10T09:41:33.000000Z"
 };
+const hot = {
+  cat_id: 0,
+  sort: 0,
+  all: 1,
+  keyword: ''
+};
+const flashsale = {
+  cat_id: 0,
+  sort: 0,
+  all: 2,
+  keyword: ''
+};
+const stringifyProducttype1 = queryString.stringify(hot);
+
+const stringifyProducttype2 = queryString.stringify(flashsale);
+
+
+// const stringifyProducttype1 = encodeURIComponent(JSON.stringify(hot));
+// // {/* <a href={`/product/${stringifyProduct}`} style={{ textDecoration: 'none' }}> */ }
+// const stringifyProducttype2 = encodeURIComponent(JSON.stringify(flashsale));
+
 const MainProduct = () => {
+
+
+
+  const [loading, setloading] = useState(false);
+
+  const [bestSeller, setbestSeller] = useState([]);
+  const [flashSale, setflashSale] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8000/api/products/main-product/1`);
+        console.log(response);
+        setbestSeller(response.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setloading(true);
+      }
+    };
+    fetchData();
+  }, []);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8000/api/products/main-product/2`);
+        console.log(response);
+        setflashSale(response.data);
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setloading(true);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className='helmert-app-home-mainproduct'>
       <div className='helmert-app-home-mainproduct-hot'>
@@ -28,18 +89,17 @@ const MainProduct = () => {
           <div className='helmert-app-home-mainproduct-heading-title'>
             <h1 className='text-title-h1'>BEST SELLER</h1>
             <p className='btn-transition'>
-              <Link to="/" className='helmert-app-home-mainproduct-heading-title-link btn-transition'>Discover</Link>
+              <a href={`/product-filter/${stringifyProducttype1}`} className='helmert-app-home-mainproduct-heading-title-link btn-transition'>Discover</a>
             </p>
           </div>
           <div className='helmert-app-home-mainproduct-heading-line' />
         </div>
         <div className='helmert-app-home-mainproduct-content'>
-          <OneProduct product={products} key={1} />
-          <OneProduct product={products} key={3} />
-          <OneProduct product={products} key={2} />
-          <OneProduct product={products} key={4} />
-          <OneProduct product={products} key={5} />
-          <OneProduct product={products} key={6} />
+          {bestSeller.map((product) => (
+            <OneProduct product={product} key={product.id} />
+          )
+          )
+          }
         </div>
       </div>
       <div className='helmert-app-home-mainproduct-flashsale'>
@@ -47,18 +107,17 @@ const MainProduct = () => {
           <div className='helmert-app-home-mainproduct-heading-title'>
             <h1 className='text-title-h1'>FLASH SALE</h1>
             <p className='btn-transition'>
-              <Link to="/" className='helmert-app-home-mainproduct-heading-title-link btn-transition'>Discover</Link>
+              <a href={`/product-filter/${stringifyProducttype2}`} className='helmert-app-home-mainproduct-heading-title-link btn-transition'>Discover</a>
             </p>
           </div>
           <div className='helmert-app-home-mainproduct-heading-line' />
         </div>
         <div className='helmert-app-home-mainproduct-content'>
-          <OneProduct product={products} key={1} />
-          <OneProduct product={products} key={3} />
-          <OneProduct product={products} key={2} />
-          <OneProduct product={products} key={4} />
-          <OneProduct product={products} key={5} />
-          <OneProduct product={products} key={6} />
+          {flashSale.map((product) => (
+            <OneProduct product={product} key={product.id} />
+          )
+          )
+          }
         </div>
       </div>
     </div>
