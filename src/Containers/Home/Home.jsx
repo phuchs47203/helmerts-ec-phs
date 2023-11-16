@@ -56,26 +56,26 @@ const Home = () => {
           <div className='helmert-app-home_product-categorise-content-row1'>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[0]}`} className=''>
+                <a href={`/product/1`} className=''>
                   <img src={images.fullface} alt="fullface" />
                 </a>
 
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[0]}`} className='helmert-app-home_heading-title-link p-bold'>Fullface</a>
+                  <a href={`/product/1`} className='helmert-app-home_heading-title-link p-bold'>Fullface</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[1]}`} className=''>
+                <a href={`/product/1`} className=''>
                   <img src={images.openface} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[1]}`} className='helmert-app-home_heading-title-link p-bold'>Openface</a>
+                  <a href={`/product/1`} className='helmert-app-home_heading-title-link p-bold'>Openface</a>
                 </p>
               </div>
             </div>

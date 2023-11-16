@@ -84,7 +84,7 @@
 
 .app-helmerts_product_details-content-main-right-column {
     max-width: 450px;
-    background: white;
+    background-color: var(--color-legal);
     display: flex;
     flex-direction: column;
     grid-gap: 1rem;
@@ -329,7 +329,7 @@ p {
     justify-content: center;
     align-items: center;
     padding: 1rem;
-    background-color: white;
+    background-color: var(--color-legal);
     left: 0;
     grid-gap: 1rem;
     /* padding-right: 0rem; */
@@ -384,6 +384,64 @@ p {
     font-size: 12px;
     font-weight: 500;
     line-height: 18px;
+}
+
+.app-helmerts_product_details-content_left-manuals {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-legal);
+    grid-gap: 2rem;
+    padding: 1rem;
+}
+
+.app-helmerts_product_details-content_left-manuals-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts_product_details-content_left-manuals-heading h1 {
+    font-family: var(--font-family2);
+    color: var(--color-h);
+    font-weight: 300;
+    font-size: 26px;
+    line-height: 38px;
+}
+
+.app-helmerts_product_details-content_left-manuals-content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts_product_details-content_left-manuals-content-item {
+    display: flex;
+
+    flex-direction: column;
+    grid-gap: 0.5rem;
+}
+
+/* .app-helmerts_product_details-content_left-manuals-content-item h3 {
+    font-family: var(--font-family2);
+    color: var(--pink);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+.app-helmerts_product_details-content_left-manuals-content-item p {
+    font-family: var(--font-family2);
+    color: var(--color-p);
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+} */
+.caplital {
+    text-transform: capitalize;
 }
 
 @media screen and (max-width:990px) {
@@ -469,6 +527,16 @@ p {
     .app-helmerts_product_details-content_left-size-guide-content td {
         width: 100%;
     }
+
+    .app-helmerts_product_details-content_left-manuals {
+        grid-gap: 1rem;
+    }
+
+    .app-helmerts_product_details-content_left-manuals-heading h1 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
 
 }
 
@@ -596,6 +664,15 @@ p {
         padding-bottom: 0.9rem;
         border-bottom: 2px solid var(--color-h);
         background-color: var(--color-bg);
+    }
+
+    .app-helmerts_product_details-content_left-manuals {
+        grid-gap: 0.5rem;
+    }
+
+    .app-helmerts_product_details-content_left-manuals-heading h1 {
+        font-size: 18px;
+        line-height: 28px;
     }
 
 
