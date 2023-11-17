@@ -41,7 +41,7 @@ const Product = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [showLoading, setShowLoading] = useState(false);
-  const [visibleProducts, setVisibleProducts] = useState(9);
+  const [visibleProducts, setVisibleProducts] = useState(45);
 
   const observer = useRef();
 
@@ -64,6 +64,7 @@ const Product = () => {
     const value = e.currentTarget.getAttribute("value");
     console.log(value);
     productObj.cat_id = value;
+    productObj.keyword = "";
     const stringifyProduct = queryString.stringify(productObj);
     navigate(`/product-filter/${stringifyProduct}`);
     window.location.reload();
@@ -110,7 +111,7 @@ const Product = () => {
                   setnotFound(true);
                   setProducts(productWhenNotFound);
                 }
-                if (response.data.length <= 9 & response.data.length >= 0) {
+                if (response.data.length <= 45 & response.data.length >= 0) {
                   setHasMore(false);
                 }
 
@@ -158,7 +159,7 @@ const Product = () => {
   );
 
   const handleShowMore = () => {
-    const newVisibleProducts = visibleProducts + 9;
+    const newVisibleProducts = visibleProducts + (products.length - 45);
 
     // Kiểm tra xem đã hiển thị hết số lượng sản phẩm chưa, nếu có thì tắt nút "Show More"
     if (newVisibleProducts >= products.length) {

@@ -97,9 +97,7 @@ const MainProduct = () => {
         <div className='helmert-app-home-mainproduct-content'>
           {bestSeller.map((product) => (
             <OneProduct product={product} key={product.id} />
-          )
-          )
-          }
+          ))}
         </div>
       </div>
       <div className='helmert-app-home-mainproduct-flashsale'>

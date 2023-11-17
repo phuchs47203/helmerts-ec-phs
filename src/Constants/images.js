@@ -42,6 +42,7 @@ import gucci from '../Assets/gucci-removebg-preview.png';
 import swaure from '../Assets/Untitled.png';
 import pre1 from '../Assets/pro11.png';
 import pre2 from '../Assets/pro44.png';
+import orange_box from '../Assets/orange-box.jpg';
 export default {
     slide1,
     slide2,
@@ -86,7 +87,8 @@ export default {
     gucci,
     swaure,
     pre1,
-    pre2
+    pre2,
+    orange_box
 };
 
 

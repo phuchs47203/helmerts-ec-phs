@@ -6,7 +6,8 @@ import { AiOutlineUp, AiOutlineDown } from 'react-icons/ai';
 import axios from 'axios'
 import { images } from '../../Constants';
 import InforLink from '../InforLink/InforLink';
-
+import InterestedProduct from '../InterestedProduct/InterestedProduct';
+import OneProduct from '../OneProduct/OneProduct';
 const data = [
     { name: "XXS", inch: "21.6", cm: "55", eur: "4", usa: "6 3/4", uk: "6 7/8" },
     { name: "XS", inch: "22", cm: "56", eur: "4 1/2", usa: "6 7/8", uk: "7" },
@@ -53,21 +54,66 @@ const ProductDetails = () => {
     const [loading, setloading] = useState(true);
     const [product_details, setproduct_details] = useState({});
     const [toggleErrSize, settoggleErrSize] = useState("");
+    const [catId, setCatId] = useState(null);
+
+    const [ListSize, setListSize] = useState([
+        {
+            size: "XS"
+        },
+        {
+            size: "S"
+        },
+        {
+            size: "M"
+        },
+        {
+            size: "L"
+        },
+        {
+            size: "XL"
+        },
+        {
+            size: "XXL"
+        },
+        {
+            size: "XXXL"
+        }
+    ]);
+
     useEffect(() => {
-        const fetchData = () => {
+        const fetchData = async () => {
             setloading(true);
-            const response = axios
-                .get(URL_PRODUCT_ID)
-                .then((response) => {
-                    setproduct_details(response.data);
-                })
-                .catch((error) => {
-                    console.log(error);
-                });
-            setloading(true);
+            try {
+                const response = await axios.get(URL_PRODUCT_ID);
+                setproduct_details(response.data);
+                setCatId(response.data.cat_id);
+            } catch (error) {
+                console.log(error);
+            } finally {
+                setloading(false);
+            }
         };
         fetchData();
     }, []);
+
+    const URL_PRODUCT_INTERESTED = "http://localhost:8000/api/products/interested/";
+
+    const [productInterested, setproductInterested] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            // console.log("catId in second useEffect:", catId);
+            if (catId != null) {
+                try {
+                    const response = await axios.get(URL_PRODUCT_INTERESTED + catId);
+                    setproductInterested(response.data);
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+        };
+        fetchData();
+    }, [catId]);
+
     const navigate = useNavigate();
     const handleBack = () => {
         navigate(-1);
@@ -79,9 +125,38 @@ const ProductDetails = () => {
     const [selectedSize, setselectedSize] = useState('');
     const handleSizeClick = (size) => {
         setselectedSize(size);
-        console.log(selectedSize);
     };
+    useEffect(() => {
+        console.log(selectedSize);
+    }, [selectedSize]);
 
+    const addToCart = () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        console.log('sizeSelectted: ', selectedSize);
+        if (!selectedSize) {
+            console.log('chưa chọn size');
+            return;
+        }
+        const existItem = cart.find(item => (item.product_details && item.product_details.id === product_details.id)
+            && (item.size === selectedSize)
+        );
+
+        // localStorage.removeItem('cart');
+
+        if (existItem) {
+            if (existItem.quantity >= 7) {
+                console.log('vượt quá số lượng sản phẩm tôi đa');
+                return;
+            }
+            existItem.quantity++;
+        }
+        else {
+            cart.push({ product_details, size: selectedSize, quantity: 1 });
+        }
+        setselectedSize('');
+        localStorage.setItem('cart', JSON.stringify(cart));
+        console.log('Cart:', cart); // Xuất ra giỏ hàng
+    };
 
     return (
         <div className='app-helmerts_product_details'>
@@ -95,14 +170,16 @@ const ProductDetails = () => {
                 <div className='app-helmerts_product_details-content-main'>
                     <div className='app-helmerts_product_details-content-main-left'>
                         <div className='app-helmerts_product_details-content_left-img'>
+                            {/* <img src={product_details.imgurl} alt="" /> */}
                             <img src={images.modular} alt="" />
+
                         </div>
 
                     </div>
                     <div className='app-helmerts_product_details-content-main-right'>
                         <div className='app-helmerts_product_details-content-main-right-column'>
                             <div className='app-helmerts_product_details-content_right-header'>
-                                <h1>Open Face Helmet XP05247 Black SXL</h1>
+                                <h1>{product_details.name}</h1>
                                 <div className='app-helmerts_product_details-content_right-header_price'>
                                     <p>	₫ 4,800,000</p>
                                     <p>	₫ 2,450,000</p>
@@ -132,7 +209,7 @@ const ProductDetails = () => {
                                             <p>Please choose a size</p>
                                         </div>
                                     }
-                                    {toggleSize &&
+                                    {/* {toggleSize &&
                                         <div className='app-helmerts_product_details-content_right-content-size-content'>
                                             <div className='app-helmerts_product_details-content_right-content-size-content-column'>
                                                 <div
@@ -167,12 +244,31 @@ const ProductDetails = () => {
                                                 </div>
                                             </div>
                                         </div>
+                                    } */}
+
+                                    {/*        
+                                             className={`app-helmerts_product_details-content_right-content-size-s ${item.size.toLowerCase()} ${selectedSize === item.size ? 'selected' : ''}`}
+ */}
+                                    {toggleSize &&
+                                        <div className='app-helmerts_product_details-content_right-content-size-content'>
+
+                                            {ListSize.map((item, index) => (
+                                                <div
+                                                    key={index}
+                                                    className={`app-helmerts_product_details-content_right-content-size-s  ${selectedSize === item.size ? 'selected' : ''}`}
+                                                    onClick={() => handleSizeClick(item.size)}
+                                                >
+                                                    <p>{item.size}</p>
+                                                </div>
+                                            ))}
+
+                                        </div>
                                     }
                                 </div>
                                 <div className='line' />
 
                                 <div className='app-helmerts_product_details-content_right-content-add_to_cart'>
-                                    <button className='btn-transition'>Add to cart</button>
+                                    <button className='btn-transition' onClick={() => addToCart()}>Add to cart</button>
                                 </div>
                                 <div className='line' />
 
@@ -231,7 +327,16 @@ const ProductDetails = () => {
                         </div>
                     </div>
                     <div className='app-helmerts_product_details-content_left-similar'>
-                        similar products
+                        <div className='app-helmerts_product_details-content_left-similar-heading'>
+                            <h1>
+                                You may also be interested
+                            </h1>
+                        </div>
+                        <div className='app-helmerts_product_details-content_left-similar-content'>
+                            {productInterested.map((product) => (
+                                <OneProduct product={product} key={product.id} />
+                            ))}
+                        </div>
                     </div>
                     <div className='app-helmerts_product_details-content_left-reviews'>
                         reviews

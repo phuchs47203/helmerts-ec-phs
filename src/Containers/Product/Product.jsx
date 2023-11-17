@@ -42,7 +42,7 @@ const Product = () => {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [showLoading, setShowLoading] = useState(false);
-  const [visibleProducts, setVisibleProducts] = useState(9);
+  const [visibleProducts, setVisibleProducts] = useState(45);
 
   const observer = useRef();
 
@@ -93,7 +93,7 @@ const Product = () => {
   );
 
   const handleShowMore = () => {
-    const newVisibleProducts = visibleProducts + 9;
+    const newVisibleProducts = visibleProducts + (products.length-45);
 
     // Kiểm tra xem đã hiển thị hết số lượng sản phẩm chưa, nếu có thì tắt nút "Show More"
     if (newVisibleProducts >= products.length) {

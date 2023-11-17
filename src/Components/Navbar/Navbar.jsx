@@ -21,7 +21,7 @@ const types = [
 const MenuProductCategories = () => (
   <>
     <p>
-      <a href="/product" className='menu-link' >All Products</a>
+      <Link to="/product" className='menu-link' >All Products</Link>
     </p>
     <p>
       <a href={`/product/category/${types[0]}`} className='menu-link' >Full Face</a>
