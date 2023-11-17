@@ -1,0 +1,102 @@
+.app-helmerts-cart {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0rem 0rem;
+}
+
+.app-helmerts-cart-box {
+    display: flex;
+    flex-direction: column;
+    width: 1260px;
+    height: 100%;
+    padding: 0rem 1rem;
+}
+
+.app-helmerts-cart-heading {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.app-helmerts-cart-content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-gap: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts-cart-content-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    grid-gap: 0.1rem;
+}
+
+.app-helmerts-cart-content-left-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    grid-gap: 0.1rem;
+}
+
+.app-helmerts-cart-content-left-total_price {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+}
+
+.app-helmerts-cart-content-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    grid-gap: 0.1rem;
+    justify-content: flex-start;
+    background-color: transparent;
+}
+
+.app-helmerts-cart-content-right-box-title {
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+}
+
+.app-helmerts-cart-content-right-box-title h1 {
+    font-family: var(--font-family33);
+    color: #444;
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.app-helmerts-cart-content-right-box-content {
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+}
+
+.app-helmerts-cart-content-right-service {
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .app-helmerts-cart-content {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1rem;
+        width: 100%;
+        height: 100%;
+    }
+}

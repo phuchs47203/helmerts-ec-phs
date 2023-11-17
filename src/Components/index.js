@@ -14,7 +14,7 @@ export { default as ReturnExchange } from './ReturnExchange/ReturnExchange.jsx';
 export { default as PersonalInformation } from './PersonalInformation/PersonalInformation.jsx'
 export { default as ProductDetails } from './ProductDetails/ProductDetails.jsx';
 export { default as InterestedProduct } from './InterestedProduct/InterestedProduct.jsx';
-
+export { default as CartItem } from './CartItem/CartItem.jsx';
 
 
 
