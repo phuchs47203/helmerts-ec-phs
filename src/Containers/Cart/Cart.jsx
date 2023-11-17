@@ -18,10 +18,78 @@ const Cart = () => {
     }
     console.log(loadingCart);
   }, [loadingCart]);
-  const productss = {
-    name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
-    id: 1,
-  }
+  // const productss = {
+  //   name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+  //   id: 1,
+  //   imgurl: images.modular
+  // };
+
+  // const product1 = {
+  //   name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+  //   id: 1,
+  //   imgurl: images.half
+  // };
+  // const product2 = {
+  //   name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+  //   id: 1,
+  //   imgurl: images.children
+  // };
+  // const product3 = {
+  //   name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+  //   id: 1,
+  //   imgurl: images.fullface
+  // };
+  // const product4 = {
+  //   name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+  //   id: 1,
+  //   imgurl: images.openface
+  // };
+  const dataProducts = [
+    {
+      name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+      id: 1,
+      imgurl: images.modular,
+      size: 'XL',
+      quantity: 2
+
+
+    },
+    {
+      name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+      id: 2,
+      imgurl: images.children,
+      size: 'XXL',
+      quantity: 1
+
+
+    },
+    {
+      name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+      id: 1,
+      imgurl: images.half,
+      size: 'XL',
+      quantity: 2
+
+    },
+    {
+      name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+      id: 1,
+      imgurl: images.fullface,
+      size: 'S',
+      quantity: 4
+
+    },
+    {
+      name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
+      id: 1,
+      imgurl: images.openface,
+      size: 'L',
+      quantity: 5
+
+    }
+
+
+  ];
   return (
     <div id='cart' className='app-helmerts-cart'>
       <div className='app-helmerts-cart-box'>
@@ -31,7 +99,7 @@ const Cart = () => {
         <div className='app-helmerts-cart-content'>
           <div className='app-helmerts-cart-content-left'>
 
-            {loadingCart &&
+            {/* {loadingCart &&
               <div className='app-helmerts-cart-content-left-box'>
                 {
                   cartLocal.map((item, index) => (
@@ -39,8 +107,22 @@ const Cart = () => {
                   ))
                 }
               </div>
+            } */}
+
+            {
+              <div className='app-helmerts-cart-content-left-box'>
+                {
+                  dataProducts.map((item, index) => (
+                    <CartItem product={item} size={item.size} quantity={item.quantity} key={2} />
+                  ))
+                }
+              </div>
             }
-            <CartItem product={productss} size={XL} quantity={item.quantity} key={3} />
+            {/* <CartItem product={productss} size='XL' quantity={1} key={3} />
+            <CartItem product={product1} size='XXXL' quantity={3} key={4} />
+            <CartItem product={product2} size='S' quantity={1} key={1} />
+            <CartItem product={product3} size='L' quantity={1} key={2} />
+            <CartItem product={product4} size='SX' quantity={2} key={5} /> */}
 
             {/* {loadingCart &&
               <div className='app-helmerts-cart-content-left-box'>

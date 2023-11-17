@@ -10,7 +10,7 @@ const CartItem = ({ product, size, quantity }) => {
                 <div className='app-helmerts-cart-cart_item-left'>
                     <div className='app-helmerts-cart-cart_item-left-main'>
                         <div className='app-helmerts-cart-cart_item-left-main-img'>
-                            <img src={images.modular} alt="" />
+                            <img src={product.imgurl} alt="" />
                         </div>
                         <div className='app-helmerts-cart-cart_item-left-main-content'>
                             <div className='app-helmerts-cart-cart_item-left-main-content-name'>
