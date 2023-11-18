@@ -38,7 +38,7 @@ const CartItem = ({ product, size, quantity }) => {
                 </div>
                 <div className='app-helmerts-cart-cart_item-right'>
                     <IoIosClose />
-                    <p>đ 12,450,000</p>
+                    <p>đ12,450,000</p>
                 </div>
             </div>
         </div>

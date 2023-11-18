@@ -158,4 +158,12 @@
     font-size: 12px;
     font-family: var(--font-family3);
     font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+@media screen and (max-width: 600px) {
+    .app-helmerts-cart-cart_item-box {
+        grid-gap: 0.5rem;
+    }
+
 }

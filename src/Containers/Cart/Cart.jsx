@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react'
 import './Cart.css'
 import { images } from '../../Constants';
 import { CartItem } from '../../Components';
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { LiaTruckMovingSolid } from "react-icons/lia";
+import { LiaExchangeAltSolid } from "react-icons/lia";
+import { BsFillBagCheckFill } from "react-icons/bs";
+
 const Cart = () => {
   const [cartLocal, setcartLocal] = useState([]);
   const [loadingCart, setloadingCart] = useState(false);
@@ -168,10 +173,40 @@ const Cart = () => {
                 </h1>
               </div>
               <div className='app-helmerts-cart-content-right-service-contact'>
-
+                <div className='app-helmerts-cart-content-right-service-contact-svg'>
+                  <MdOutlineLocalPhone />
+                </div>
+                <div className='app-helmerts-cart-content-right-service-contact-phone'>
+                  <a href="tel:800-441-4488">800-441-4488</a>
+                  <p>Monday to Friday: 9am - 9pm EST</p>
+                  <p>Saturday: 10am - 9pm EST</p>
+                </div>
               </div>
               <div className='app-helmerts-cart-content-right-service-deliver'>
-
+                <div className='app-helmerts-cart-content-right-service-deliver-item'>
+                  <div className='app-helmerts-cart-content-right-service-deliver-item-svg'>
+                    <LiaTruckMovingSolid />
+                  </div>
+                  <div className='app-helmerts-cart-content-right-service-deliver-item-p'>
+                    <p>Free standard delivery</p>
+                  </div>
+                </div>
+                <div className='app-helmerts-cart-content-right-service-deliver-item'>
+                  <div className='app-helmerts-cart-content-right-service-deliver-item-svg'>
+                    <LiaExchangeAltSolid />
+                  </div>
+                  <div className='app-helmerts-cart-content-right-service-deliver-item-p'>
+                    <p>Returns & exchanges</p>
+                  </div>
+                </div>
+                <div className='app-helmerts-cart-content-right-service-deliver-item'>
+                  <div className='app-helmerts-cart-content-right-service-deliver-item-svg'>
+                    <BsFillBagCheckFill />
+                  </div>
+                  <div className='app-helmerts-cart-content-right-service-deliver-item-p'>
+                    <p>Shop securely</p>
+                  </div>
+                </div>
               </div>
               <div className='app-helmerts-cart-content-right-service-payment'>
 

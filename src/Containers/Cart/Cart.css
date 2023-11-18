@@ -56,7 +56,38 @@
     height: 100%;
     background-color: var(--color-bg-box);
     padding: 1rem;
+    grid-gap: 1rem;
 }
+
+.app-helmerts-cart-content-left-total_price-subtotal,
+.app-helmerts-cart-content-left-total_price-total {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.app-helmerts-cart-content-left-total_price-subtotal h1,
+.app-helmerts-cart-content-left-total_price-total h1 {
+    font-family: var(--font-family3);
+    color: #444;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: -0.05rem;
+}
+
+.app-helmerts-cart-content-left-total_price-subtotal p,
+.app-helmerts-cart-content-left-total_price-total p {
+    font-family: var(--font-family3);
+    word-spacing: -0.04rem;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
 
 .app-helmerts-cart-content-right {
     display: flex;
@@ -74,10 +105,10 @@
 }
 
 .app-helmerts-cart-content-right-box-title h1 {
-    font-family: var(--font-family33);
+    font-family: var(--font-family);
     color: #444;
     font-weight: 400;
-    font-size: 22px;
+    font-size: 20px;
     text-transform: uppercase;
 }
 
@@ -124,7 +155,135 @@
 
 .app-helmerts-cart-content-right-service {
     background-color: var(--color-bg-box);
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.2rem;
+    background-color: transparent;
+}
+
+.app-helmerts-cart-content-right-service-title,
+.app-helmerts-cart-content-right-service-contact,
+.app-helmerts-cart-content-right-service-deliver {
+    background-color: var(--color-bg-box);
     padding: 1rem;
+}
+
+.app-helmerts-cart-content-right-service-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app-helmerts-cart-content-right-service-title h1 {
+    font-family: var(--font-family);
+    color: #444;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.app-helmerts-cart-content-right-service-contact {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 0.5rem;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+    height: 100%;
+    width: 100%;
+}
+
+.app-helmerts-cart-content-right-service-contact-svg {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.app-helmerts-cart-content-right-service-contact-svg svg {
+    width: 25px;
+    height: 25px;
+    color: var(--color-p);
+}
+
+.app-helmerts-cart-content-right-service-contact-phone {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 0.5rem;
+    height: 100%;
+    justify-content: space-between;
+    margin-top: 0rem;
+}
+
+.app-helmerts-cart-content-right-service-contact-phone a {
+    color: #444;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    border-bottom: 0.5px solid var(--color-p);
+    font-family: var(--font-family3);
+    text-decoration: none;
+    width: fit-content;
+}
+
+.app-helmerts-cart-content-right-service-contact-phone a:hover {
+    border-bottom: none;
+    margin-bottom: 0.06rem;
+}
+
+.app-helmerts-cart-content-right-service-contact-phone p {
+    color: var(--color-p);
+    font-size: 14px;
+    word-spacing: -0.1rem;
+    letter-spacing: -0.04rem;
+}
+
+.app-helmerts-cart-content-right-service-deliver {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 1rem;
+}
+
+.app-helmerts-cart-content-right-service-deliver-item {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts-cart-content-right-service-deliver-item-svg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts-cart-content-right-service-deliver-item-svg svg {
+    width: 25px;
+    height: 25px;
+    font-weight: 100;
+    color: #444;
+}
+
+.app-helmerts-cart-content-right-service-deliver-item-p {
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts-cart-content-right-service-deliver-item-p p {
+    color: var(--color-p);
+    font-size: 14px;
+    word-spacing: -0.1rem;
+    letter-spacing: -0.04rem;
+    font-weight: 400;
+    text-align: center;
 }
 
 @media screen and (max-width: 1000px) {
@@ -134,5 +293,60 @@
         grid-gap: 1rem;
         width: 100%;
         height: 100%;
+    }
+
+    .app-helmerts-cart-content-right-box-content {}
+
+    .app-helmerts-cart-content-right-box-content {
+        padding: 1rem;
+        /* display: flex;
+        flex-direction: row; */
+        grid-template-columns: 0fr 0fr;
+        grid-gap: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+    }
+
+    .app-helmerts-cart-content-right-box-content-p {
+        justify-content: flex-start;
+        width: fit-content;
+    }
+
+    .app-helmerts-cart-content-right-box-content-img {
+        justify-content: flex-start;
+        width: fit-content;
+    }
+
+    .app-helmerts-cart-content-right-box-content-img img {
+        max-height: 80px;
+        width: auto;
+        aspect-ratio: 1/1;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .app-helmerts-cart-content-right-box-content-img img {
+        max-height: 60px;
+        width: auto;
+        aspect-ratio: 1/1;
+    }
+
+    .app-helmerts-cart-content-right-service-contact-svg svg {
+        width: 20px;
+        height: 20px;
+        color: var(--color-p);
+    }
+
+    .app-helmerts-cart-content-right-service-contact-phone a {
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.1rem;
+    }
+
+    .app-helmerts-cart-content-right-service-contact-phone a:hover {
+        border-bottom: none;
+        margin-bottom: 0.06rem;
     }
 }
