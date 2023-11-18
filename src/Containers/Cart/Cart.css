@@ -238,10 +238,10 @@
 }
 
 .app-helmerts-cart-content-right-service-deliver {
-    display: flex;
+    display: grid;
     width: 100%;
     height: 100%;
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr 1fr;
     justify-content: space-between;
     align-items: center;
     grid-gap: 1rem;
@@ -275,6 +275,10 @@
 .app-helmerts-cart-content-right-service-deliver-item-p {
     width: 100%;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .app-helmerts-cart-content-right-service-deliver-item-p p {
@@ -348,5 +352,24 @@
     .app-helmerts-cart-content-right-service-contact-phone a:hover {
         border-bottom: none;
         margin-bottom: 0.06rem;
+    }
+
+
+    .app-helmerts-cart-content-right-service-deliver {
+        grid-gap: 0.5rem;
+        padding: 1rem 0.5rem;
+    }
+
+
+    .app-helmerts-cart-content-right-service-deliver-item-p p {
+        font-size: 12px;
+        word-spacing: 0rem;
+        letter-spacing: -0.04rem;
+
+    }
+
+    .app-helmerts-cart-content-right-box-content-p p {
+        font-size: 13px;
+        word-spacing: -0.15rem;
     }
 }
