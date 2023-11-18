@@ -15,13 +15,16 @@ const Cart = () => {
     setcartLocal(saveCart);
   }, []);
   useEffect(() => {
-    console.log(cartLocal);
+    // console.log(cartLocal);
+    console.log();
   }, [cartLocal]);
   useEffect(() => {
     if (cartLocal != null) {
       setloadingCart(true);
     }
-    console.log(loadingCart);
+    // console.log(loadingCart);
+    console.log();
+
   }, [loadingCart]);
   // const productss = {
   //   name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
@@ -92,8 +95,6 @@ const Cart = () => {
       quantity: 5
 
     }
-
-
   ];
   return (
     <div id='cart' className='app-helmerts-cart'>
@@ -108,7 +109,7 @@ const Cart = () => {
               <div className='app-helmerts-cart-content-left-box'>
                 {
                   cartLocal.map((item, index) => (
-                    <CartItem product={item.product_details} size={item.size} quantity={item.quantity} key={item.product_details.id} />
+                    <CartItem product={item.product_details} size={item.size} quantity={item.quantity} key={item.product_details.id + item.size} />
                   ))
                 }
               </div>

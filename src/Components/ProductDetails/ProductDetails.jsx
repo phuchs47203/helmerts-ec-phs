@@ -132,7 +132,7 @@ const ProductDetails = () => {
 
     const addToCart = () => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        console.log('sizeSelectted: ', selectedSize);
+        // console.log('sizeSelectted: ', selectedSize);
         if (!selectedSize) {
             console.log('chưa chọn size');
             return;

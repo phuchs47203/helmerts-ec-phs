@@ -9,6 +9,14 @@
     padding: 1rem;
 }
 
+.app-helmerts-cart-cart_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
 .app-helmerts-cart-cart_item-box {
     display: grid;
     grid-template-columns: 8fr 2fr;

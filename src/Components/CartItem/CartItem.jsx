@@ -1,9 +1,38 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoIosClose } from "react-icons/io";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { images } from '../../Constants';
-import './CartItem.css'
+import './CartItem.css';
+
+
 const CartItem = ({ product, size, quantity }) => {
+
+    const [error, seterror] = useState('');
+    const [quantityChange, setquantityChange] = useState(quantity);
+    const updateQuantity = (value) => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existsProductIndex = cart.findIndex(item => (item.product_details
+            && item.product_details.id === product.id
+            && item.size === size));
+        cart[existsProductIndex].quantity = value;
+        localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    const handleIncrease = () => {
+        if (quantityChange >= 7) {
+            seterror("You reach the maximun number of products, contact us to buy more")
+            return;
+        }
+        setquantityChange(quantityChange + 1);
+    };
+    const handleDescrease = () => {
+        if (quantityChange == 1) {
+            return;
+        }
+        setquantityChange(quantityChange - 1);
+    };
+    useEffect(() => {
+        updateQuantity(quantityChange);
+    }, [quantityChange]);
     return (
         <div className='app-helmerts-cart-cart_item'>
             <div className='app-helmerts-cart-cart_item-box'>
@@ -25,9 +54,9 @@ const CartItem = ({ product, size, quantity }) => {
                                 </div>
                                 <div className='app-helmerts-cart-cart_item-left-main-content-description-quantity'>
                                     <div className='app-helmerts-cart-cart_item-left-main-content-description-quantity-box'>
-                                        <AiOutlineMinus />
-                                        <p>{quantity}</p>
-                                        <AiOutlinePlus />
+                                        <AiOutlineMinus onClick={() => handleDescrease()} />
+                                        <p>{quantityChange}</p>
+                                        <AiOutlinePlus onClick={() => handleIncrease()} />
                                     </div>
                                 </div>
                             </div>
@@ -41,6 +70,9 @@ const CartItem = ({ product, size, quantity }) => {
                     <p>đ12,450,000</p>
                 </div>
             </div>
+            {
+
+            }
         </div>
     )
 }
