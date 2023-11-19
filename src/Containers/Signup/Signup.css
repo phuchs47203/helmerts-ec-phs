@@ -418,4 +418,14 @@
         font-size: 12px;
     }
 
+    .app-helmerts-signup-heading p {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .link_ {
+        font-size: 12px;
+        text-align: center;
+    }
+
 }
