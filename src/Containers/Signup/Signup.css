@@ -409,4 +409,13 @@
         grid-gap: 1.5rem;
     }
 
+    .app-helmerts-signup-content-attribute-left-login_information-content-password-alert-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .app-helmerts-signup-content-confirm-content-p p {
+        font-size: 12px;
+    }
+
 }
