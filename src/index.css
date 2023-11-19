@@ -13,7 +13,7 @@
     --gradient-bg: linear-gradient(90deg, rgba(193, 77, 42, 1) 0%, rgba(153, 73, 197, 1) 100%);
     --gradient-bg-cta: linear-gradient(180deg, rgba(253, 214, 194, 1) 0%, rgba(230, 230, 196, 1) 100%);
 
-    --primary-color: #dceafa;
+    --primary-color: #ffffff;
     --secondary-color: #313bac;
     --black-color: #030303;
     --lightGray-color: #e4e4e4;
@@ -31,6 +31,8 @@
     --color-legal: rgb(250, 252, 241);
     --color-icon: rgb(96, 49, 34);
     --color-icon2: rgb(211, 238, 216);
+    --color-icon3: rgb(141, 86, 59);
+
     --liner-color: linear-gradient(90deg, rgba(160, 51, 19, 1) 0%, rgba(247, 210, 181, 1) 100%);
 }
 

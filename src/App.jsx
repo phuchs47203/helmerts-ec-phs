@@ -34,8 +34,8 @@ const App = () => {
 
             {/* <Route path='/information#return-exchange' element={<Information />} /> */}
             <Route path='/account' element={<Account />} />
-            <Route path='/account/signin' element={<Signin />} />
-            <Route path='/account/signup' element={<Signup />} />
+            <Route path='/signin' element={<Signin />} />
+            <Route path='/signup' element={<Signup />} />
             <Route path='/account/signout' element={<Signout />} />
             <Route path='/product/category/:productType' element={<Category />} />
             <Route path='/cart' element={<Cart />} />

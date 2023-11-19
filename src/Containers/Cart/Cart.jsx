@@ -105,7 +105,7 @@ const Cart = () => {
         <div className='app-helmerts-cart-content'>
           <div className='app-helmerts-cart-content-left'>
 
-            {/* {loadingCart &&
+            {loadingCart &&
               <div className='app-helmerts-cart-content-left-box'>
                 {
                   cartLocal.map((item, index) => (
@@ -113,9 +113,9 @@ const Cart = () => {
                   ))
                 }
               </div>
-            } */}
+            }
 
-            {
+            {/* {
               <div className='app-helmerts-cart-content-left-box'>
                 {
                   dataProducts.map((item, index) => (
@@ -123,7 +123,7 @@ const Cart = () => {
                   ))
                 }
               </div>
-            }
+            } */}
             {/* <CartItem product={productss} size='XL' quantity={1} key={3} />
             <CartItem product={product1} size='XXXL' quantity={3} key={4} />
             <CartItem product={product2} size='S' quantity={1} key={1} />

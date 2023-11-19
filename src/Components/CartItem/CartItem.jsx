@@ -25,7 +25,7 @@ const CartItem = ({ product, size, quantity }) => {
         setquantityChange(quantityChange + 1);
     };
     const handleDescrease = () => {
-        if (quantityChange == 1) {
+        if (quantityChange === 1) {
             return;
         }
         setquantityChange(quantityChange - 1);

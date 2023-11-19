@@ -169,9 +169,9 @@
     letter-spacing: 0.05rem;
 }
 
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
     .app-helmerts-cart-cart_item-box {
-        grid-gap: 0.5rem;
+        grid-gap: 1rem;
     }
 
-}
+} */
