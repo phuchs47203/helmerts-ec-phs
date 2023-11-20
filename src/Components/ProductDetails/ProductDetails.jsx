@@ -171,7 +171,7 @@ const ProductDetails = () => {
                     <div className='app-helmerts_product_details-content-main-left'>
                         <div className='app-helmerts_product_details-content_left-img'>
                             {/* <img src={product_details.imgurl} alt="" /> */}
-                            <img src={images.modular} alt="" />
+                            <img src={product_details.imgurl} alt="" />
 
                         </div>
 

@@ -616,6 +616,13 @@ p {
         grid-gap: 2rem;
     }
 
+    .app-helmerts_product_details-content_left-similar-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        grid-gap: 0.3rem;
+    }
+
 }
 
 @media screen and (max-width: 600px) {

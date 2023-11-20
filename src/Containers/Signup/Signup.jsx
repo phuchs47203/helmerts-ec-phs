@@ -65,6 +65,9 @@ const Signup = () => {
       console.log(valueEmail);
     }
   }, [valueEmail]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleChangeEmail = (event) => {
     setValueEmail(event.target.value);
   };

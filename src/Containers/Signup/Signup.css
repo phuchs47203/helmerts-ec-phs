@@ -320,8 +320,8 @@
 .app-helmerts-signup-content-confirm-content-p {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
     margin-left: -1rem;

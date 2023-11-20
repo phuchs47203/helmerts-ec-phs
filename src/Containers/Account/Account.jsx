@@ -1,11 +1,20 @@
 import React from 'react'
 import './Account.css'
 import { Signin, Signout, Signup } from '../../Containers';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes, useNavigate } from 'react-router-dom';
 const Account = () => {
+    const navigate = useNavigate();
     return (
         <div id='account'>
-            Account
+            <h1>Account</h1>
+
+            <p>
+                <Link to="/signup">Sigup</Link>
+            </p>
+            <p>
+                <Link to="/signin">Log in</Link>
+            </p>
+
             <Routes>
                 <Route path='/signin' element={<Signin />} />
                 <Route path='/signout' element={<Signout />} />
