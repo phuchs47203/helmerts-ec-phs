@@ -335,6 +335,34 @@
     font-weight: 400;
 }
 
+.app-helmerts-signup-content-error,
+.app-helmerts-signup-content-success,
+.app-helmerts-signup-content-wait {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.app-helmerts-signup-content-error p,
+.app-helmerts-signup-content-success p,
+.app-helmerts-signup-content-wait p {
+    font-family: var(--font-family);
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 500;
+    color: rgb(32, 168, 32);
+}
+
+.app-helmerts-signup-content-wait p {
+    color: var(--color-p);
+}
+
+.app-helmerts-signup-content-error p {
+    color: var(--color-h);
+}
+
 .app-helmerts-signup-content-confirm-button {
     display: flex;
     flex-direction: row;

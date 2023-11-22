@@ -8,45 +8,7 @@ import { images } from '../../Constants';
 import InforLink from '../InforLink/InforLink';
 import InterestedProduct from '../InterestedProduct/InterestedProduct';
 import OneProduct from '../OneProduct/OneProduct';
-const data = [
-    { name: "XXS", inch: "21.6", cm: "55", eur: "4", usa: "6 3/4", uk: "6 7/8" },
-    { name: "XS", inch: "22", cm: "56", eur: "4 1/2", usa: "6 7/8", uk: "7" },
-    { name: "S", inch: "22.4", cm: "57", eur: "5", usa: "7", uk: "7 1/8" },
-    { name: "M", inch: "22.8", cm: "58", eur: "5 1/2", usa: "7 1/8", uk: "7 1/4" },
-    { name: "L", inch: "23.2", cm: "59", eur: "6", usa: "7 1/4", uk: "7 3/8" },
-    { name: "XL", inch: "23.6", cm: "60", eur: "6 1/2", usa: "7 3/8", uk: "7 1/2" },
-    { name: "XXL", inch: "24", cm: "61", eur: "7", usa: "7 1/2", uk: "7 5/8" },
-    { name: "XXXL", inch: "25", cm: "62", eur: "7 1/2", usa: "7 3/4", uk: "7 3/4" },
 
-];
-const dataManual = [
-    {
-        title: '1. No Helmet Can Protect You Against All Possible Impacts At Low And High Speed',
-        content: 'In any case, in order to have maximum protection for your head, the helmet must fit perfectly and the locking system must be knotted securely under your chin. The helmet should allow you to have peripheral vision while you are wearing it. If your helmet is too big, it can move on your head when you are driving your motorcycle which can cause it to fall off in case of accident or even block your vision while driving. In the first case, your helmet would not protect your head in case of accident and this may result in a severe injury or even death. In the second case, if your vision is impaired, this can cause an accident.'
-    },
-    {
-        title: '2. Only Use A Helmet That Completely Holds Your Entire Head And Tighten The Locking System Securely Under Your Chin',
-        content: 'Open the helmet with your hands and put it on your head. Please check to see if the helmet fits correctly according to the list of points to be checked. Pull the straps of the locking system, not the mechanisms. Pulling the mechanisms could break them.'
-    },
-    {
-        title: '3. Clean Your Helmet Carefully Clean Your Helmet Carefully',
-        content: 'Never use hot or salty water, gasoline, glass cleaners or any other solvent. Your helmet could suffer severe damage due to these substances although no visible damage is appreciated externally. A helmet deteriorated or weakened by a cleaning agent may not offer protection in case of accident, causing severe injuries or death.'
-    },
-    {
-        title: '4. Never Modify Your Helmet',
-        content: 'Punching holes, cutting the shell or the material on the inside is very dangerous. Modifications may weaken the helmet. Modifying the locking system may also weaken the helmet and it may break in case of accident. Removing parts such as the chin-strap or other parts may leave cutting edges of the shell uncovered which may be very dangerous in case of accident. Always use original LS2 spare parts: screens, screws and other parts.'
-    },
-    {
-        title: '5. Do Not Mistreat Your Helmet',
-        content: 'Never drive with the helmet hanging from the locking system and do not hang the helmet on a support, for example, a mirror. Do not sit on the helmet and do not throw it. You should not expose the inside of the helmet to sun light or sources which generate excessive heat such as heaters, which may produce temperatures higher than 50ºC (122ºF). Avoid exposing the helmet to anti-mosquito sprays. If you do not treat your helmet correctly, the shell and the inside could weaken and it could lose its capacity to protect you in case of accident.'
-    },
-    {
-        title: '6. Do Not Repain The Helmet',
-        content: 'We do not recommend repainting the helmet given that the paint may damage the materials used in its manufacturing. A helmet damaged and weakened by a paint agent may not offer protection in case of accident, causing severe injuries or even death. If you need to paint your helmet, please contact your LS2 supplier.'
-    },
-
-
-];
 const ProductDetails = () => {
     const { id } = useParams();
     const [toggleSize, settoggleSize] = useState(false);
@@ -287,7 +249,7 @@ const ProductDetails = () => {
                 <div className='app-helmerts_product_details-content-addition'>
                     <div className='app-helmerts_product_details-content_left-size-guide'>
                         <div>
-                            <h3>Size Guide</h3>
+                            <h3>Helmerts Size Chart</h3>
                         </div>
                         <table>
                             <tr className='app-helmerts_product_details-content_left-size-guide-header'>
@@ -349,5 +311,43 @@ const ProductDetails = () => {
         </div>
     )
 }
+const data = [
+    { name: "XXS", inch: "21.6", cm: "55", eur: "4", usa: "6 3/4", uk: "6 7/8" },
+    { name: "XS", inch: "22", cm: "56", eur: "4 1/2", usa: "6 7/8", uk: "7" },
+    { name: "S", inch: "22.4", cm: "57", eur: "5", usa: "7", uk: "7 1/8" },
+    { name: "M", inch: "22.8", cm: "58", eur: "5 1/2", usa: "7 1/8", uk: "7 1/4" },
+    { name: "L", inch: "23.2", cm: "59", eur: "6", usa: "7 1/4", uk: "7 3/8" },
+    { name: "XL", inch: "23.6", cm: "60", eur: "6 1/2", usa: "7 3/8", uk: "7 1/2" },
+    { name: "XXL", inch: "24", cm: "61", eur: "7", usa: "7 1/2", uk: "7 5/8" },
+    { name: "XXXL", inch: "25", cm: "62", eur: "7 1/2", usa: "7 3/4", uk: "7 3/4" },
 
+];
+const dataManual = [
+    {
+        title: '1. No Helmet Can Protect You Against All Possible Impacts At Low And High Speed',
+        content: 'In any case, in order to have maximum protection for your head, the helmet must fit perfectly and the locking system must be knotted securely under your chin. The helmet should allow you to have peripheral vision while you are wearing it. If your helmet is too big, it can move on your head when you are driving your motorcycle which can cause it to fall off in case of accident or even block your vision while driving. In the first case, your helmet would not protect your head in case of accident and this may result in a severe injury or even death. In the second case, if your vision is impaired, this can cause an accident.'
+    },
+    {
+        title: '2. Only Use A Helmet That Completely Holds Your Entire Head And Tighten The Locking System Securely Under Your Chin',
+        content: 'Open the helmet with your hands and put it on your head. Please check to see if the helmet fits correctly according to the list of points to be checked. Pull the straps of the locking system, not the mechanisms. Pulling the mechanisms could break them.'
+    },
+    {
+        title: '3. Clean Your Helmet Carefully Clean Your Helmet Carefully',
+        content: 'Never use hot or salty water, gasoline, glass cleaners or any other solvent. Your helmet could suffer severe damage due to these substances although no visible damage is appreciated externally. A helmet deteriorated or weakened by a cleaning agent may not offer protection in case of accident, causing severe injuries or death.'
+    },
+    {
+        title: '4. Never Modify Your Helmet',
+        content: 'Punching holes, cutting the shell or the material on the inside is very dangerous. Modifications may weaken the helmet. Modifying the locking system may also weaken the helmet and it may break in case of accident. Removing parts such as the chin-strap or other parts may leave cutting edges of the shell uncovered which may be very dangerous in case of accident. Always use original LS2 spare parts: screens, screws and other parts.'
+    },
+    {
+        title: '5. Do Not Mistreat Your Helmet',
+        content: 'Never drive with the helmet hanging from the locking system and do not hang the helmet on a support, for example, a mirror. Do not sit on the helmet and do not throw it. You should not expose the inside of the helmet to sun light or sources which generate excessive heat such as heaters, which may produce temperatures higher than 50ºC (122ºF). Avoid exposing the helmet to anti-mosquito sprays. If you do not treat your helmet correctly, the shell and the inside could weaken and it could lose its capacity to protect you in case of accident.'
+    },
+    {
+        title: '6. Do Not Repain The Helmet',
+        content: 'We do not recommend repainting the helmet given that the paint may damage the materials used in its manufacturing. A helmet damaged and weakened by a paint agent may not offer protection in case of accident, causing severe injuries or even death. If you need to paint your helmet, please contact your LS2 supplier.'
+    },
+
+
+];
 export default ProductDetails

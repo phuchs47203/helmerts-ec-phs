@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Signup.css'
-import { Link } from 'react-router-dom'
+import { Link, json, useNavigate } from 'react-router-dom'
 import TextField from '@mui/material/TextField';
 import Autocomplete from '@mui/material/Autocomplete';
 import PhoneInput from 'react-phone-input-2'
@@ -18,6 +18,7 @@ import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
+import axios from 'axios';
 const VisuallyHiddenInput = styled('input')({
   clip: 'rect(0 0 0 0)',
   clipPath: 'inset(50%)',
@@ -31,6 +32,7 @@ const VisuallyHiddenInput = styled('input')({
 });
 
 const Signup = () => {
+  const URL_REQUEST = "http://localhost:8000/api/register";
   const defaultProps = {
     options: top7OptionTitle,
     getOptionLabel: (option) => option.name,
@@ -42,35 +44,51 @@ const Signup = () => {
     options: top6OptionLocation,
     getOptionLabel: (option) => option.country,
   };
+  const navigate = useNavigate();
   const [valueEmail, setValueEmail] = useState('');
   const [valuePassword, setValuePassword] = useState(null);
   const [valueTitle, setValueTitle] = useState(null);
   const [valueCountry, setValueCountry] = useState(null);
   const [firstName, setfirstName] = useState('');
   const [lastName, setlastName] = useState('');
+  const [phoneNumber, setphoneNumber] = useState(null);
+  const [fileURL, setfileURL] = useState("");
   const [selectedFile, setSelectedFile] = React.useState(null);
-  const [dateOfBirth, setdateOfBirth] = useState('');
+  const [dateOfBirth, setdateOfBirth] = useState(null);
   const [valueDate, setValueDate] = React.useState(dayjs('2000-07-27'));
   // const [valueLocation, setValueLocation] = useState(null);
   const [valueAddressDetails, setvalueAddressDetails] = useState('');
   const [valueCity, setvalueCity] = useState('');
   const [valueDistrict, setvalueDistrict] = useState('');
-  useEffect(() => {
-    if (valueTitle !== null) {
-      console.log(valueTitle.name);
-    }
-  }, [valueTitle]);
-  useEffect(() => {
-    if (valueEmail !== null) {
-      console.log(valueEmail);
-    }
-  }, [valueEmail]);
+  // useEffect(() => {
+  //   if (valueTitle !== null) {
+  //     console.log(valueTitle.name);
+  //   }
+  // }, [valueTitle]);
+  // useEffect(() => {
+  //   if (valuePassword !== null) {
+  //     console.log(valuePassword);
+  //   }
+  // }, [valuePassword]);
+  // useEffect(() => {
+  //   if (valueEmail !== null) {
+  //     console.log(valueEmail);
+  //   }
+  // }, [valueEmail]);
+  // useEffect(() => {
+  //   if (selectedFile !== null) {
+  //     console.log(selectedFile);
+  //   }
+  // }, [selectedFile]);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   const handleChangeEmail = (event) => {
     setValueEmail(event.target.value);
   };
+  const handleChangePassword = (event) => {
+    setValuePassword(event.target.value);
+  }
   const handleChangeFirstName = (event) => {
     setfirstName(event.target.value);
   };
@@ -80,13 +98,14 @@ const Signup = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
+    setSelectedFile(file);
     if (file) {
-      console.log("has file");
+      // console.log("has file");
 
       reader.readAsDataURL(file);
       reader.onload = () => {
-        setSelectedFile(reader.result);
-        console.log(selectedFile);
+        setfileURL(reader.result);
+        // console.log(selectedFile);
       }
     }
   }
@@ -100,40 +119,133 @@ const Signup = () => {
   const handleChangeDistrict = (event) => {
     setvalueDistrict(event.target.value);
   };
-
-  const commonTextFieldStyle = {
-    backgroundColor: 'white',
-    width: '100%',
-    borderRadius: 'none',
-    border: '0px solid var(--color-p)',
-    outline: 'none',
-    background: 'transparent',
+  const handleChangeDateOfBirth = (event) => {
+    setdateOfBirth(event.target.value);
   };
-
-  const commonInputLabelStyle = {
-    root: 'custom-input-label',
-  };
-
-  const commonInputPropsStyle = {
-    color: 'var(--color-p)',
-    backgroundColor: 'transparent',
-    borderRadius: '0rem',
-    border: '0rem solid white',
-    outline: 'none',
-    fontSize: '13px',
-    background: 'transparent',
-    width: '100%',
-  };
-
-  const commonInputClasses = {
-    root: 'custom-input-root',
-    notchedOutline: 'custom-notched-outline',
-    focused: 'custom-focused',
+  const handleChangePhoneNumber = (event) => {
+    setphoneNumber(event.target.value);
   };
 
 
+  const [errorEmail, seterrorEmail] = useState('');
+  const [registerSuccess, setregisterSuccess] = useState('');
+  const [pleaseWait, setpleaseWait] = useState('');
+  const URL_LOGOUT = "http://localhost:8000/api/logout";
+  const [accessTokenLogout, setaccessTokenLogout] = useState(null);
+  const Loggout = () => {
+    try {
+      const storedAccessToken = localStorage.getItem('accessToken');
+      const parsedAccessToken = JSON.parse(storedAccessToken);
+      setaccessTokenLogout(parsedAccessToken.token);
+      console.log("token:", parsedAccessToken.token);
+      axios.post(URL_LOGOUT, null, {
+        headers: {
+          Accept: "application/json",
+          Authorization: `Bearer ${parsedAccessToken.token}`
+        }
+      })
+        .then(response => {
+          // console.log(response.data);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+
+      localStorage.removeItem('accessToken');
+
+    } catch (error) {
+      return error;
+    }
+
+  }
+  const saveUser = () => {
+    const formData = new FormData();
+    setpleaseWait('Please Wait ...!');
+    seterrorEmail('');
+    const formattedDate = dayjs(valueDate).format('YYYY-MM-DD');
+    console.log(formattedDate);
 
 
+    formData.append('first_name', firstName);
+    formData.append('last_name', lastName);
+    formData.append('email', valueEmail);
+    formData.append('password', valuePassword);
+    formData.append('phone_number', phoneNumber);
+    formData.append('country', valueCountry.country);
+    formData.append('city', valueCity);
+    formData.append('district', valueDistrict);
+    formData.append('address_details', valueAddressDetails);
+    formData.append('imgurl', selectedFile);
+    formData.append('dateofbirth', formattedDate);
+    formData.append('password_confirmation', valuePassword);
+
+    // for (const [key, value] of formData.entries()) {
+    //   console.log(key, value);
+    // }
+
+    axios
+      .post(URL_REQUEST, formData,
+        {
+          headers: { Accept: "application/json" },
+        })
+      .then((response) => {
+        // console.log(response.data);
+        const { token, user } = response.data;
+        // console.log(user.role);
+        // console.log(token);
+        const accessToken = {
+          token: token,
+          expiration_time: new Date(new Date().getTime() + 30 * 60 * 1000), // Thời gian hết hạn sau 30 phút
+          user: user
+        }
+        Loggout();
+        localStorage.setItem('accessToken', JSON.stringify(accessToken));
+        setregisterSuccess('Register Successfully!');
+        setTimeout(() => {
+          navigate(`/account`);
+        }, 1500);
+      })
+      .catch((error) => {
+        console.log(error);
+        seterrorEmail('The Email Address Already Been Taken!');
+
+      });
+    const storedAccessToken = localStorage.getItem('accessToken');
+
+    // if (storedAccessToken) {
+    //   const parsedAccessToken = JSON.parse(storedAccessToken);
+    //   // console.log("token saved: ")
+    //   // console.log(parsedAccessToken.token); // Xuất giá trị của trường "token"
+    //   // console.log(parsedAccessToken.expiration_time); // Xuất giá trị của trường "expiration_time"
+    //   // console.log(parsedAccessToken.user); // Xuất giá trị của trường "role"
+    // }
+
+    // const storedAccessToken = localStorage.getItem('accessToken');
+
+    // if (storedAccessToken) {
+    //   const parsedAccessToken = JSON.parse(storedAccessToken);
+    //   const expirationTime = new Date(parsedAccessToken.expiration_time);
+    //   console.log("now", new Date());
+    //   console.log("expriation time:", expirationTime);
+
+    //   if (new Date() > expirationTime) {
+
+    //     console.log('Token has expired. Need to log in again.');
+    //   } else {
+    //     console.log('Token is still valid.');
+    //   }
+    // }
+
+
+  };
+  useEffect(() => {
+    seterrorEmail('');
+    setpleaseWait('');
+
+  }, [registerSuccess]);
+  useEffect(() => {
+    setpleaseWait('');
+  }, [errorEmail]);
   return (
     <div id='signup' className='app-helmerts-signup-box'>
       <div className='app-helmerts-signup'>
@@ -219,6 +331,8 @@ const Signup = () => {
                         label="Password"
                         type="password"
                         autoComplete="current-password"
+                        value={valuePassword}
+                        onChange={handleChangePassword}
                         style={commonTextFieldStyle}
                         InputLabelProps={{
                           classes: commonInputLabelStyle,
@@ -354,8 +468,8 @@ const Signup = () => {
                       //  accept='image/*'
                       />
                     </Button>
-                    {selectedFile && (
-                      <img src={selectedFile} className='imge-style' alt="no image" />
+                    {fileURL && (
+                      <img src={fileURL} className='imge-style' alt="no image" />
                     )
 
                     }
@@ -364,6 +478,8 @@ const Signup = () => {
                   <div className='app-helmerts-signup-content-attribute-left-personal_information-content-item'>
                     <PhoneInput
                       className="phone_style"
+                      value={phoneNumber}
+                      onChange={(newValue) => setphoneNumber(newValue)}
                       inputStyle={{
                         width: '100%', // Thiết lập chiều dài của phần nhập số điện thoại là 100%
                         backgroundColor: 'var(--color-bg)', // Thiết lập màu nền là yellow
@@ -517,8 +633,32 @@ const Signup = () => {
                 </p>
               </div>
             </div>
+            {pleaseWait &&
+              <div className='app-helmerts-signup-content-wait'>
+                <p>
+                  {pleaseWait}
+                </p>
+              </div>
+            }
+            {errorEmail &&
+              <div className='app-helmerts-signup-content-error'>
+                <p>
+                  {errorEmail}
+                </p>
+              </div>
+            }
+            {registerSuccess &&
+              <div className='app-helmerts-signup-content-success'>
+                <p>
+                  {registerSuccess}
+                </p>
+              </div>
+            }
             <div className='app-helmerts-signup-content-confirm-button'>
-              <button>Create an account</button>
+              <button
+                className='btn-transition'
+                onClick={saveUser}
+              >Create an account</button>
             </div>
           </div>
         </div>
@@ -569,4 +709,33 @@ const top7OptionTitle = [
     name: "Hon."
   },
 ];
+const commonTextFieldStyle = {
+  backgroundColor: 'white',
+  width: '100%',
+  borderRadius: 'none',
+  border: '0px solid var(--color-p)',
+  outline: 'none',
+  background: 'transparent',
+};
+
+const commonInputLabelStyle = {
+  root: 'custom-input-label',
+};
+
+const commonInputPropsStyle = {
+  color: 'var(--color-p)',
+  backgroundColor: 'transparent',
+  borderRadius: '0rem',
+  border: '0rem solid white',
+  outline: 'none',
+  fontSize: '13px',
+  background: 'transparent',
+  width: '100%',
+};
+
+const commonInputClasses = {
+  root: 'custom-input-root',
+  notchedOutline: 'custom-notched-outline',
+  focused: 'custom-focused',
+};
 export default Signup
