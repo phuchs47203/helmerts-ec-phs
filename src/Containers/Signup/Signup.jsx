@@ -10,8 +10,6 @@ import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
-
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
@@ -535,7 +533,6 @@ const Signup = () => {
                     value={valueCountry}
                     onChange={(event, newValue) => {
                       setValueCountry(newValue);
-
                     }}
                     style={commonTextFieldStyle}
                     InputLabelProps={{

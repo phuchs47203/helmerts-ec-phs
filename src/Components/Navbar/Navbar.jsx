@@ -24,25 +24,25 @@ const MenuProductCategories = () => (
       <Link to="/product" className='menu-link' >All Products</Link>
     </p>
     <p>
-      <a href={`/product/category/${types[0]}`} className='menu-link' >Full Face</a>
+      <a href={`/product-filter/all=0&cat_id=1&keyword=&sort=0`} className='menu-link' >Full Face</a>
     </p>
     <p>
-      <a href={`/product/category/${types[1]}`} className='menu-link' >Open Face(3/4)</a>
+      <a href={`/product-filter/all=0&cat_id=2&keyword=&sort=0`} className='menu-link' >Half Helmet</a>
     </p>
     <p>
-      <a href={`/product/category/${types[2]}`} className='menu-link' >Modular</a>
+      <a href={`/product-filter/all=0&cat_id=3&keyword=&sort=0`} className='menu-link' >Open Face(3/4)</a>
     </p>
     <p>
-      <a href={`/product/category/${types[3]}`} className='menu-link' >Half Helmet</a>
+      <a href={`/product-filter/all=0&cat_id=4&keyword=&sort=0`} className='menu-link' >Modular</a>
     </p>
     <p>
-      <a href={`/product/category/${types[4]}`} className='menu-link' >Bicycle Helmet</a>
+      <a href={`/product-filter/all=0&cat_id=5&keyword=&sort=0`} className='menu-link' >Bicycle Helmet</a>
     </p>
     <p>
-      <a href={`/product/category/${types[5]}`} className='menu-link' >Children's Helmet</a>
+      <a href={`/product-filter/all=0&cat_id=6&keyword=&sort=0`} className='menu-link' >Children's Helmet</a>
     </p>
     <p>
-      <a href={`/product/category/${types[6]}`} className='menu-link' >Accessories</a>
+      <a href={`/product-filter/all=0&cat_id=7&keyword=&sort=0`} className='menu-link' >Accessories</a>
     </p>
   </>
 )

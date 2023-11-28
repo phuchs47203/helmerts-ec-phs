@@ -59,6 +59,37 @@
     grid-gap: 1rem;
 }
 
+.app-helmerts-cart-content-left-check_out {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+    grid-gap: 1rem;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.app-helmerts-cart-content-left-check_out button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #444;
+    font-family: var(--font-family);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+.app-helmerts-cart-content-left-check_out button:hover{
+    color: var(--color-h);
+}
+
 .app-helmerts-cart-content-left-total_price-subtotal,
 .app-helmerts-cart-content-left-total_price-total {
     display: flex;

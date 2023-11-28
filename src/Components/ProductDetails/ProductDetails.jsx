@@ -13,6 +13,8 @@ const ProductDetails = () => {
     const { id } = useParams();
     const [toggleSize, settoggleSize] = useState(false);
     const URL_PRODUCT_ID = "http://localhost:8000/api/products/" + id;
+    const URL_PRODUCT_SIZE = "http://localhost:8000/api/product-list-size/" + id;
+
     const [loading, setloading] = useState(true);
     const [product_details, setproduct_details] = useState({});
     const [toggleErrSize, settoggleErrSize] = useState("");
@@ -57,7 +59,18 @@ const ProductDetails = () => {
         };
         fetchData();
     }, []);
-
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(URL_PRODUCT_SIZE);
+                setListSize(response.data);
+                // console.log(response.data);
+            } catch (error) {
+                console.log(error);
+            }
+        };
+        fetchData();
+    }, []);
     const URL_PRODUCT_INTERESTED = "http://localhost:8000/api/products/interested/";
 
     const [productInterested, setproductInterested] = useState([]);
@@ -89,7 +102,7 @@ const ProductDetails = () => {
         setselectedSize(size);
     };
     useEffect(() => {
-        console.log(selectedSize);
+        // console.log(selectedSize);
     }, [selectedSize]);
 
     const addToCart = () => {
@@ -214,7 +227,7 @@ const ProductDetails = () => {
                                     {toggleSize &&
                                         <div className='app-helmerts_product_details-content_right-content-size-content'>
 
-                                            {ListSize.map((item, index) => (
+                                            {ListSize.filter(item => item.available > 0).map((item, index) => (
                                                 <div
                                                     key={index}
                                                     className={`app-helmerts_product_details-content_right-content-size-s  ${selectedSize === item.size ? 'selected' : ''}`}

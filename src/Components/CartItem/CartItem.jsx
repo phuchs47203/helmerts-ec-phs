@@ -5,7 +5,7 @@ import { images } from '../../Constants';
 import './CartItem.css';
 
 
-const CartItem = ({ product, size, quantity }) => {
+const CartItem = ({ product, size, quantity, price, updateCartLocal }) => {
 
     const [error, seterror] = useState('');
     const [quantityChange, setquantityChange] = useState(quantity);
@@ -17,8 +17,19 @@ const CartItem = ({ product, size, quantity }) => {
         cart[existsProductIndex].quantity = value;
         localStorage.setItem('cart', JSON.stringify(cart));
     }
+    const deleteItemCart = () => {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const existsProductIndex = cart.findIndex(item => (item.product_details
+            && item.product_details.id === product.id
+            && item.size === size));
+        if (existsProductIndex !== -1) {
+            cart.splice(existsProductIndex, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+        }
+        updateCartLocal(cart);
+    }
     const handleIncrease = () => {
-        if (quantityChange >= 7) {
+        if (quantityChange >= 5) {
             seterror("You reach the maximun number of products, contact us to buy more")
             return;
         }
@@ -32,6 +43,8 @@ const CartItem = ({ product, size, quantity }) => {
     };
     useEffect(() => {
         updateQuantity(quantityChange);
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartLocal(cart);
     }, [quantityChange]);
     return (
         <div className='app-helmerts-cart-cart_item'>
@@ -44,7 +57,7 @@ const CartItem = ({ product, size, quantity }) => {
                         <div className='app-helmerts-cart-cart_item-left-main-content'>
                             <div className='app-helmerts-cart-cart_item-left-main-content-name'>
                                 <h1>
-                                    Full Face Helmet white FT985 2023 Paint Strongly
+                                    {product.name}
                                 </h1>
                             </div>
                             <div className='app-helmerts-cart-cart_item-left-main-content-description'>
@@ -66,8 +79,8 @@ const CartItem = ({ product, size, quantity }) => {
 
                 </div>
                 <div className='app-helmerts-cart-cart_item-right'>
-                    <IoIosClose />
-                    <p>đ12,450,000</p>
+                    <IoIosClose onClick={deleteItemCart} />
+                    <p>₫ {(price * quantityChange).toLocaleString()}</p>
                 </div>
             </div>
             {

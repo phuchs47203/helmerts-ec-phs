@@ -14,10 +14,8 @@ const Cart = () => {
     const saveCart = JSON.parse(localStorage.getItem('cart')) || [];
     setcartLocal(saveCart);
   }, []);
-  useEffect(() => {
-    // console.log(cartLocal);
-    console.log();
-  }, [cartLocal]);
+
+
   useEffect(() => {
     if (cartLocal != null) {
       setloadingCart(true);
@@ -52,6 +50,44 @@ const Cart = () => {
   //   id: 1,
   //   imgurl: images.openface
   // };
+  const [total_price, settotal_price] = useState(0);
+  const [sub_total_price, setsub_total_price] = useState(0);
+  const [shipping_fee, setshipping_fee] = useState(0);
+  let SubtotlaPrice = 0;
+  let TotalPrice = 0;
+  let ShipphingFee = 0
+  const updateCartLocal = (cart) => {
+    setcartLocal(cart);
+  };
+  useEffect(() => {
+    let quantity_ship = 0;
+    if (cartLocal === null) {
+      SubtotlaPrice = 0;
+      TotalPrice = 0;
+      console.log("cart is null");
+    }
+    else {
+      cartLocal.forEach(element => {
+        SubtotlaPrice += element.product_details.sale_price * element.quantity;
+        TotalPrice += element.product_details.sale_price * element.quantity;
+        ShipphingFee += element.quantity * 30000;
+        quantity_ship += element.quantity;
+      });
+    }
+    setsub_total_price(SubtotlaPrice);
+    setshipping_fee(ShipphingFee);
+    if (quantity_ship > 10 || SubtotlaPrice > 10000000) {
+      setshipping_fee(0);
+    }
+    console.log("quantity: ", quantity_ship);
+
+    // console.log('ShppingFEEE', ShipphingFee);
+    // console.log("shipping fee", shipping_fee);
+  }, [cartLocal]);
+  useEffect(() => {
+    settotal_price(sub_total_price + shipping_fee);
+  }, [shipping_fee]);
+
   const dataProducts = [
     {
       name: 'FULL FACE HELMET WHITE FT985 2023 PAINT STRONGLY',
@@ -109,7 +145,12 @@ const Cart = () => {
               <div className='app-helmerts-cart-content-left-box'>
                 {
                   cartLocal.map((item, index) => (
-                    <CartItem product={item.product_details} size={item.size} quantity={item.quantity} key={item.product_details.id + item.size} />
+                    <CartItem product={item.product_details}
+                      size={item.size}
+                      quantity={item.quantity}
+                      price={item.product_details.sale_price}
+                      updateCartLocal={updateCartLocal}
+                      key={item.product_details.id + item.size} />
                   ))
                 }
               </div>
@@ -142,13 +183,19 @@ const Cart = () => {
             <div className='app-helmerts-cart-content-left-total_price'>
               <div className='app-helmerts-cart-content-left-total_price-subtotal'>
                 <h1>SUBTOTAL</h1>
-                <p> đ 9,500,000</p>
+                <p> ₫ {sub_total_price.toLocaleString()}</p>
               </div>
-
+              <div className='app-helmerts-cart-content-left-total_price-subtotal'>
+                <h1>Shipping Fee</h1>
+                <p> ₫ {shipping_fee.toLocaleString()}</p>
+              </div>
               <div className='app-helmerts-cart-content-left-total_price-total'>
                 <h1>TOTAL</h1>
-                <p> đ 9,500,000</p>
+                <p> ₫ {total_price.toLocaleString()}</p>
               </div>
+            </div>
+            <div className='app-helmerts-cart-content-left-check_out'>
+              <button className='btn-transition'>Check Out</button>
             </div>
           </div>
           <div className='app-helmerts-cart-content-right'>
@@ -210,7 +257,6 @@ const Cart = () => {
                 </div>
               </div>
               <div className='app-helmerts-cart-content-right-service-payment'>
-
               </div>
             </div>
 
