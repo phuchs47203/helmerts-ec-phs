@@ -3,6 +3,7 @@ import { IoIosClose } from "react-icons/io";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { images } from '../../Constants';
 import './CartItem.css';
+import { useNavigate } from 'react-router-dom';
 
 
 const CartItem = ({ product, size, quantity, price, updateCartLocal }) => {
@@ -46,12 +47,18 @@ const CartItem = ({ product, size, quantity, price, updateCartLocal }) => {
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         updateCartLocal(cart);
     }, [quantityChange]);
+    const navigate = useNavigate();
+    const handleClickProduct = () => {
+        navigate('/product/' + product.id);
+    }
     return (
         <div className='app-helmerts-cart-cart_item'>
             <div className='app-helmerts-cart-cart_item-box'>
                 <div className='app-helmerts-cart-cart_item-left'>
                     <div className='app-helmerts-cart-cart_item-left-main'>
-                        <div className='app-helmerts-cart-cart_item-left-main-img'>
+                        <div
+                            onClick={handleClickProduct}
+                            className='app-helmerts-cart-cart_item-left-main-img'>
                             <img src={product.imgurl} alt="" />
                         </div>
                         <div className='app-helmerts-cart-cart_item-left-main-content'>
@@ -62,7 +69,7 @@ const CartItem = ({ product, size, quantity, price, updateCartLocal }) => {
                             </div>
                             <div className='app-helmerts-cart-cart_item-left-main-content-description'>
                                 <div className='app-helmerts-cart-cart_item-left-main-content-description-text'>
-                                    <p>Color: beige glaise</p>
+                                    <p>Color: {product.color}</p>
                                     <p>Size: {size}</p>
                                 </div>
                                 <div className='app-helmerts-cart-cart_item-left-main-content-description-quantity'>

@@ -15,6 +15,14 @@ export { default as PersonalInformation } from './PersonalInformation/PersonalIn
 export { default as ProductDetails } from './ProductDetails/ProductDetails.jsx';
 export { default as InterestedProduct } from './InterestedProduct/InterestedProduct.jsx';
 export { default as CartItem } from './CartItem/CartItem.jsx';
+export { default as OrderDetail } from './OrderDetail/OrderDetail.jsx';
+export { default as CheckOut } from './CheckOut/CheckOut.jsx'
+export { default as ProductCheckout } from './ProductCheckout/ProductCheckout.jsx'
+export { default as ListOrder } from './ListOrder/ListOrder.jsx';
+export { default as UpdatePersonalInformation } from './UpdatePersonalInformation/UpdatePersonalInformation.jsx';
+
+
+
 
 
 

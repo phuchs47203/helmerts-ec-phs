@@ -17,6 +17,15 @@
     min-width: 250px;
 }
 
+/* .input__ input {
+    input:-internal-autofill-selected {
+        appearance: menulist-button;
+        background-image: none !important;
+        background-color: -internal-light-dark(rgb(232, 240, 254), rgba(70, 90, 126, 0.4)) !important;
+        color: fieldtext !important;
+    }
+} */
+
 .app-helmerts-signin-heading {
     display: flex;
     flex-direction: column;
@@ -170,9 +179,10 @@
     color: rgb(34, 133, 163);
     border-bottom: none;
 }
+
 @media screen and (max-width:600px) {
     .app-helmerts-signin-heading h1 {
         font-size: 20px;
     }
-    
+
 }

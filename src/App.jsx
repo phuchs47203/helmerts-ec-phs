@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Navbar, Footer, SlideIntro, CTA, ProductDetails } from './Components';
-import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup, Category, ClientService, ProductFilter } from './Containers';
+import { Navbar, Footer, SlideIntro, CTA, ProductDetails, CheckOut } from './Components';
+import { Account, Cart, Home, Information, Introduce, Product, Signin, Signout, Signup, Category, ClientService, ProductFilter, ChatBotOpenAI } from './Containers';
 
 const App = () => {
   return (
@@ -11,6 +11,7 @@ const App = () => {
       <div className='helmerst-app'>
         <div className='helmerst-app-navbar'>
           <Navbar />
+          <ChatBotOpenAI />
         </div>
         <Routes>
           <Route path='/' element={<SlideIntro />} />
@@ -40,6 +41,7 @@ const App = () => {
             <Route path='/product/category/:productType' element={<Category />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/client-service' element={<ClientService />} />
+            <Route path='/check-out' element={<CheckOut />} />
           </Routes>
         </div>
         <div className='helmerst-app-cta section__padding'>

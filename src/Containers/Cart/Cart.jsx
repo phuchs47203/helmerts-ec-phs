@@ -6,6 +6,7 @@ import { MdOutlineLocalPhone } from "react-icons/md";
 import { LiaTruckMovingSolid } from "react-icons/lia";
 import { LiaExchangeAltSolid } from "react-icons/lia";
 import { BsFillBagCheckFill } from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const [cartLocal, setcartLocal] = useState([]);
@@ -132,6 +133,10 @@ const Cart = () => {
 
     }
   ];
+  const navigate = useNavigate();
+  const linkToCheckOut = () => {
+    navigate('/check-out');
+  }
   return (
     <div id='cart' className='app-helmerts-cart'>
       <div className='app-helmerts-cart-box'>
@@ -155,31 +160,6 @@ const Cart = () => {
                 }
               </div>
             }
-
-            {/* {
-              <div className='app-helmerts-cart-content-left-box'>
-                {
-                  dataProducts.map((item, index) => (
-                    <CartItem product={item} size={item.size} quantity={item.quantity} key={2} />
-                  ))
-                }
-              </div>
-            } */}
-            {/* <CartItem product={productss} size='XL' quantity={1} key={3} />
-            <CartItem product={product1} size='XXXL' quantity={3} key={4} />
-            <CartItem product={product2} size='S' quantity={1} key={1} />
-            <CartItem product={product3} size='L' quantity={1} key={2} />
-            <CartItem product={product4} size='SX' quantity={2} key={5} /> */}
-
-            {/* {loadingCart &&
-              <div className='app-helmerts-cart-content-left-box'>
-                {
-                  cartLocal.map((item, index) => (
-                    <CartItem product={item.product_details} size={item.size} quantity={item.quantity} key={item.product_details.id} />
-                  ))
-                }
-              </div>
-            } */}
             <div className='app-helmerts-cart-content-left-total_price'>
               <div className='app-helmerts-cart-content-left-total_price-subtotal'>
                 <h1>SUBTOTAL</h1>
@@ -195,7 +175,9 @@ const Cart = () => {
               </div>
             </div>
             <div className='app-helmerts-cart-content-left-check_out'>
-              <button className='btn-transition'>Check Out</button>
+              <button
+                onClick={linkToCheckOut}
+                className='btn-transition'>Check Out</button>
             </div>
           </div>
           <div className='app-helmerts-cart-content-right'>

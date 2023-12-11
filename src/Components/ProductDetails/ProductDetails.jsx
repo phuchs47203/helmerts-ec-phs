@@ -98,8 +98,10 @@ const ProductDetails = () => {
     }, []); // Gọi scrollTo khi component mount
 
     const [selectedSize, setselectedSize] = useState('');
-    const handleSizeClick = (size) => {
+    const [sizeID, setsizeID] = useState(null);
+    const handleSizeClick = (size, sizeID) => {
         setselectedSize(size);
+        setsizeID(sizeID);
     };
     useEffect(() => {
         // console.log(selectedSize);
@@ -126,7 +128,7 @@ const ProductDetails = () => {
             existItem.quantity++;
         }
         else {
-            cart.push({ product_details, size: selectedSize, quantity: 1 });
+            cart.push({ product_details, size: selectedSize, size_id: sizeID, quantity: 1 });
         }
         setselectedSize('');
         localStorage.setItem('cart', JSON.stringify(cart));
@@ -231,7 +233,7 @@ const ProductDetails = () => {
                                                 <div
                                                     key={index}
                                                     className={`app-helmerts_product_details-content_right-content-size-s  ${selectedSize === item.size ? 'selected' : ''}`}
-                                                    onClick={() => handleSizeClick(item.size)}
+                                                    onClick={() => handleSizeClick(item.size, item.id)}
                                                 >
                                                     <p>{item.size}</p>
                                                 </div>

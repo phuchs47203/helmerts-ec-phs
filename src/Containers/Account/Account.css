@@ -1,0 +1,232 @@
+.app-helmerts-account {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-top: -1rem;
+}
+
+.app-helmerts-account-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.app-helmerts-account-denied {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+    grid-gap: 1rem;
+}
+
+.app-helmerts-account-denied-signin {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts-account-denied-title {
+    font-family: var(--font-family);
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 300;
+    color: white;
+    text-transform: capitalize;
+    text-align: center;
+    padding: 1rem;
+    width: 100%;
+    background-color: #444;
+}
+
+.app-helmerts-account-content {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.app-helmerts-account-content-left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    grid-gap: 1rem;
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+    height: fit-content;
+    padding-bottom: 3rem;
+    border-radius: 0.3rem;
+}
+
+.app-helmerts-account-content-left-profile {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    grid-gap: 1rem;
+    height: 100%;
+}
+
+.app-helmerts-account-content-left-profile-img {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 80px;
+    height: 100%;
+}
+
+.app-helmerts-account-content-left-profile-img img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.app-helmerts-account-content-left-description {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* max-height: 80px; */
+    height: 80px;
+    justify-content: space-between;
+}
+
+.app-helmerts-account-content-left-description-name {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.app-helmerts-account-content-left-description-name p {
+    font-family: var(--font-family);
+    color: #444;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.app-helmerts-account-content-left-description-button {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 0.5rem;
+    align-items: center;
+    width: fit-content;
+    padding: 0.2rem 1rem;
+    padding-left: 0rem;
+    cursor: pointer;
+}
+
+.app-helmerts-account-content-left-description-button p,
+.app-helmerts-account-content-left-link-item p {
+    font-family: var(--font-family);
+    color: #444;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.app-helmerts-account-content-left-description-button svg,
+.app-helmerts-account-content-left-link-item svg {
+    color: var(--color-icon);
+}
+
+.app-helmerts-account-content-left-description-button:hover p,
+.app-helmerts-account-content-left-description-button:hover svg,
+.app-helmerts-account-content-left-link-item:hover p,
+.app-helmerts-account-content-left-link-item:hover svg {
+    color: var(--color-h);
+}
+
+.app-helmerts-account-content-left-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    grid-gap: 1rem;
+}
+
+.app-helmerts-account-content-left-link-item {
+    display: flex;
+    flex-direction: row;
+    grid-gap: 0.5rem;
+    align-items: center;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.app-helmerts-account-content-right {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-helmerts-account-content-right-list_order {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.app-helmerts-account-content-right-update_infor {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+@media screen and (max-width:990px) {
+    .app-helmerts-account-denied-title {
+        font-size: 16px;
+        line-height: 24px;
+        white-space: nowrap;
+    }
+
+    .app-helmerts-account-content {
+        flex-direction: column;
+        grid-gap: 2rem;
+    }
+
+    .app-helmerts-account-content-left {
+        flex-direction: column;
+        max-width: 990px;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    .app-helmerts-account-content-left-link {
+        flex-direction: row;
+        height: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        grid-gap: 2rem;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .app-helmerts-account {
+        padding: 0.2rem;
+    }
+
+    .app-helmerts-account-denied-title {
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    .app-helmerts-account-content-left {
+        grid-gap: 2rem;
+    }
+
+}

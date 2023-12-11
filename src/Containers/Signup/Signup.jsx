@@ -176,6 +176,7 @@ const Signup = () => {
     formData.append('imgurl', selectedFile);
     formData.append('dateofbirth', formattedDate);
     formData.append('password_confirmation', valuePassword);
+    formData.append('title', valueTitle.name);
 
     // for (const [key, value] of formData.entries()) {
     //   console.log(key, value);

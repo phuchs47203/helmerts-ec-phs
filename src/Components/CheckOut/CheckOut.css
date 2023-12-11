@@ -1,0 +1,113 @@
+.app-hlemerts-check-out-box-parent {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-hlemerts-check-out {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    grid-gap: 0.5rem;
+    max-width: 1200px;
+    padding: 1rem;
+}
+
+.app-hlemerts-check-out-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg);
+    grid-gap: 0.1rem;
+}
+
+.app-hlemerts-check-out-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    grid-gap: 1.5rem;
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+}
+
+.app-hlemerts-check-out-total_price {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+    grid-gap: 1rem;
+}
+
+.app-hlemerts-check-out-check_out {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-bg-box);
+    padding: 1rem;
+    grid-gap: 1rem;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.app-hlemerts-check-out-check_out button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 3rem;
+    border-radius: 0.3rem;
+    border: none;
+    background-color: #444;
+    font-family: var(--font-family);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.app-hlemerts-check-out-check_out button:hover {
+    color: var(--color-h);
+}
+
+.app-hlemerts-check-out-total_price-subtotal,
+.app-hlemerts-check-out-total_price-total {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.app-hlemerts-check-out-total_price-subtotal h1,
+.app-hlemerts-check-out-total_price-total h1 {
+    font-family: var(--font-family3);
+    color: #444;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: capitalize;
+    white-space: nowrap;
+}
+
+.app-hlemerts-check-out-total_price-subtotal p,
+.app-hlemerts-check-out-total_price-total p {
+    font-family: var(--font-family3);
+    word-spacing: -0.04rem;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.app-hlemerts-check-out-total_price-total h1 {
+    font-weight: 500;
+}

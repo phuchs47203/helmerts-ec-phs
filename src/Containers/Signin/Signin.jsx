@@ -33,12 +33,12 @@ const Signin = () => {
         const { token, user } = response.data;
         const accessToken = {
           token: token,
-          expiration_time: new Date(new Date().getTime() + 30 * 60 * 1000), // Thời gian hết hạn sau 30 phút
+          expiration_time: new Date(new Date().getTime() + 58 * 60 * 1000), // Thời gian hết hạn sau 30 phút
           user: user
         }
         localStorage.setItem('accessToken', JSON.stringify(accessToken));
         setloginSuccess('Loggin successfully');
-
+        console.log(accessToken.expiration_time.getTime());
         setstoredAccessToken(localStorage.getItem('accessToken'));
         setTimeout(() => {
           navigate(`/account`);
@@ -74,7 +74,7 @@ const Signin = () => {
       localStorage.removeItem('accessToken');
       setTimeout(() => {
         window.location.reload();
-      }, 1500);
+      }, 1000);
     } catch (error) {
       return error;
     }
