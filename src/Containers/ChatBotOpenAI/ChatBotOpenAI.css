@@ -1,24 +1,23 @@
-.chatbot-container {
-    /* width: 400px; */
-    margin: 0 auto;
-    /* border: 1px solid #ccc; */
+.chatbot-container-box {
+    display: flex;
+    flex-direction: column;
     border-radius: 8px;
     padding: 16px;
-    background-color: var(--color-bg-box);
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
     position: fixed;
     z-index: 999;
-    bottom: 10px;
-    right: 0;
+    bottom: 5px;
+    right: 5px;
     max-width: 400px;
-    /* width: 100%; */
+
 }
+
 
 .chatbot-container-icon {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
 
-
+    cursor: pointer;
 }
 
 .chatbot-container-icon svg {
@@ -26,60 +25,145 @@
     cursor: pointer;
     width: 25px;
     height: 25px;
+}
 
+.chatbot-container-icon-box {
+    background-color: var(--color-icon4);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50%;
+
+}
+
+.chatbot-container {
+    background-color: var(--color-chatbot);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+
+.chatbot-container-icon-close {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-chatbot);
+    padding: 0.5rem;
+    justify-content: space-between;
+    border-radius: 0.5rem;
+
+}
+
+.chatbot-container-icon-close svg {
+    color: var(--color-icon);
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.chatbot-container-icon-close img {
+    width: 50px;
+    height: auto;
+    object-fit: cover;
+}
+
+.chatbot-messages-usually {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.chatbot-messages-usually div {
+    padding: 0.5rem;
+    background-color: var(--color-icon2);
+    border-radius: 0.6rem;
+    cursor: pointer;
+}
+
+.chatbot-messages-usually p {
+    color: var(--color-p);
 }
 
 .chatbot-messages {
     height: 400px;
     overflow-y: scroll;
     padding: 8px;
-    background-color: rgb(224, 161, 161);
+    background-color: var(--color-chatbot);
 
 }
 
-.message {
-    margin: 8px 0;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 16px;
-    line-height: 1.5;
+.chatbot-messages::-webkit-scrollbar {
+    display: none;
+}
+
+.message-box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
 }
 
 .user-message {
-    background-color: #007bff;
-    color: #fff;
-    text-align: right;
+    color: var(--color-p);
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .ai-message {
-    background-color: #f0f0f0;
-    text-align: left;
+    margin-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
 }
+
+.user-message div,
+.ai-message div {
+    background-color: var(--color-user);
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: 0.5px solid var(--color-p);
+    width: fit-content;
+    max-width: 75%;
+}
+
+.ai-message div {
+    background-color: var(--color-ai);
+}
+
+.user-message p,
+.ai-message p {
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 14px;
+    line-height: 18px;
+    word-spacing: -0.1rem;
+}
+
+
 
 .chatbot-input-form {
     display: flex;
-    margin-top: 16px;
+    /* margin-top: 16px; */
+    flex-direction: row;
+    grid-gap: 1rem;
+    padding: 0.5rem;
 }
 
 .chatbot-input-form input {
     flex: 1;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--color-icon);
     border-radius: 4px 0 0 4px;
-    font-size: 16px;
-    background-color: rgb(224, 161, 161);
-}
-
-.chatbot-input-form button {
-    padding: 8px 16px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 0 4px 4px 0;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.chatbot-input-form button:hover {
-    background-color: #0056b3;
+    font-size: 14px;
+    background-color: var(--color-bg-box);
+    color: var(--color-p);
+    outline: none;
 }
