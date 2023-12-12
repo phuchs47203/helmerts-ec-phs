@@ -100,7 +100,6 @@ const Account = () => {
                                         <p>
                                             {userInfor.last_name}
                                             &nbsp;{userInfor.first_name}
-                                            &nbsp;Phúc
                                         </p>
                                     </div>
                                     <div
@@ -116,12 +115,15 @@ const Account = () => {
                                     <BsFillPersonFill />
                                     <p>My Profile</p>
                                 </div>
-                                <div
-                                    onClick={() => setupdateInfor(false)}
-                                    className='app-helmerts-account-content-left-link-item'>
-                                    <IoReceiptSharp />
-                                    <p>My Order</p>
-                                </div>
+
+                                {userInfor.role === 'user' &&
+                                    <div
+                                        onClick={() => setupdateInfor(false)}
+                                        className='app-helmerts-account-content-left-link-item'>
+                                        <IoReceiptSharp />
+                                        <p>My Order</p>
+                                    </div>
+                                }
                                 {userInfor.role === 'shipper' &&
                                     <div className='app-helmerts-account-content-left-link-item'>
                                         <FaShippingFast />
@@ -138,11 +140,21 @@ const Account = () => {
                             </div>
                         </div>
                         <div className='app-helmerts-account-content-right'>
-                            <div className='app-helmerts-account-content-right-list_order'>
-                                {!updateInfor &&
-                                    <ListOrder localToken={localToken} />
-                                }
-                            </div>
+                            {userInfor.role === 'user' &&
+                                <div className='app-helmerts-account-content-right-list_order'>
+                                    {!updateInfor &&
+                                        <ListOrder localToken={localToken} />
+                                    }
+                                </div>
+                            }
+                            {userInfor.role === 'admin' &&
+                                <div className='app-helmerts-account-content-right-list_order'>
+                                    {!updateInfor &&
+                                        <UpdatePersonalInformation User_Details={userInfor} />
+                                    }
+                                </div>
+                            }
+
                             {updateInfor &&
                                 <div className='app-helmerts-account-content-right-update_infor'>
                                     <UpdatePersonalInformation User_Details={userInfor} />
@@ -156,7 +168,7 @@ const Account = () => {
 
                 }
             </div>
-        </div>
+        </div >
     )
 }
 

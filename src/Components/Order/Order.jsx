@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import OrderDetail from '../OrderDetail/OrderDetail';
 import './Order.css'
+import CancelOrder from '../CancelOrder/CancelOrder';
 const Order = ({ OrderInfor, localToken }) => {
   const URL_REQUEST_ORDER_DETAILS = "http://localhost:8000/api/order-details-of-order/" + OrderInfor.id;
   const [listOrderDetails, setlistOrderDetails] = useState([]);
@@ -24,12 +25,8 @@ const Order = ({ OrderInfor, localToken }) => {
   // useEffect(() => {
   //   setloadingData(true);
   // }, [listOrderDetails]);
-  const cancelOrder = () => {
-      
-  }
-  const WritePreview = () => {
-    
-  }
+  const [toggleCancel, settoggleCancel] = useState(false);
+  const [toggleWriteReview, settoggleWriteReview] = useState(false);
   return (
     <div className='app-helmerts-order'>
       <div className='app-helmerts-order-heading'>
@@ -62,13 +59,20 @@ const Order = ({ OrderInfor, localToken }) => {
           <h1>Total Payment: ₫ {OrderInfor.total_payment.toLocaleString()}</h1>
         </div>
         <div className='app-helmerts-order-payment_review-review'>
-          { OrderInfor.status === 'Completed' &&
-            <button className='btn-transition button_default'>Write A Review</button>
+          {OrderInfor.status === 'Completed' &&
+            <button className='btn-transition button_default' onClick={() => settoggleWriteReview(true)}>Write A Review</button>
           }
-          { OrderInfor.status === 'Pending' &&
-            <button className='btn-transition button_default'>Cancel Order</button>
+          {OrderInfor.status === 'Pending' &&
+            <button className='btn-transition button_default' onClick={() => settoggleCancel(true)}>Cancel Order</button>
           }
         </div>
+      </div>
+      <div>
+        {
+          toggleCancel &&
+          <CancelOrder Order={OrderInfor} localToken={localToken} setToggleCancel={settoggleCancel} />
+        }
+
       </div>
     </div>
   )

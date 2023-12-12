@@ -20,7 +20,7 @@ export { default as CheckOut } from './CheckOut/CheckOut.jsx'
 export { default as ProductCheckout } from './ProductCheckout/ProductCheckout.jsx'
 export { default as ListOrder } from './ListOrder/ListOrder.jsx';
 export { default as UpdatePersonalInformation } from './UpdatePersonalInformation/UpdatePersonalInformation.jsx';
-
+export { default as CancelOrder } from './CancelOrder/CancelOrder.jsx';
 
 
 

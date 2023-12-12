@@ -86,6 +86,9 @@
 
 .chatbot-messages-usually p {
     color: var(--color-p);
+    font-size: 13px;
+    line-height: 18px;
+    word-spacing: -0.2rem;
 }
 
 .chatbot-messages {

@@ -15,7 +15,7 @@ const ChatBotOpenAI = () => {
 
         const headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer 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`
         };
         // Thêm các câu hỏi mặc định và cung cấp câu trả lời
         let promptToUse = userInput;
@@ -29,11 +29,15 @@ const ChatBotOpenAI = () => {
             return promptToUse;
         }
         if (userInput.toLowerCase().includes('tôi muốn mua hàng')) {
-            promptToUse = 'Bạn cần tạo một tài khoản cá nhân, thêm sản phẩm vào giỏ hàng và tiến hành làm theo hướng dẫn tren website của chúng tôi';
+            promptToUse = 'Bạn cần tạo một tài khoản cá nhân, thêm sản phẩm vào giỏ hàng và tiến hành làm theo hướng dẫn trên website của chúng tôi';
             return promptToUse;
         }
         if (userInput.toLowerCase().includes('chính sách bảo mật thông tin cá nhân')) {
             promptToUse = 'Helmerts cam kết bảo mật thông tin của ngươi dùng, không bán hoặc chia sẻ thông tin dưới bất kì hình thức nào';
+            return promptToUse;
+        }
+        if (userInput.toLowerCase().includes('hướng dẫn chọn size')) {
+            promptToUse = 'Bạn có thể tham khảo bảng size của Helmerts bằng cách truy cập vào Menu -> Cliens Service -> Size Guide.';
             return promptToUse;
         }
 
@@ -93,7 +97,10 @@ const ChatBotOpenAI = () => {
                                 <p>Start chatting!</p>
                             </div>
                             <div onClick={() => setInput('Tôi muốn mua hàng')}>
-                                <p>Tôi muốn mua hàng?</p>
+                                <p>Tôi muốn mua hàng?</p> 
+                            </div>
+                            <div onClick={() => setInput('Hướng dẫn chọn size')}>
+                                <p>Hướng dẫn chọn size</p>
                             </div>
                             <div onClick={() => setInput('Cửa hàng của Helmerts ở đâu')}>
                                 <p>Cửa hàng của Helmerts ở đâu?</p>
