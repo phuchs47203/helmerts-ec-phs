@@ -58,26 +58,7 @@ const Signup = () => {
   const [valueAddressDetails, setvalueAddressDetails] = useState('');
   const [valueCity, setvalueCity] = useState('');
   const [valueDistrict, setvalueDistrict] = useState('');
-  // useEffect(() => {
-  //   if (valueTitle !== null) {
-  //     console.log(valueTitle.name);
-  //   }
-  // }, [valueTitle]);
-  // useEffect(() => {
-  //   if (valuePassword !== null) {
-  //     console.log(valuePassword);
-  //   }
-  // }, [valuePassword]);
-  // useEffect(() => {
-  //   if (valueEmail !== null) {
-  //     console.log(valueEmail);
-  //   }
-  // }, [valueEmail]);
-  // useEffect(() => {
-  //   if (selectedFile !== null) {
-  //     console.log(selectedFile);
-  //   }
-  // }, [selectedFile]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -210,30 +191,6 @@ const Signup = () => {
 
       });
     const storedAccessToken = localStorage.getItem('accessToken');
-
-    // if (storedAccessToken) {
-    //   const parsedAccessToken = JSON.parse(storedAccessToken);
-    //   // console.log("token saved: ")
-    //   // console.log(parsedAccessToken.token); // Xuất giá trị của trường "token"
-    //   // console.log(parsedAccessToken.expiration_time); // Xuất giá trị của trường "expiration_time"
-    //   // console.log(parsedAccessToken.user); // Xuất giá trị của trường "role"
-    // }
-
-    // const storedAccessToken = localStorage.getItem('accessToken');
-
-    // if (storedAccessToken) {
-    //   const parsedAccessToken = JSON.parse(storedAccessToken);
-    //   const expirationTime = new Date(parsedAccessToken.expiration_time);
-    //   console.log("now", new Date());
-    //   console.log("expriation time:", expirationTime);
-
-    //   if (new Date() > expirationTime) {
-
-    //     console.log('Token has expired. Need to log in again.');
-    //   } else {
-    //     console.log('Token is still valid.');
-    //   }
-    // }
 
 
   };

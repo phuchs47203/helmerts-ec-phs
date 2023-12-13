@@ -6,7 +6,7 @@ import axios from 'axios';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { IoReceiptSharp } from "react-icons/io5";
 import { CiEdit } from "react-icons/ci";
-import { ListOrder, UpdatePersonalInformation } from '../../Components';
+import { DeliveryOrder, ListOrder, UpdatePersonalInformation } from '../../Components';
 import { FaShippingFast } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
 
@@ -125,7 +125,9 @@ const Account = () => {
                                     </div>
                                 }
                                 {userInfor.role === 'shipper' &&
-                                    <div className='app-helmerts-account-content-left-link-item'>
+                                    <div
+                                        onClick={() => setupdateInfor(false)}
+                                        className='app-helmerts-account-content-left-link-item'>
                                         <FaShippingFast />
                                         <p>Delivery Order</p>
                                     </div>
@@ -147,17 +149,26 @@ const Account = () => {
                                     }
                                 </div>
                             }
+                            {userInfor.role === 'shipper' &&
+                                <div className='app-helmerts-account-content-right-list_order'>
+                                    {!updateInfor &&
+                                        <DeliveryOrder localToken={localToken} />
+                                    }
+                                </div>
+                            }
                             {userInfor.role === 'admin' &&
                                 <div className='app-helmerts-account-content-right-list_order'>
                                     {!updateInfor &&
-                                        <UpdatePersonalInformation User_Details={userInfor} />
+                                        <UpdatePersonalInformation User_Details={userInfor} localToken={localToken} />
                                     }
                                 </div>
                             }
 
                             {updateInfor &&
                                 <div className='app-helmerts-account-content-right-update_infor'>
-                                    <UpdatePersonalInformation User_Details={userInfor} />
+                                    <UpdatePersonalInformation
+                                        User_Details={userInfor}
+                                        localToken={localToken} />
                                 </div>
                             }
 

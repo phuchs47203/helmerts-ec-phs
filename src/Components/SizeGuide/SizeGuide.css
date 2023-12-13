@@ -1,0 +1,167 @@
+.app-helmerts-size-guide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-legal);
+    left: 0;
+    grid-gap: 1rem;
+    /* padding-right: 0rem; */
+}
+
+.app-helmerts-size-guide h3 {
+    color: var(--color-h);
+    font-size: 22px;
+    line-height: 30px;
+    font-family: var(--font-family);
+}
+
+.app-helmerts-size-guide table {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.app-helmerts-size-guide tr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+}
+
+.app-helmerts-size-guide-header th {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+
+}
+
+.app-helmerts-size-guide-content td {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0rem;
+
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+}
+
+@media screen and (max-width: 990px) {
+    .app-helmerts-size-guide-header th {
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+
+    }
+
+    .app-helmerts-size-guide tr {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        grid-gap: 0rem;
+    }
+
+
+    .app-helmerts-size-guide-header th {
+        width: 100%;
+    }
+
+    .app-helmerts-size-guide-content td {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width:750px) {
+
+    .app-helmerts-size-guide {
+
+        grid-gap: 0.5rem;
+        /* padding-right: 0rem; */
+    }
+
+    .app-helmerts-size-guide h3 {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .hidden {
+        width: 0px;
+        color: transparent;
+        font-size: 0px;
+        line-height: 0px;
+        display: none;
+        height: 0px;
+        background-color: transparent;
+        font-weight: none;
+    }
+
+    .app-helmerts-size-guide-header th {
+        font-size: 14px;
+        line-height: 22px;
+    }
+
+    .app-helmerts-size-guide-header th:nth-last-child(-n+3) {
+        width: 0px;
+        color: transparent;
+        line-height: 0px;
+        display: none;
+        height: 0px;
+        background-color: transparent;
+        font-size: 0px;
+        font-weight: none;
+    }
+
+    .app-helmerts-size-guide-content td:nth-last-child(-n+3) {
+        width: 0px;
+        color: transparent;
+        line-height: 0px;
+        display: none;
+        height: 0px;
+        background-color: transparent;
+        font-weight: none;
+    }
+
+
+    .app-helmerts-size-guide {
+        padding-bottom: 0rem;
+    }
+
+    .app-helmerts-size-guide-content td {
+        padding: 0.5rem;
+    }
+
+    .app-helmerts-size-guide-content tr {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        grid-gap: 2rem;
+    }
+
+    .app-helmerts_product_details-content_left-similar-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        grid-gap: 0.3rem;
+    }
+
+}

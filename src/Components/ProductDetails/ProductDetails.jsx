@@ -158,15 +158,15 @@ const ProductDetails = () => {
                             <div className='app-helmerts_product_details-content_right-header'>
                                 <h1>{product_details.name}</h1>
                                 <div className='app-helmerts_product_details-content_right-header_price'>
-                                    <p>	₫ 4,800,000</p>
-                                    <p>	₫ 2,450,000</p>
+                                    <p>	₫ {(product_details.origional_price*1).toLocaleString()}</p>
+                                    <p>	₫ {(product_details.sale_price*1).toLocaleString()}</p>
                                 </div>
                             </div>
                             <div className='line' />
                             <div className='app-helmerts_product_details-content_right-content'>
                                 <div className='app-helmerts_product_details-content_right-content-color'>
                                     <h3>Color</h3>
-                                    <p>Red</p>
+                                    <p>{product_details.color}</p>
                                 </div>
                                 <div className='line' />
 

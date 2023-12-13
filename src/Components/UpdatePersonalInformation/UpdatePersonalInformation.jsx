@@ -29,8 +29,7 @@ const VisuallyHiddenInput = styled('input')({
     whiteSpace: 'nowrap',
     width: 1,
 });
-const UpdatePersonalInformation = ({ User_Details }) => {
-    const URL_REQUEST = "http://localhost:8000/api/register";
+const UpdatePersonalInformation = ({ User_Details, localToken }) => {
     const defaultProps = {
         options: top7OptionTitle,
         getOptionLabel: (option) => option.name,
@@ -106,7 +105,7 @@ const UpdatePersonalInformation = ({ User_Details }) => {
     };
 
 
-    
+
     const [errorEmail, seterrorEmail] = useState('');
     const [registerSuccess, setregisterSuccess] = useState('');
     const [pleaseWait, setpleaseWait] = useState('');
@@ -117,15 +116,16 @@ const UpdatePersonalInformation = ({ User_Details }) => {
             const storedAccessToken = localStorage.getItem('accessToken');
             const parsedAccessToken = JSON.parse(storedAccessToken);
             setaccessTokenLogout(parsedAccessToken.token);
+
             console.log("token:", parsedAccessToken.token);
             axios.post(URL_LOGOUT, null, {
                 headers: {
                     Accept: "application/json",
-                    Authorization: `Bearer ${parsedAccessToken.token}`
+                    Authorization: `Bearer ${localToken.token}`
                 }
             })
                 .then(response => {
-                    // console.log(response.data);
+                    console.log(response.data);
                 })
                 .catch(error => {
                     console.log(error);
@@ -139,6 +139,7 @@ const UpdatePersonalInformation = ({ User_Details }) => {
 
     }
     const saveUser = () => {
+        const URL_REQUEST = "http://localhost:8000/api/users/" + User_Details.id;
         const formData = new FormData();
         setpleaseWait('Please Wait ...!');
         seterrorEmail('');
@@ -154,46 +155,38 @@ const UpdatePersonalInformation = ({ User_Details }) => {
         formData.append('city', valueCity);
         formData.append('district', valueDistrict);
         formData.append('address_details', valueAddressDetails);
-        formData.append('imgurl', selectedFile);
+        if (selectedFile) {
+            formData.append('imgurl', selectedFile);
+        }
         formData.append('dateofbirth', formattedDate);
         if (valuePassword) {
             formData.append('password', valuePassword);
             formData.append('password_confirmation', valuePassword);
-
         }
-
-        for (const [key, value] of formData.entries()) {
-            console.log(key, value);
-        }
-        return;
+        // for (const [key, value] of formData.entries()) {
+        //     console.log(key, value);
+        // }
         axios
             .post(URL_REQUEST, formData,
                 {
-                    headers: { Accept: "application/json" },
+                    headers: {
+                        Accept: "application/json",
+                        Authorization: `Bearer ${localToken.token}`
+                    }
                 })
             .then((response) => {
-                // console.log(response.data);
-                const { token, user } = response.data;
-                // console.log(user.role);
-                // console.log(token);
-                const accessToken = {
-                    token: token,
-                    expiration_time: new Date(new Date().getTime() + 30 * 60 * 1000), // Thời gian hết hạn sau 30 phút
-                    user: user
-                }
-                Loggout();
-                localStorage.setItem('accessToken', JSON.stringify(accessToken));
-                setregisterSuccess('Register Successfully!');
-                setTimeout(() => {
-                    navigate(`/account`);
-                }, 1500);
+                console.log(response.data);
+                setregisterSuccess('Update Successfully! Logout To Refresh Information');
+                // Loggout();
+                // setTimeout(() => {
+                //     window.location.reload();
+                // }, 1500);
             })
             .catch((error) => {
                 console.log(error);
                 seterrorEmail('The Email Address Already Been Taken!');
-
+                setregisterSuccess('');
             });
-        const storedAccessToken = localStorage.getItem('accessToken');
     };
     useEffect(() => {
         seterrorEmail('');

@@ -57,7 +57,6 @@ const MainProduct = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:8000/api/products/main-product/1`);
-        console.log(response);
         setbestSeller(response.data);
       } catch (error) {
         console.log(error);
@@ -71,7 +70,6 @@ const MainProduct = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`http://localhost:8000/api/products/main-product/2`);
-        console.log(response);
         setflashSale(response.data);
       } catch (error) {
         console.log(error);

@@ -54,22 +54,22 @@ const Footer = () => {
               <div className='app-helmerts-footer-heading-content-main-service_link'>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Choosing Size Guide</Link>
+                    <Link to="/client-service" className='link-decoration'>Choosing Size Guide</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Shopping Guide</Link>
+                    <Link to="/client-service" className='link-decoration'>Shopping Guide</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Shop System</Link>
+                    <Link to="/client-service" className='link-decoration'>Shop System</Link>
                   </p>
                 </div>
                 <div className='app-helmerts-footer-heading-content-main-service_link-content'>
                   <p>
-                    <Link to="" className='link-decoration'>Gifting</Link>
+                    <Link to="/client-service" className='link-decoration'>Gifting</Link>
                   </p>
                 </div>
               </div>

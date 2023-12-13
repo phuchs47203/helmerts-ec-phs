@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import OrderDetail from '../OrderDetail/OrderDetail';
 import './Order.css'
 import CancelOrder from '../CancelOrder/CancelOrder';
+import ConfirmOrder from '../ConfirmOrder/ConfirmOrder';
+import WritePreview from '../WritePreview/WritePreview';
 const Order = ({ OrderInfor, localToken }) => {
   const URL_REQUEST_ORDER_DETAILS = "http://localhost:8000/api/order-details-of-order/" + OrderInfor.id;
   const [listOrderDetails, setlistOrderDetails] = useState([]);
@@ -26,6 +28,7 @@ const Order = ({ OrderInfor, localToken }) => {
   //   setloadingData(true);
   // }, [listOrderDetails]);
   const [toggleCancel, settoggleCancel] = useState(false);
+  const [toggleConfim, settoggleConfim] = useState(false);
   const [toggleWriteReview, settoggleWriteReview] = useState(false);
   return (
     <div className='app-helmerts-order'>
@@ -59,11 +62,19 @@ const Order = ({ OrderInfor, localToken }) => {
           <h1>Total Payment: ₫ {OrderInfor.total_payment.toLocaleString()}</h1>
         </div>
         <div className='app-helmerts-order-payment_review-review'>
-          {OrderInfor.status === 'Completed' &&
+          {OrderInfor.status === 'Completed' && localToken.user.role === 'user' &&
             <button className='btn-transition button_default' onClick={() => settoggleWriteReview(true)}>Write A Review</button>
           }
           {OrderInfor.status === 'Pending' &&
             <button className='btn-transition button_default' onClick={() => settoggleCancel(true)}>Cancel Order</button>
+          }
+          {localToken.user.role === 'shipper' &&
+            OrderInfor.status === 'Shipped' &&
+            <button className='btn-transition button_default' onClick={() => settoggleCancel(true)}>Cancel Order</button>
+          }
+          {localToken.user.role === 'shipper' &&
+            OrderInfor.status === 'Shipped' &&
+            <button className='btn-transition button_confirm' onClick={() => settoggleConfim(true)}>Confirm Order</button>
           }
         </div>
       </div>
@@ -72,7 +83,13 @@ const Order = ({ OrderInfor, localToken }) => {
           toggleCancel &&
           <CancelOrder Order={OrderInfor} localToken={localToken} setToggleCancel={settoggleCancel} />
         }
-
+        {
+          toggleConfim &&
+          <ConfirmOrder Order={OrderInfor} localToken={localToken} settoggleConfim={settoggleConfim} />
+        }
+        { toggleWriteReview &&
+          <WritePreview Order={OrderInfor} localToken={localToken} settoggleWriteReview={settoggleWriteReview} />
+        }
       </div>
     </div>
   )

@@ -269,6 +269,25 @@ p {
   color: var(--color-h);
 }
 
+.button_confirm {
+  font-family: var(--font-family);
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 0.4rem 1rem;
+  border-radius: 0.2rem;
+  border: none;
+  background-color: #2f5836;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.button_confirm:hover {
+  color: var(--color-h);
+}
+
 .button_update {
   font-family: var(--font-family);
   text-decoration: none;
@@ -282,7 +301,6 @@ p {
   background-color: rgb(168, 197, 207);
   z-index: 1;
   white-space: nowrap;
-
 }
 
 .button_delete {

@@ -47,7 +47,7 @@ const OneProduct = ({ product }) => {
                     <div className='hermerts-app-oneproduct-description'>
                         <h1>{product.name}</h1>
                         <div className='hermerts-app-oneproduct-description-price' >
-                            <p >₫ {product.sale_price}</p>
+                            <p>	₫ {(product.sale_price*1).toLocaleString()}</p>
                             <p >-{Math.round(product.discount * 100)}%</p>
                         </div>
                     </div>

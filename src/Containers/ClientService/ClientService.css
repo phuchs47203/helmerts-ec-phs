@@ -1,0 +1,54 @@
+.app-helmerts-cliend_service-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.app-helmerts-cliend_service {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 1300px;
+    width: 100%;
+    grid-gap: 3rem;
+}
+
+.app-helmerts-cliend_service-link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 2rem;
+}
+
+.app-helmerts-cliend_service-link-box {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+    justify-content: flex-start;
+}
+
+.app-helmerts-cliend_service-box a {
+    text-decoration: none;
+    padding-bottom: 0.2rem;
+    width: fit-content;
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 16px;
+}
+
+.app-helmerts-cliend_service-box a:hover {
+    border-bottom: 0.5px solid var(--color-p);
+    margin-bottom: -1px;
+    color: var(--color-h);
+
+}
+@media screen and (max-width:600px) {
+    .app-helmerts-cliend_service-link-box {
+        grid-gap: 0.5rem;
+    }
+    .app-helmerts-cliend_service-box a {
+        font-size: 14px;
+    }
+    
+}

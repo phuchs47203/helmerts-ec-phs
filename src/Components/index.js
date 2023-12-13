@@ -21,8 +21,10 @@ export { default as ProductCheckout } from './ProductCheckout/ProductCheckout.js
 export { default as ListOrder } from './ListOrder/ListOrder.jsx';
 export { default as UpdatePersonalInformation } from './UpdatePersonalInformation/UpdatePersonalInformation.jsx';
 export { default as CancelOrder } from './CancelOrder/CancelOrder.jsx';
-
-
-
+export { default as DeliveryOrder } from './DeliveryOrder/DeliveryOrder.jsx';
+export { default as ShoppingGuide } from './ShoppingGuide/ShoppingGuide.jsx';
+export { default as ShopSystem } from './ShopSystem/ShopSystem.jsx';
+export { default as SizeGuide } from './SizeGuide/SizeGuide.jsx';
+export { default as Gifting } from './Gifting/Gifting.jsx';
 
 

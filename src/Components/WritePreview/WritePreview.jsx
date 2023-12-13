@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './CancelOrder.css'
+import './WritePreview.css'
 import TextField from '@mui/material/TextField';
 import 'react-phone-input-2/lib/style.css'
 import { styled } from '@mui/material/styles';
@@ -16,21 +16,20 @@ const VisuallyHiddenInput = styled('input')({
     width: 1,
 });
 
-const CancelOrder = ({ Order, localToken, setToggleCancel }) => {
+const WritePreview = ({ Order, localToken, settoggleWriteReview }) => {
     const [valueNote, setvalueNote] = useState('');
     const handleChangeNote = (event) => {
         setvalueNote(event.target.value);
     };
     const handleClickDiscard = () => {
-        setToggleCancel(false);
-
+        settoggleWriteReview(false);
     }
-    const CancelRequestByUser = () => {
-        const URL_REQUEST = 'http://localhost:8000/api/cancel-order-by-user/' + Order.id;
+
+    const RequestComment = () => {
+        const URL_REQUEST = 'http://localhost:8000/api/comments';
         const formData = new FormData();
-        formData.append('note', valueNote);
-        console.log(formData);
-        console.log("cancel");
+        formData.append('order_id', Order.id);
+        formData.append('content', valueNote);
         axios.post(URL_REQUEST, formData, {
             headers: {
                 Accept: "application/json",
@@ -39,80 +38,25 @@ const CancelOrder = ({ Order, localToken, setToggleCancel }) => {
         })
             .then(response => {
                 console.log(response.data);
+                settoggleWriteReview(false);
             })
             .catch(error => {
                 console.log(error);
             });
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
     }
-    const CancelRequestByShipper = () => {
-        const URL_REQUEST = 'http://localhost:8000/api/cancel-order-by-shipper/' + Order.id;
-        const formData = new FormData();
-        formData.append('note', valueNote);
-        axios.post(URL_REQUEST, formData, {
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${localToken.token}`
-            }
-        })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
-    }
-    const CancelRequestByManager = () => {
-        const URL_REQUEST = 'http://localhost:8000/api/cancel-order-by-manager/' + localToken.user.id + '/' + Order.id;
-        const formData = new FormData();
-        formData.append('note', valueNote);
-        axios.post(URL_REQUEST, formData, {
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${localToken.token}`
-            }
-        })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
-    }
-    const handleClickCancel = () => {
 
-        if (localToken.user.role === 'user') {
-
-            CancelRequestByUser();
-        }
-        if (localToken.user.role === 'shipper') {
-            CancelRequestByShipper();
-        }
-        if (localToken.user.role === 'manager') {
-            CancelRequestByManager();
-        }
-    }
     return (
-        <div className='app-helmerts-cancel_order'>
-            <div className='app-helmerts-cancel_order-box'>
-                <div className='app-helmerts-cancel_order-heading'>
-                    <h1>Do you want to cancel order?</h1>
-
+        <div className='app-helmerts-comment_order'>
+            <div className='app-helmerts-comment_order-box'>
+                <div className='app-helmerts-comment_order-heading'>
+                    <h1>Please leave your useful review, sincerely !</h1>
                 </div>
-                <div className='app-helmerts-cancel_order-content'>
-                    <div className='app-helmerts-cancel_order-content-input'>
+                <div className='app-helmerts-comment_order-content'>
+                    <div className='app-helmerts-comment_order-content-input'>
                         <TextField
                             required
                             id="note"
-                            label="Reason"
+                            label="Review"
                             variant="outlined"
                             value={valueNote}
                             onChange={handleChangeNote}
@@ -128,14 +72,14 @@ const CancelOrder = ({ Order, localToken, setToggleCancel }) => {
                             }}
                         />
                     </div>
-                    <div className='app-helmerts-cancel_order-content-btn'>
+                    <div className='app-helmerts-comment_order-content-btn'>
                         <button className='button_default btn-transition'
                             onClick={handleClickDiscard}>
                             Discard
                         </button>
                         <button className='button_confirm btn-transition'
-                            onClick={handleClickCancel}>
-                            Confirm
+                            onClick={RequestComment}>
+                            Send
                         </button>
                     </div>
                 </div>
@@ -172,4 +116,5 @@ const commonInputClasses = {
     notchedOutline: 'custom-notched-outline',
     focused: 'custom-focused',
 };
-export default CancelOrder
+
+export default WritePreview

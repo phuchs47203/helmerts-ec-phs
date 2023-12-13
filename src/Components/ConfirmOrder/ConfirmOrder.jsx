@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './CancelOrder.css'
+import './ConfirmOrder.css'
 import TextField from '@mui/material/TextField';
 import 'react-phone-input-2/lib/style.css'
 import { styled } from '@mui/material/styles';
@@ -16,22 +16,20 @@ const VisuallyHiddenInput = styled('input')({
     width: 1,
 });
 
-const CancelOrder = ({ Order, localToken, setToggleCancel }) => {
+const ConfirmOrder = ({Order, localToken, settoggleConfim }) => {
     const [valueNote, setvalueNote] = useState('');
     const handleChangeNote = (event) => {
         setvalueNote(event.target.value);
     };
     const handleClickDiscard = () => {
-        setToggleCancel(false);
+        settoggleConfim(false);
 
     }
-    const CancelRequestByUser = () => {
-        const URL_REQUEST = 'http://localhost:8000/api/cancel-order-by-user/' + Order.id;
-        const formData = new FormData();
-        formData.append('note', valueNote);
-        console.log(formData);
-        console.log("cancel");
-        axios.post(URL_REQUEST, formData, {
+
+    const ConfirmRequestByShipper = () => {
+        const URL_REQUEST = 'http://localhost:8000/api/update-order-by-shipper/' + Order.id;
+
+        axios.post(URL_REQUEST, null, {
             headers: {
                 Accept: "application/json",
                 Authorization: `Bearer ${localToken.token}`
@@ -47,68 +45,46 @@ const CancelOrder = ({ Order, localToken, setToggleCancel }) => {
             window.location.reload();
         }, 2000);
     }
-    const CancelRequestByShipper = () => {
-        const URL_REQUEST = 'http://localhost:8000/api/cancel-order-by-shipper/' + Order.id;
-        const formData = new FormData();
-        formData.append('note', valueNote);
-        axios.post(URL_REQUEST, formData, {
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${localToken.token}`
-            }
-        })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
-    }
-    const CancelRequestByManager = () => {
-        const URL_REQUEST = 'http://localhost:8000/api/cancel-order-by-manager/' + localToken.user.id + '/' + Order.id;
-        const formData = new FormData();
-        formData.append('note', valueNote);
-        axios.post(URL_REQUEST, formData, {
-            headers: {
-                Accept: "application/json",
-                Authorization: `Bearer ${localToken.token}`
-            }
-        })
-            .then(response => {
-                console.log(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        setTimeout(() => {
-            window.location.reload();
-        }, 2000);
-    }
-    const handleClickCancel = () => {
+    // const ConfrimRequestByManager = () => {
+    //     const URL_REQUEST = 'http://localhost:8000/api/update-order-by-manager/' +  Order.id;
+    //     const formData = new FormData();
+    //     formData.append('note', valueNote);
+    //     formData.append('manager_id', );
+    //     formData.append('shipper_id', );
 
-        if (localToken.user.role === 'user') {
-
-            CancelRequestByUser();
-        }
+    //     axios.post(URL_REQUEST, formData, {
+    //         headers: {
+    //             Accept: "application/json",
+    //             Authorization: `Bearer ${localToken.token}`
+    //         }
+    //     })
+    //         .then(response => {
+    //             console.log(response.data);
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         });
+    //     setTimeout(() => {
+    //         window.location.reload();
+    //     }, 2000);
+    // }
+    const handleClickConfirm = () => {
         if (localToken.user.role === 'shipper') {
-            CancelRequestByShipper();
+            ConfirmRequestByShipper();
         }
-        if (localToken.user.role === 'manager') {
-            CancelRequestByManager();
-        }
+        // if (localToken.user.role === 'manager') {
+        //     ConfrimRequestByManager();
+        // }
     }
     return (
-        <div className='app-helmerts-cancel_order'>
-            <div className='app-helmerts-cancel_order-box'>
-                <div className='app-helmerts-cancel_order-heading'>
-                    <h1>Do you want to cancel order?</h1>
+        <div className='app-helmerts-confirm_order'>
+            <div className='app-helmerts-confirm_order-box'>
+                <div className='app-helmerts-confirm_order-heading'>
+                    <h1>Do you want to confirm order?</h1>
 
                 </div>
-                <div className='app-helmerts-cancel_order-content'>
-                    <div className='app-helmerts-cancel_order-content-input'>
+                <div className='app-helmerts-confirm_order-content'>
+                    {/* <div className='app-helmerts-confirm_order-content-input'>
                         <TextField
                             required
                             id="note"
@@ -127,14 +103,14 @@ const CancelOrder = ({ Order, localToken, setToggleCancel }) => {
                                 classes: commonInputClasses,
                             }}
                         />
-                    </div>
-                    <div className='app-helmerts-cancel_order-content-btn'>
+                    </div> */}
+                    <div className='app-helmerts-confirm_order-content-btn'>
                         <button className='button_default btn-transition'
                             onClick={handleClickDiscard}>
                             Discard
                         </button>
                         <button className='button_confirm btn-transition'
-                            onClick={handleClickCancel}>
+                            onClick={handleClickConfirm}>
                             Confirm
                         </button>
                     </div>
@@ -172,4 +148,5 @@ const commonInputClasses = {
     notchedOutline: 'custom-notched-outline',
     focused: 'custom-focused',
 };
-export default CancelOrder
+
+export default ConfirmOrder

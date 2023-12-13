@@ -1,0 +1,62 @@
+.app-helmerts-shopping_guide {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-legal);
+    border-radius: 0.4rem;
+    padding: 1rem;
+    grid-gap: 1.5rem;
+    width: 100%;
+}
+
+.app-helmerts-shopping_guide-heading {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-helmerts-shopping_guide-heading h1 {
+    white-space: nowrap;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+}
+
+.app-helmerts-shopping_guide-content {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1.5rem;
+    width: 100%;
+}
+
+.app-helmerts-shopping_guide-content-item {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+}
+
+.app-helmerts-shopping_guide-content-item-name {
+    display: flex;
+}
+
+.app-helmerts-shopping_guide-content-item-name h1 {
+    font-family: var(--font-family);
+    font-size: 24px;
+    line-height: 32px;
+    color: #444;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+}
+
+.app-helmerts-shopping_guide-content-item-main {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 1rem;
+    padding: 0rem 1.5rem;
+}
+
+@media screen and (max-width: 650px) {
+    .app-helmerts-shopping_guide-content-item-name h1 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}

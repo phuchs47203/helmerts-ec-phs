@@ -93,6 +93,7 @@
     width: 100%;
     align-items: center;
     justify-content: flex-end;
+    grid-gap: 1rem;
 }
 
 .app-helmerts-order-payment_review-review button {}

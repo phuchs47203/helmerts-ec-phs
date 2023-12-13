@@ -56,50 +56,50 @@ const Home = () => {
           <div className='helmert-app-home_product-categorise-content-row1'>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/1`} className=''>
+                <a href={`/product-filter/all=0&cat_id=1&keyword=&sort=0`} className=''>
                   <img src={images.fullface} alt="fullface" />
                 </a>
 
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/1`} className='helmert-app-home_heading-title-link p-bold'>Fullface</a>
+                  <a href={`/product-filter/all=0&cat_id=1&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Fullface</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/1`} className=''>
+                <a href={`product-filter/all=0&cat_id=3&keyword=&sort=0`} className=''>
                   <img src={images.openface} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/1`} className='helmert-app-home_heading-title-link p-bold'>Openface</a>
+                  <a href={`/product-filter/all=0&cat_id=3&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Openface</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[2]}`} className=''>
+                <a href={`product-filter/all=0&cat_id=4&keyword=&sort=0`} className=''>
                   <img src={images.modular} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[2]}`} className='helmert-app-home_heading-title-link p-bold'>Modular</a>
+                  <a href={`product-filter/all=0&cat_id=4&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Modular</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[3]}`} className=''>
+                <a href={`product-filter/all=0&cat_id=2&keyword=&sort=0`} className=''>
                   <img src={images.half} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[3]}`} className='helmert-app-home_heading-title-link p-bold'>Halfface</a>
+                  <a href={`product-filter/all=0&cat_id=2&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Halfface</a>
                 </p>
               </div>
             </div>
@@ -107,37 +107,37 @@ const Home = () => {
           <div className='helmert-app-home_product-categorise-content-row2'>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[4]}`} className=''>
+                <a href={`product-filter/all=0&cat_id=5&keyword=&sort=0`} className=''>
                   <img src={images.bicycle} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[4]}`} className='helmert-app-home_heading-title-link p-bold'>Bike Helmet</a>
+                  <a href={`product-filter/all=0&cat_id=5&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Bike Helmet</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[5]}`} className=''>
+                <a href={`product-filter/all=0&cat_id=6&keyword=&sort=0`} className=''>
                   <img src={images.children} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[5]}`} className='helmert-app-home_heading-title-link p-bold'>Kids Helmet</a>
+                  <a href={`product-filter/all=0&cat_id=6&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Kids Helmet</a>
                 </p>
               </div>
             </div>
             <div className='helmert-app-home_product-categorise-content-row'>
               <div className='helmert-app-home_product-categorise-content-row-img'>
-                <a href={`/product/category/${types[6]}`} className=''>
+                <a href={`product-filter/all=0&cat_id=7&keyword=&sort=0`} className=''>
                   <img src={images.accessories} alt="fullface" />
                 </a>
               </div>
               <div className='helmert-app-home_product-categorise-content-row-p'>
                 <p>
-                  <a href={`/product/category/${types[6]}`} className='helmert-app-home_heading-title-link p-bold'>Accessories</a>
+                  <a href={`product-filter/all=0&cat_id=7&keyword=&sort=0`} className='helmert-app-home_heading-title-link p-bold'>Accessories</a>
                 </p>
               </div>
             </div>
