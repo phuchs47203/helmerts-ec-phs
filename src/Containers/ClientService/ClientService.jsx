@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './ClientService.css'
 import { Gifting, ShopSystem, ShoppingGuide, SizeGuide } from '../../Components'
 const ClientService = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <div id='client-service' className='app-helmerts-cliend_service-box'>
 
