@@ -23,6 +23,7 @@
     width: 20px;
     height: 20px;
     color: var(--pink);
+    color: var(--color-icon3);
 }
 
 @media screen and (max-width: 600px) {
