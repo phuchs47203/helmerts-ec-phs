@@ -4,7 +4,7 @@
     background-color: var(--color-legal);
     border-radius: 0.4rem;
     padding: 1rem;
-    grid-gap: 1.5rem;
+    grid-gap: 1rem;
     width: 100%;
 }
 
@@ -31,7 +31,6 @@
 .app-helmerts-gifting-content-item {
     display: flex;
     flex-direction: column;
-    grid-gap: 1rem;
     grid-gap: 2rem;
 }
 
@@ -53,4 +52,9 @@
     flex-direction: column;
     grid-gap: 1rem;
     padding: 0rem 1.5rem;
+}
+@media screen and (max-width: 600px) {
+    .app-helmerts-gifting-content-item-main {
+        padding: 0rem 1rem;
+    }
 }

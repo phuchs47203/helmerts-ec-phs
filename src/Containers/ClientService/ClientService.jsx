@@ -15,10 +15,10 @@ const ClientService = () => {
                         <p className='text-paragraph-p'>Thank you for using our website service.Helmerts ensures that all information collected will be stored safely</p>
                     </div>
                     <div className='app-helmerts-cliend_service-link-box'>
-                        <a href="#shopping-guide">Shopping Guide</a>
-                        <a href="#size-guide">Shoosing Size Guide</a>
-                        <a href="#shop-system">Shop System</a>
-                        <a href="#gifting">Gifting</a>
+                        <a href="#shopping-guide" className='link_service'>Shopping Guide</a>
+                        <a href="#size-guide" className='link_service'>Shoosing Size Guide</a>
+                        <a href="#shop-system" className='link_service'>Shop System</a>
+                        <a href="#gifting" className='link_service'>Gifting</a>
                     </div>
                 </div>
                 <ShoppingGuide />

@@ -18,6 +18,7 @@ import slide5v from '../Assets/slide5_v.jpeg';
 import slide6v from '../Assets/slide6_v.jpeg';
 import hcm1 from '../Assets/103 Đ. Đinh Tiên Hoàng, Đa Kao, Quận 1, Thành phố Hồ Chí Minh 02838201836.jpg';
 import hcm2 from '../Assets/Cửa Hàng Nón Sơn, 83 Đ. Trần Quốc Hoàn, Phường 4, Tân Bình, Thành phố Hồ Chí Minh 02839483998.jpg';
+import hcm3 from '../Assets/2 Đ. Châu Văn Liêm, Phường 10, Quận 5, Thành phố Hồ Chí Minh, Việt Nam 02838552955.jpg';
 import hn1 from '../Assets/Trương Định, Hai Bà Trưng District, Hanoi  02432181669.jpg';
 import hn2 from '../Assets/Shop Nón Sơn, 520 P. Xã Đàn, Nam Đồng, Đống Đa, Hà Nội  02435773162.jpg';
 import ct1 from '../Assets/1-23 Đ. Mậu Thân, Xuân Khánh, Ninh Kiều, Cần Thơ, Việt Nam 02923828268.jpg';
@@ -64,6 +65,7 @@ export default {
     slide6v,
     hcm1,
     hcm2,
+    hcm3,
     hn1,
     hn2,
     ct1,

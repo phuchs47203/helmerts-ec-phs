@@ -18,6 +18,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import axios from 'axios';
 import ProductCheckout from '../ProductCheckout/ProductCheckout';
+import { Signin } from '../../Containers';
 const VisuallyHiddenInput = styled('input')({
     clip: 'rect(0 0 0 0)',
     clipPath: 'inset(50%)',
@@ -136,14 +137,13 @@ const CheckOut = () => {
     const handleChangeNote = (event) => {
         setorderNote(event.target.value);
     }
+    const [cartEmpty, setcartEmpty] = useState('');
     const [newOrder, setnewOrder] = useState([]);
     const saveOrder = () => {
-        // cartLocal.forEach(element => {
-        //     console.log(element.size_id);
-        //     console.log(element.product_details.id);
-        // });
-
-        // return;
+        if (cartLocal.length === 0) {
+            setcartEmpty('Cart is empty! Please add product to cart at');
+            return;
+        }
 
         const URL_REQUEST_ORDER = "http://localhost:8000/api/orders/";
         const URL_REQUEST_ORDER_DETAILS = "http://localhost:8000/api/order-details";
@@ -194,6 +194,7 @@ const CheckOut = () => {
                     })
                         .then(respone2 => {
                             console.log("OK");
+                            localStorage.removeItem('cart');
                         })
                         .catch(err => {
                             console.log(err);
@@ -208,161 +209,180 @@ const CheckOut = () => {
     }
     return (
         <div className='app-hlemerts-check-out-box-parent'>
-            <div className='app-hlemerts-check-out' id='check-out'>
-                {loadingCart &&
-                    <div className='app-hlemerts-check-out-box'>
-                        {
-                            cartLocal.map((item, index) => (
-                                <ProductCheckout product={item.product_details}
-                                    size={item.size}
-                                    quantity={item.quantity}
-                                    price={item.product_details.sale_price}
-                                    key={item.product_details.id + item.size} />
-                            ))
-                        }
-                    </div>
-                }
-                <div className='app-hlemerts-check-out-form'>
-                    <TextField
-                        required
-                        id="country"
-                        label="Country"
-                        variant="outlined"
-                        value={country}
-                        type='text'
-                        // autoComplete="current-name"
-                        autoComplete="on"
-                        style={commonTextFieldStyle}
-                        InputLabelProps={{
-                            classes: commonInputLabelStyle,
-                        }}
-                        InputProps={{
-                            style: commonInputPropsStyle,
-                            classes: commonInputClasses,
-                        }}
-                        disabled
-                    />
-                    <Autocomplete
-                        {...defaultPropsCountry}
-                        id="disable-clearable"
-                        disableClearable
-                        value={city}
-                        onChange={(event, newValue) => {
-                            setcity(newValue);
-                        }}
-                        style={commonTextFieldStyle}
-                        InputLabelProps={{
-                            classes: commonInputLabelStyle,
-                        }}
-                        InputProps={{
-                            style: commonInputPropsStyle,
-                            classes: commonInputClasses,
-                        }}
-                        renderInput={(params) => (
-                            <TextField {...params} required label="City" variant="standard" />
-                        )}
-                    />
-                    <TextField
-                        required
-                        id="district"
-                        label="District"
-                        variant="outlined"
-                        value={valueDistrict}
-                        onChange={handleChangeDistrict}
-                        type='text'
-                        // autoComplete="current-name"
-                        autoComplete="on"
-                        style={commonTextFieldStyle}
-                        InputLabelProps={{
-                            classes: commonInputLabelStyle,
-                        }}
-                        InputProps={{
-                            style: commonInputPropsStyle,
-                            classes: commonInputClasses,
-                        }}
-                    />
-                    <TextField
-                        required
-                        id="addredd"
-                        label="Address"
-                        variant="outlined"
-                        value={address_details}
-                        onChange={handleChangeAddress}
-                        type='text'
-                        // autoComplete="current-name"
-                        autoComplete="on"
-                        style={commonTextFieldStyle}
-                        InputLabelProps={{
-                            classes: commonInputLabelStyle,
-                        }}
-                        InputProps={{
-                            style: commonInputPropsStyle,
-                            classes: commonInputClasses,
-                        }}
-                    />
-                    <TextField
-                        required
-                        id="note"
-                        label="Note"
-                        variant="outlined"
-                        value={orderNote}
-                        onChange={handleChangeNote}
-                        type='text'
-                        // autoComplete="current-name"
-                        autoComplete="on"
-                        style={commonTextFieldStyle}
-                        InputLabelProps={{
-                            classes: commonInputLabelStyle,
-                        }}
-                        InputProps={{
-                            style: commonInputPropsStyle,
-                            classes: commonInputClasses,
-                        }}
-                    />
-                    <PhoneInput
-                        className="phone_style"
-                        value={userInfor.phone_number}
-                        onChange={(newValue) => setphoneNumber(newValue)}
-                        inputStyle={{
-                            width: '100%', // Thiết lập chiều dài của phần nhập số điện thoại là 100%
-                            backgroundColor: 'var(--color-bg)', // Thiết lập màu nền là yellow
-                            color: 'var(--color-p)'
-                        }}
-                        inputProps={{
-                            name: 'phone',
-                            required: true,
-                            autoFocus: true,
-                        }}
-                        style={commonTextFieldStyle}
-                        InputLabelProps={{
-                            classes: commonInputLabelStyle,
-                        }}
-                        InputProps={{
-                            style: commonInputPropsStyle,
-                            classes: commonInputClasses,
-                        }}
-                    />
-                </div>
-                <div className='app-hlemerts-check-out-total_price'>
-                    <div className='app-hlemerts-check-out-total_price-subtotal'>
-                        <h1>Total product cost</h1>
-                        <p> ₫ {sub_total_price.toLocaleString()}</p>
-                    </div>
-                    <div className='app-hlemerts-check-out-total_price-subtotal'>
-                        <h1>Shipping Fee</h1>
-                        <p> ₫ {shipping_fee.toLocaleString()}</p>
-                    </div>
-                    <div className='app-hlemerts-check-out-total_price-total'>
-                        <h1>Total payment</h1>
-                        <p style={{ color: 'var(--color-h)' }}> ₫ {total_price.toLocaleString()}</p>
+            {!permitUser &&
+                <div className='app-helmerts-account-denied'>
+                    <h1 className='app-helmerts-account-denied-title'>You do not have permission to access this page</h1>
+                    <div className='app-helmerts-account-denied-signin'>
+                        <Signin />
                     </div>
                 </div>
-                <div className='app-hlemerts-check-out-check_out'>
-                    <button
-                        onClick={saveOrder}
-                        className='btn-transition'>Confirm</button>
+
+            }
+            {permitUser &&
+                <div className='app-hlemerts-check-out' id='check-out'>
+                    {loadingCart &&
+                        <div className='app-hlemerts-check-out-box'>
+                            {
+                                cartLocal.map((item, index) => (
+                                    <ProductCheckout product={item.product_details}
+                                        size={item.size}
+                                        quantity={item.quantity}
+                                        price={item.product_details.sale_price}
+                                        key={item.product_details.id + item.size} />
+                                ))
+                            }
+                        </div>
+                    }
+                    {cartEmpty &&
+                        <div className='app-hlemerts-check-out-box-error_cart'>
+                            <p>{cartEmpty}&nbsp;<a href="/product">Products List</a></p>
+                            
+                        </div>
+
+                    }
+                    <div className='app-hlemerts-check-out-form'>
+                        <TextField
+                            required
+                            id="country"
+                            label="Country"
+                            variant="outlined"
+                            value={country}
+                            type='text'
+                            // autoComplete="current-name"
+                            autoComplete="on"
+                            style={commonTextFieldStyle}
+                            InputLabelProps={{
+                                classes: commonInputLabelStyle,
+                            }}
+                            InputProps={{
+                                style: commonInputPropsStyle,
+                                classes: commonInputClasses,
+                            }}
+                            disabled
+                        />
+                        <Autocomplete
+                            {...defaultPropsCountry}
+                            id="disable-clearable"
+                            disableClearable
+                            value={city}
+                            onChange={(event, newValue) => {
+                                setcity(newValue);
+                            }}
+                            style={commonTextFieldStyle}
+                            InputLabelProps={{
+                                classes: commonInputLabelStyle,
+                            }}
+                            InputProps={{
+                                style: commonInputPropsStyle,
+                                classes: commonInputClasses,
+                            }}
+                            renderInput={(params) => (
+                                <TextField {...params} required label="City" variant="standard" />
+                            )}
+                        />
+                        <TextField
+                            required
+                            id="district"
+                            label="District"
+                            variant="outlined"
+                            value={valueDistrict}
+                            onChange={handleChangeDistrict}
+                            type='text'
+                            // autoComplete="current-name"
+                            autoComplete="on"
+                            style={commonTextFieldStyle}
+                            InputLabelProps={{
+                                classes: commonInputLabelStyle,
+                            }}
+                            InputProps={{
+                                style: commonInputPropsStyle,
+                                classes: commonInputClasses,
+                            }}
+                        />
+                        <TextField
+                            required
+                            id="addredd"
+                            label="Address"
+                            variant="outlined"
+                            value={address_details}
+                            onChange={handleChangeAddress}
+                            type='text'
+                            // autoComplete="current-name"
+                            autoComplete="on"
+                            style={commonTextFieldStyle}
+                            InputLabelProps={{
+                                classes: commonInputLabelStyle,
+                            }}
+                            InputProps={{
+                                style: commonInputPropsStyle,
+                                classes: commonInputClasses,
+                            }}
+                        />
+                        <TextField
+                            required
+                            id="note"
+                            label="Note"
+                            variant="outlined"
+                            value={orderNote}
+                            onChange={handleChangeNote}
+                            type='text'
+                            // autoComplete="current-name"
+                            autoComplete="on"
+                            style={commonTextFieldStyle}
+                            InputLabelProps={{
+                                classes: commonInputLabelStyle,
+                            }}
+                            InputProps={{
+                                style: commonInputPropsStyle,
+                                classes: commonInputClasses,
+                            }}
+                        />
+                        <PhoneInput
+                            className="phone_style"
+                            value={userInfor.phone_number}
+                            onChange={(newValue) => setphoneNumber(newValue)}
+                            inputStyle={{
+                                width: '100%', // Thiết lập chiều dài của phần nhập số điện thoại là 100%
+                                backgroundColor: 'var(--color-bg)', // Thiết lập màu nền là yellow
+                                color: 'var(--color-p)'
+                            }}
+                            inputProps={{
+                                name: 'phone',
+                                required: true,
+                                autoFocus: true,
+                            }}
+                            style={commonTextFieldStyle}
+                            InputLabelProps={{
+                                classes: commonInputLabelStyle,
+                            }}
+                            InputProps={{
+                                style: commonInputPropsStyle,
+                                classes: commonInputClasses,
+                            }}
+                        />
+                    </div>
+                    <div className='app-hlemerts-check-out-total_price'>
+                        <div className='app-hlemerts-check-out-total_price-subtotal'>
+                            <h1>Total product cost</h1>
+                            <p> ₫ {sub_total_price.toLocaleString()}</p>
+                        </div>
+                        <div className='app-hlemerts-check-out-total_price-subtotal'>
+                            <h1>Shipping Fee</h1>
+                            <p> ₫ {shipping_fee.toLocaleString()}</p>
+                        </div>
+                        <div className='app-hlemerts-check-out-total_price-total'>
+                            <h1>Total payment</h1>
+                            <p style={{ color: 'var(--color-h)' }}> ₫ {total_price.toLocaleString()}</p>
+                        </div>
+                    </div>
+                    <div className='app-hlemerts-check-out-check_out'>
+                        <button
+                            onClick={saveOrder}
+                            className='btn-transition'>Confirm</button>
+                    </div>
                 </div>
-            </div>
+            }
+
         </div>
 
     )

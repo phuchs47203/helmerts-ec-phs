@@ -139,13 +139,13 @@ const Footer = () => {
             </Link>
           </div>
           <div className='app-helmerts-footer-heading-logo-social'>
-            <a href="" className='app-helmerts-footer-heading-logo-social-content link-decoration'>
+            <a href="https://www.facebook.com/hermes/" className='app-helmerts-footer-heading-logo-social-content link-decoration'>
               <FaSquareFacebook className='color-svg-social' />
             </a>
-            <a href="" className='app-helmerts-footer-heading-logo-social-content link-decoration'>
+            <a href="https://www.instagram.com/hermes/?hl=en" className='app-helmerts-footer-heading-logo-social-content link-decoration'>
               <AiOutlineInstagram className='color-svg-social' />
             </a>
-            <a href="" className='app-helmerts-footer-heading-logo-social_link-content link-decoration'>
+            <a href="https://www.youtube.com/user/HERMES" className='app-helmerts-footer-heading-logo-social_link-content link-decoration'>
               <AiOutlineYoutube className='color-svg-social' />
             </a>
           </div>

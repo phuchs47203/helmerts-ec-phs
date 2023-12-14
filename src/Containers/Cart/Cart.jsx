@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const Cart = () => {
   const [cartLocal, setcartLocal] = useState([]);
   const [loadingCart, setloadingCart] = useState(false);
+  const [cartEmpty, setcartEmpty] = useState('');
   useEffect(() => {
     const saveCart = JSON.parse(localStorage.getItem('cart')) || [];
     setcartLocal(saveCart);
@@ -21,6 +22,7 @@ const Cart = () => {
     if (cartLocal != null) {
       setloadingCart(true);
     }
+    setcartEmpty('Cart is empty! Please add product to cart at');
     // console.log(loadingCart);
     console.log();
 
@@ -140,9 +142,9 @@ const Cart = () => {
   return (
     <div id='cart' className='app-helmerts-cart'>
       <div className='app-helmerts-cart-box'>
-        <div className='app-helmerts-cart-heading'>
+        {/* <div className='app-helmerts-cart-heading'>
           cart
-        </div>
+        </div> */}
         <div className='app-helmerts-cart-content'>
           <div className='app-helmerts-cart-content-left'>
 
@@ -157,6 +159,13 @@ const Cart = () => {
                       updateCartLocal={updateCartLocal}
                       key={item.product_details.id + item.size} />
                   ))
+                }
+                {cartEmpty &&
+                  <div className='app-hlemerts-check-out-box-error_cart'>
+                    <p>{cartEmpty}&nbsp;<a href="/product">Products List</a></p>
+
+                  </div>
+
                 }
               </div>
             }

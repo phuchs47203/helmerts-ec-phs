@@ -28,7 +28,7 @@
     justify-content: flex-start;
 }
 
-.app-helmerts-cliend_service-box a {
+/* .app-helmerts-cliend_service-box a {
     text-decoration: none;
     padding-bottom: 0.2rem;
     width: fit-content;
@@ -42,13 +42,29 @@
     margin-bottom: -1px;
     color: var(--color-h);
 
+} */
+.link_service {
+    text-decoration: none;
+    padding-bottom: 0.2rem;
+    width: fit-content;
+    font-family: var(--font-family);
+    color: var(--color-p);
+    font-size: 16px;
 }
+
+.link_service:hover {
+    border-bottom: 0.5px solid var(--color-p);
+    margin-bottom: -1px;
+    color: var(--color-h);
+}
+
 @media screen and (max-width:600px) {
     .app-helmerts-cliend_service-link-box {
         grid-gap: 0.5rem;
     }
-    .app-helmerts-cliend_service-box a {
+
+    .link_service {
         font-size: 14px;
     }
-    
+
 }

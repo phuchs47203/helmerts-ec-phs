@@ -26,5 +26,5 @@ export { default as ShoppingGuide } from './ShoppingGuide/ShoppingGuide.jsx';
 export { default as ShopSystem } from './ShopSystem/ShopSystem.jsx';
 export { default as SizeGuide } from './SizeGuide/SizeGuide.jsx';
 export { default as Gifting } from './Gifting/Gifting.jsx';
-
+export { default as AddressItem } from './AddressItem/AddressItem.jsx';
 
