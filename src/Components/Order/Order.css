@@ -72,6 +72,21 @@
     grid-gap: 0.5rem;
 }
 
+.app-helmerts-order-payment_review-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    grid-gap: 0.5rem;
+}
+
+.app-helmerts-order-payment_review-address h1 {
+    font-family: var(--font-family3);
+    font-size: 13px;
+    font-weight: 400;
+    color: #444;
+}
+
 .app-helmerts-order-payment_review-total_payment {
     display: flex;
     flex-direction: row;

@@ -64,8 +64,8 @@ const Product = () => {
 
   }, []);
   const data_filter = {
-    cat_id: 5,
-    sort: 2,
+    cat_id: 0,
+    sort: 0,
     all: 0,
     keyword: ''
   };
@@ -177,14 +177,14 @@ const Product = () => {
             <div className='app-helmerts-product_filter-category_content'>
               {toggleCat &&
                 <div className='app-helmerts-product_filter-category_content-list'>
-                  <p value={0} onClick={(e) => handleChangeSort(e)}>Category</p>
-                  <p value={1} onClick={(e) => handleChangeSort(e)}>Full Face</p>
-                  <p value={2} onClick={(e) => handleChangeSort(e)}>Half Face</p>
-                  <p value={3} onClick={(e) => handleChangeSort(e)}>Open Face</p>
-                  <p value={4} onClick={(e) => handleChangeSort(e)}>Modular</p>
-                  <p value={5} onClick={(e) => handleChangeSort(e)}>Bicycle Helmet</p>
-                  <p value={6} onClick={(e) => handleChangeSort(e)}>Children's Helmet</p>
-                  <p value={7} onClick={(e) => handleChangeSort(e)}>Accessories</p>
+                  <p value={0} onClick={(e) => handleChangeCategory(e)}>Category</p>
+                  <p value={1} onClick={(e) => handleChangeCategory(e)}>Full Face</p>
+                  <p value={2} onClick={(e) => handleChangeCategory(e)}>Half Face</p>
+                  <p value={3} onClick={(e) => handleChangeCategory(e)}>Open Face</p>
+                  <p value={4} onClick={(e) => handleChangeCategory(e)}>Modular</p>
+                  <p value={5} onClick={(e) => handleChangeCategory(e)}>Bicycle Helmet</p>
+                  <p value={6} onClick={(e) => handleChangeCategory(e)}>Children's Helmet</p>
+                  <p value={7} onClick={(e) => handleChangeCategory(e)}>Accessories</p>
                 </div>
               }
             </div>
@@ -205,10 +205,10 @@ const Product = () => {
             <div className='app-helmerts-product_filter-sort_content'>
               {toggleSort &&
                 <div className='app-helmerts-product_filter-sort_content-list'>
-                  <p value={0} onClick={(e) => handleChangeCategory(e)}>Default</p>
-                  <p value={1} onClick={(e) => handleChangeCategory(e)}>Lowest price</p>
-                  <p value={2} onClick={(e) => handleChangeCategory(e)}>Highest price</p>
-                  <p value={3} onClick={(e) => handleChangeCategory(e)}>Newest</p>
+                  <p value={0} onClick={(e) => handleChangeSort(e)}>Default</p>
+                  <p value={1} onClick={(e) => handleChangeSort(e)}>Lowest price</p>
+                  <p value={2} onClick={(e) => handleChangeSort(e)}>Highest price</p>
+                  <p value={3} onClick={(e) => handleChangeSort(e)}>Newest</p>
                 </div>
               }
             </div>

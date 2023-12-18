@@ -195,6 +195,9 @@ const CheckOut = () => {
                         .then(respone2 => {
                             console.log("OK");
                             localStorage.removeItem('cart');
+                            setTimeout(() => {
+                                navigate('/account');
+                            }, 500);
                         })
                         .catch(err => {
                             console.log(err);

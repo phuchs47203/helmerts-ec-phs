@@ -77,6 +77,14 @@
     padding: 1rem;
 }
 
+.app-helmert-introduce-feature_col-content svg,
+.svg_icon {
+    width: 30px;
+    height: 30px;
+    color: var(--color-p);
+    margin-bottom: 1rem;
+}
+
 .texalign_start {
     text-align: start;
     font-size: 20px;
@@ -143,7 +151,7 @@
         flex-direction: column;
         grid-gap: 3rem;
     }
-    
+
     .app-helmert-introduce-history {
         padding: 0rem;
     }

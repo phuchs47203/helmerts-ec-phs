@@ -58,6 +58,12 @@ const Order = ({ OrderInfor, localToken }) => {
         }
       </div>
       <div className='app-helmerts-order-payment_review'>
+        <div className='app-helmerts-order-payment_review-address'>
+          <h1>Phone: {OrderInfor.phone_number}</h1>
+          <h1>City: {OrderInfor.city}</h1>
+          <h1>District: {OrderInfor.district}</h1>
+          <h1>Address: {OrderInfor.address_Details}</h1>
+        </div>
         <div className='app-helmerts-order-payment_review-total_payment'>
           <h1>Total Payment: ₫ {OrderInfor.total_payment.toLocaleString()}</h1>
         </div>
@@ -87,7 +93,7 @@ const Order = ({ OrderInfor, localToken }) => {
           toggleConfim &&
           <ConfirmOrder Order={OrderInfor} localToken={localToken} settoggleConfim={settoggleConfim} />
         }
-        { toggleWriteReview &&
+        {toggleWriteReview &&
           <WritePreview Order={OrderInfor} localToken={localToken} settoggleWriteReview={settoggleWriteReview} />
         }
       </div>

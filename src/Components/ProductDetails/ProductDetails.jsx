@@ -304,9 +304,9 @@ const ProductDetails = () => {
                         </div>
                     </div>
                     <div className='app-helmerts_product_details-content_left-similar'>
-                        <div className='app-helmerts_product_details-content_left-similar-heading'>
+                        <div className='app-helmerts_product_details-content_left-manuals-heading'>
                             <h1>
-                                You may also be interested
+                                YOU MAY ALSO BE INTERESTED
                             </h1>
                         </div>
                         <div className='app-helmerts_product_details-content_left-similar-content'>
@@ -315,9 +315,9 @@ const ProductDetails = () => {
                             ))}
                         </div>
                     </div>
-                    <div className='app-helmerts_product_details-content_left-reviews'>
+                    {/* <div className='app-helmerts_product_details-content_left-reviews'>
                         reviews
-                    </div>
+                    </div> */}
                 </div>
 
 

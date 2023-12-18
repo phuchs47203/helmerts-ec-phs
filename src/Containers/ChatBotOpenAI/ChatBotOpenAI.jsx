@@ -11,11 +11,12 @@ const ChatBotOpenAI = () => {
 
     const chatWithGPT3 = async (userInput) => {
         // const apiEndpoint = 'https://api.openai.com/v1/chat/completions';
+        // const apiEndpoint = 'https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions';
         const apiEndpoint = 'https://api.openai.com/v1/engines/gpt-3.5-turbo-instruct/completions';
 
         const headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer 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`
         };
         // Thêm các câu hỏi mặc định và cung cấp câu trả lời
         let promptToUse = userInput;

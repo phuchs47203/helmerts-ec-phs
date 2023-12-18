@@ -12,6 +12,7 @@ const Cart = () => {
   const [cartLocal, setcartLocal] = useState([]);
   const [loadingCart, setloadingCart] = useState(false);
   const [cartEmpty, setcartEmpty] = useState('');
+  const [cartiIsempty, setcartiIsempty] = useState(false);
   useEffect(() => {
     const saveCart = JSON.parse(localStorage.getItem('cart')) || [];
     setcartLocal(saveCart);
@@ -21,6 +22,11 @@ const Cart = () => {
   useEffect(() => {
     if (cartLocal != null) {
       setloadingCart(true);
+    }
+    if (cartLocal.length === 0) {
+      SubtotlaPrice = 0;
+      TotalPrice = 0;
+      setcartEmpty(true);
     }
     setcartEmpty('Cart is empty! Please add product to cart at');
     // console.log(loadingCart);
@@ -68,6 +74,7 @@ const Cart = () => {
       SubtotlaPrice = 0;
       TotalPrice = 0;
       console.log("cart is null");
+      setcartEmpty(true);
     }
     else {
       cartLocal.forEach(element => {
@@ -160,7 +167,7 @@ const Cart = () => {
                       key={item.product_details.id + item.size} />
                   ))
                 }
-                {cartEmpty &&
+                {cartEmpty && cartiIsempty &&
                   <div className='app-hlemerts-check-out-box-error_cart'>
                     <p>{cartEmpty}&nbsp;<a href="/product">Products List</a></p>
 

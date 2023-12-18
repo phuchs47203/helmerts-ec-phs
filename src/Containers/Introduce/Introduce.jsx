@@ -4,6 +4,11 @@ import { images } from '../../Constants';
 import { FiTrendingUp } from 'react-icons/fi';
 import { FaMoneyBillTrendUp } from 'react-icons/fa6';
 import { useEffect } from 'react';
+import { FaServicestack } from "react-icons/fa";
+import { GiSpartanHelmet } from "react-icons/gi";
+import { GiLogicGateNxor } from "react-icons/gi";
+import { GiQuickMan } from "react-icons/gi";
+
 const Introduce = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -35,7 +40,7 @@ const Introduce = () => {
         <div className='app-helmert-introduce-feature_col1'>
 
           <div className='app-helmert-introduce-feature_col-content'>
-            <FiTrendingUp />
+            <FaServicestack />
             <h1 className='text-title-h1 texalign_start'>
               SERVICE QUALITY MAKES A DIFFERENCE
             </h1>
@@ -46,7 +51,7 @@ const Introduce = () => {
         </div>
         <div className='app-helmert-introduce-feature_col2'>
           <div className='app-helmert-introduce-feature_col-content'>
-            <FaMoneyBillTrendUp />
+            <GiSpartanHelmet className='svg_icon' />
             <h1 className='text-title-h1 texalign_start'>
               ATTRACTIVE PROMOTION PROGRAM
             </h1>
@@ -55,7 +60,7 @@ const Introduce = () => {
             </p>
           </div>
           <div className='app-helmert-introduce-feature_col-content'>
-            <FaMoneyBillTrendUp />
+            <GiLogicGateNxor />
             <h1 className='text-title-h1 texalign_start'>
               OPTIMAL LOGISTICS SERVICES
             </h1>
@@ -85,7 +90,7 @@ const Introduce = () => {
           </div>
 
           <div className='app-helmert-introduce-feature_col-content'>
-            <FaMoneyBillTrendUp />
+            <GiQuickMan />
             <h1 className='text-title-h1 texalign_start'>
               HIGHLIGHTS INFORMATION ALWAYS UPDATED QUICKLY
             </h1>
