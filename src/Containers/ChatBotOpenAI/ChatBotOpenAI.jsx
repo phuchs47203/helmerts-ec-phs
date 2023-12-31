@@ -16,7 +16,7 @@ const ChatBotOpenAI = () => {
 
         const headers = {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer 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`
+            'Authorization': `Bearer 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`
         };
         // Thêm các câu hỏi mặc định và cung cấp câu trả lời
         let promptToUse = userInput;
@@ -98,7 +98,7 @@ const ChatBotOpenAI = () => {
                                 <p>Start chatting!</p>
                             </div>
                             <div onClick={() => setInput('Tôi muốn mua hàng')}>
-                                <p>Tôi muốn mua hàng?</p> 
+                                <p>Tôi muốn mua hàng?</p>
                             </div>
                             <div onClick={() => setInput('Hướng dẫn chọn size')}>
                                 <p>Hướng dẫn chọn size</p>
